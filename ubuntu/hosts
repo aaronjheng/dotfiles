@@ -1,0 +1,15 @@
+127.0.0.1	localhost
+127.0.1.1	wentworth-mediav
+192.168.3.118	test-went.mediav.com
+192.168.3.118   api-went.mediav.com
+192.168.3.118 creative-dev.mediav.com
+192.168.3.118 compile-went.mediav.com
+192.168.3.118 creative-went.mediav.com
+218.85.143.90    www.313.com
+218.85.143.90    api.313.com
+# The following lines are desirable for IPv6 capable hosts
+::1     ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
