@@ -3,6 +3,8 @@ code { font-family: "lucida console" !important; }
 *:focus{ outline: none; }
 
 /*Baidu Music Box*/
+.mbox .top-banner #searchBar{left: 172px !important; background: #fff !important;}
+.mbox .top-banner #userBar .music-web{background: none !important;}
 #mainContent .tab-header{ display: none!important; }
 #mainContent .tab-content #page-song{ top:0!important; }
 #mainContent .tab-content #page-song .ui-reelList-footer .ecom-ads-wrap{ display: none !important; }
@@ -32,3 +34,7 @@ code { font-family: "lucida console" !important; }
 #footer #footer-content #dot-list .dot .selection-bar+input{ margin:0 !important; padding: 0 !important; min-height: 1em !important; border:none !important; text-align: center !important; }
 #footer #footer-content #footer-menu-container #vertical-separator{ display: none !important; }
 #footer #footer-content #footer-menu-container #chrome-web-store-link #chrome-web-store-title{ background: none !important; line-height: normal !important; }
+
+/*alipay*/
+#container.ui-container .i-banner{background: none !important;background-color: #f57403 !important;}
+#container.ui-container .i-content .i-side{display: none !important;}
