@@ -36,5 +36,10 @@ code { font-family: "lucida console" !important; }
 #footer #footer-content #footer-menu-container #chrome-web-store-link #chrome-web-store-title{ background: none !important; line-height: normal !important; }
 
 /*alipay*/
+#globalContainer{font-family: 'Microsoft Yahei' !important;}
+#globalContainer .global-common-a .global-header{padding: 10px 0 !important;}
+#globalContainer .global-common-a .global-header .global-header-content .global-nav{margin-top:  15px !important;}
 #container.ui-container .i-banner{background: none !important;background-color: #f57403 !important;}
 #container.ui-container .i-content .i-side{display: none !important;}
+#container.ui-container .i-content #J-cooperant-banner{height: 0!important;overflow: hidden !important;padding:0 !important;}
+#container #J-app-container{position: relative !important;}
