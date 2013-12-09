@@ -1,0 +1,34 @@
+/*Common*/
+code { font-family: "lucida console" !important; }
+*:focus{ outline: none; }
+
+/*Baidu Music Box*/
+#mainContent .tab-header{ display: none!important; }
+#mainContent .tab-content #page-song{ top:0!important; }
+#mainContent .tab-content #page-song .ui-reelList-footer .ecom-ads-wrap{ display: none !important; }
+#mainContent .tab-content #page-song .ui-reelList-viewport{ bottom: 35px!important; }
+
+#mainContent .main-wrapper>.column2{ right: 250px!important; }
+#mainContent .main-wrapper>.column3{ right: 0!important; }
+#mainContent .main-wrapper>.column4{ display: none !important; }
+
+::-webkit-scrollbar-thumb{ border-radius:0 !important; }
+
+/*Microsoft Outlook*/
+.ContentRight #ManagedContentWrapper #MainContent{ bottom: 0 !important; right: 0!important; }
+.ContentRight #ManagedContentWrapper .FooterContainer{ display: none!important; }
+.ContentRight #ManagedContentWrapper #RightRailContainer{ display: none!important; }
+
+/*Chrome New Page*/
+#login-container #login-status-header-container #login-status-header{ font-family: Tahoma, Geneva !important; font-weight: bold !important; }
+.tile-grid{ max-height: 500px !important; }
+#card-slider-frame{ bottom: 30px !important; }
+#footer #footer-content{ height: auto !important; line-height: 30px !important; background-color: #FFF !important; }
+#footer #footer-content #logo-img img{ display: none !important; }
+#footer #footer-content #dot-list .dot{ text-align: center !important; margin: 0 !important;padding: 0 !important;}
+#footer #footer-content #dot-list .dot:hover{background-color: rgba(222, 222, 222, 0.9) !important;}
+#footer #footer-content #dot-list .dot.selected input{ color: #000 !important; font-weight: bold; }
+#footer #footer-content #dot-list .dot .selection-bar{ display: none !important; }
+#footer #footer-content #dot-list .dot .selection-bar+input{ margin:0 !important; padding: 0 !important; min-height: 1em !important; border:none !important; text-align: center !important; }
+#footer #footer-content #footer-menu-container #vertical-separator{ display: none !important; }
+#footer #footer-content #footer-menu-container #chrome-web-store-link #chrome-web-store-title{ background: none !important; line-height: normal !important; }
