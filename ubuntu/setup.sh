@@ -30,7 +30,7 @@ chrome_pack_name=google-chrome-stable_current_amd64.deb
 sudo apt-get -y install libxss1
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg -i $chrome_pack_name
-cp -f ../chrome/Custom.css ~/.config/google-chrome/Default/User\ StyleSheets/Custom.css
+cat ../chrome/Custom.css > ~/.config/google-chrome/Default/User\ StyleSheets/Custom.css
 rm -f $chrome_pack_name
 
 #Set up development enviroment
