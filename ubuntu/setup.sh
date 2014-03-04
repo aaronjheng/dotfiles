@@ -17,7 +17,6 @@ sudo apt-get update
 sudo sh -c 'echo 192.168.3.118	test-went.mediav.com >> /etc/hosts'
 sudo sh -c 'echo 192.168.3.118 api-went.mediav.com >> /etc/hosts'
 sudo sh -c 'echo 192.168.3.118 creative-dev.mediav.com >> /etc/hosts'
-sudo sh -c 'echo 192.168.3.118 compile-went.mediav.com >> /etc/hosts'
 sudo sh -c 'echo 192.168.3.118 creative-went.mediav.com >> /etc/hosts'
 #Remote mount configuration
 sudo apt-get -y install cifs-utils
