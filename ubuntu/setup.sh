@@ -14,15 +14,12 @@ sudo add-apt-repository ppa:caldas-lopes/ppa -s -y
 sudo apt-get update
 
 #update /ets/hosts
-sudo sh -c 'echo 192.168.3.118	test-went.mediav.com >> /etc/hosts'
+sudo sh -c 'echo 192.168.3.118 test-went.mediav.com >> /etc/hosts'
 sudo sh -c 'echo 192.168.3.118 api-went.mediav.com >> /etc/hosts'
-sudo sh -c 'echo 192.168.3.118 creative-dev.mediav.com >> /etc/hosts'
 sudo sh -c 'echo 192.168.3.118 creative-went.mediav.com >> /etc/hosts'
 #Remote mount configuration
 sudo apt-get -y install cifs-utils
-sudo sh -c 'echo //creative-dev.mediav.com/develop/creative_went /home/wentworth/Repo/creative cifs username=root,password=goodmediav,rw,uid=wentworth >> /etc/fstab'
-sudo sh -c 'echo //creative-dev.mediav.com/develop/compile_went /home/wentworth/Repo/compile cifs username=root,password=goodmediav,rw,uid=wentworth >> /etc/fstab'
-sudo sh -c 'echo //creative-dev.mediav.com/develop/wentworth /home/wentworth/Repo/other cifs username=root,password=goodmediav,rw,uid=wentworth >> /etc/fstab'
+sudo sh -c 'echo //creative-went.mediav.com/develop/wentworth /home/wentworth/Repo/dev cifs username=root,password=goodmediav,rw,uid=wentworth >> /etc/fstab'
 
 #install chrome
 chrome_pack_name=google-chrome-stable_current_amd64.deb
