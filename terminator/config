@@ -12,6 +12,7 @@
     show_titlebar = False
     font = Lucida Console Semi-Condensed 10
     background_color = "#3a3a3a"
+    scrollback_infinite = True
 [layouts]
   [[default]]
     [[[child1]]]
