@@ -9,7 +9,6 @@ sudo apt-add-repository ppa:chris-lea/node.js -s -y
 sudo apt-add-repository ppa:tualatrix/ppa -s -y
 sudo apt-add-repository ppa:wiznote-team/ppa -s -y
 sudo apt-add-repository ppa:numix/ppa -s -y
-sudo add-apt-repository ppa:caldas-lopes/ppa -s -y
 
 sudo apt-get update
 
@@ -41,7 +40,7 @@ sudo apt-get -y install terminator
 cp ../terminator ~/.config/terminator
 
 #install stuff
-sudo apt-get -y install openjdk-7-jdk mysql-client mysql-workbench alacartewiznote cairo-dock ubuntu-tweak gimp shutter gparted filezilla numix-gtk-theme numix-icon-theme ezame ubuntu-restricted-extras
+sudo apt-get -y install openjdk-7-jdk mysql-client mysql-workbench alacartewiznote cairo-dock ubuntu-tweak gimp shutter gparted filezilla numix-gtk-theme numix-icon-theme
 
 #install fonts
 wget -O get-fonts.sh.zip http://files.cnblogs.com/DengYangjun/get-fonts.sh.zip
