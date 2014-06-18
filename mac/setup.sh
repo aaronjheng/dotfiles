@@ -28,4 +28,4 @@ sudo chmod +x /usr/local/bin/extDiff /usr/local/bin/extMerge
 
 sudo easy_install pip
 
-rsync -av . ~
+rsync -av --exclude='.DS_Store' --exclude='setup.sh'  . ~

@@ -25,7 +25,6 @@ chrome_pack_name=google-chrome-stable_current_amd64.deb
 sudo apt-get -y install libxss1
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg -i $chrome_pack_name
-cat ../chrome/Custom.css > ~/.config/google-chrome/Default/User\ StyleSheets/Custom.css
 rm -f $chrome_pack_name
 
 #Set up development enviroment
@@ -37,7 +36,7 @@ git config --global core.editor vim
 git config --global merge.tool vimdiff
 
 sudo apt-get -y install terminator
-cp ../terminator ~/.config/terminator
+cp ./terminator ~/.config/terminator
 
 #install stuff
 sudo apt-get -y install openjdk-7-jdk mysql-client mysql-workbench alacartewiznote cairo-dock ubuntu-tweak gimp shutter gparted filezilla numix-gtk-theme numix-icon-theme
