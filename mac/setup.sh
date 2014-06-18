@@ -4,7 +4,7 @@ sudo sh -c "echo %wentworth ALL=\(ALL\) NOPASSWD:ALL" -p it901694
 ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
 
 brew install wget vim
-brew install git
+brew install git bash-completion
 
 git config --global user.name "wentworth"
 git config --global user.email "wentworth@outlook.com"
@@ -27,3 +27,5 @@ EOF
 sudo chmod +x /usr/local/bin/extDiff /usr/local/bin/extMerge
 
 sudo easy_install pip
+
+rsync -av . ~
