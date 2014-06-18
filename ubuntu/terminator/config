@@ -1,0 +1,57 @@
+[global_config]
+  title_hide_sizetext = True
+  window_state = hidden
+  focus = mouse
+  title_transmit_bg_color = "#999999"
+[keybindings]
+[profiles]
+  [[default]]
+    use_system_font = False
+    background_darkness = 0.77
+    foreground_color = "#ffffff"
+    show_titlebar = False
+    font = Lucida Console Semi-Condensed 10
+    background_color = "#3a3a3a"
+    scrollback_infinite = True
+[layouts]
+  [[default]]
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+      profile = default
+    [[[window0]]]
+      type = Window
+      parent = ""
+  [[New Layout]]
+    [[[child0]]]
+      position = 0:22
+      type = Window
+      order = 0
+      parent = ""
+      size = 1920, 988
+    [[[child1]]]
+      labels = None, None
+      type = Notebook
+      order = 0
+      parent = child0
+    [[[child2]]]
+      position = 959
+      type = HPaned
+      order = 0
+      parent = child1
+    [[[terminal3]]]
+      profile = default
+      type = Terminal
+      order = 0
+      parent = child2
+    [[[terminal5]]]
+      profile = default
+      type = Terminal
+      order = 1
+      parent = child1
+    [[[terminal4]]]
+      profile = default
+      type = Terminal
+      order = 1
+      parent = child2
+[plugins]
