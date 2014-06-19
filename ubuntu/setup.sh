@@ -1,7 +1,7 @@
 #Prepare
 sudo sh -c "echo %wentworth ALL=\(ALL:ALL\) NOPASSWD: ALL" -p it901694
 sudo apt-get update
-sudo apt-get -y purge webbrowser-app thunderbird totem libreoffic* xterm xdiagnose remmina transmission-gtk brasero software-center rhythmbox gnome-disk-utility dconf-editor gnome-screenshot baobab empathy gnome-contacts
+sudo apt-get -y purge gnome-sudoku gnome-mines gnome-mahjongg gnome-orca simple-scan onboard webbrowser-app thunderbird totem libreoffic* xterm xdiagnose remmina transmission-gtk brasero software-center rhythmbox gnome-disk-utility dconf-editor gnome-screenshot baobab empathy gnome-contacts
 
 #Add PPAs
 sudo apt-add-repository ppa:webupd8team/sublime-text-2 -s -y
