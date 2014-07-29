@@ -1,0 +1,6 @@
+.DS_Store
+installfonts.sh
+setup.sh
+local.fonts.conf
+rsyncexclude
+fonts/

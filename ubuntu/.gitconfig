@@ -1,0 +1,9 @@
+[user]
+	name = wentworth
+	email = wentworth@outlook.com
+[core]
+	editor = vim
+[merge]
+	tool = meld
+[diff]
+	tool = meld
