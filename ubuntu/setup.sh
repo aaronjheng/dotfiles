@@ -1,3 +1,6 @@
+#!/bin/bash
+#
+root_dir=$(cd "$(dirname "$0")"; pwd)
 user=`whoami`
 #Prepare
 sudo sh -c "echo %$user ALL=\(ALL:ALL\) NOPASSWD: ALL >> /etc/sudoers"
@@ -14,18 +17,14 @@ sudo apt-add-repository ppa:numix/ppa -s -y
 
 sudo apt-get update
 
-#update /ets/hosts
-sudo sh -c 'echo 192.168.3.118 test-went.mediav.com >> /etc/hosts'
-sudo sh -c 'echo 192.168.3.118 api-went.mediav.com >> /etc/hosts'
-sudo sh -c 'echo 192.168.3.118 creative-went.mediav.com >> /etc/hosts'
-#Remote mount configuration
-sudo apt-get -y install cifs-utils
-sudo sh -c 'echo //creative-went.mediav.com/develop/$user /home/$user/Repo/dev cifs username=root,password=goodmediav,rw,uid=$user >> /etc/fstab'
-
 #install chrome
-chrome_pack_name=google-chrome-stable_current_amd64.deb
+if [ "$(uname -m)" = "x86_64" ]; then
+	chrome_pack_name=google-chrome-stable_current_amd64.deb
+else
+	chrome_pack_name=google-chrome-stable_current_i386.deb
+fi
 sudo apt-get -y install libxss1
-wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+wget https://dl.google.com/linux/direct/$chrome_pack_name
 sudo dpkg -i $chrome_pack_name
 rm -f $chrome_pack_name
 
@@ -34,7 +33,6 @@ sudo apt-get -y install sublime-text vim meld subversion git terminator openjdk-
 
 #install fonts
 target_fonts_dir=/usr/share/fonts/truetype/myfonts
-root_dir=$(cd "$(dirname "$0")"; pwd)
 source_fonts_dir=$root_dir/fonts
 
 sudo mkdir $target_fonts_dir 2>/dev/null
@@ -52,4 +50,4 @@ sudo mkfontscale 1>/dev/null
 sudo mkfontdir 1>/dev/null
 sudo fc-cache -v 1>/dev/null
 
-rsync -av --exclude-from=rsyncexclude  . ~
+rsync -av --exclude-from=rsyncexclude  $root_dir/ ~

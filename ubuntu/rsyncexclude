@@ -4,3 +4,4 @@ setup.sh
 local.fonts.conf
 rsyncexclude
 fonts/
+*.swp
