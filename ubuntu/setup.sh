@@ -6,7 +6,7 @@ user=`whoami`
 sudo sh -c "echo %$user ALL=\(ALL:ALL\) NOPASSWD: ALL >> /etc/sudoers"
 sudo passwd root
 sudo apt-get update
-sudo apt-get -y purge gnome-sudoku gnome-mines gnome-mahjongg gnome-orca simple-scan onboard webbrowser-app totem libreoffic* xterm xdiagnose remmina transmission-gtk brasero software-center rhythmbox gnome-disk-utility dconf-editor gnome-screenshot baobab empathy gnome-contacts
+sudo apt-get -y purge apturl gnome-sudoku gnome-mines gnome-mahjongg gnome-orca simple-scan onboard webbrowser-app totem libreoffic* xterm xdiagnose remmina transmission-gtk brasero software-center rhythmbox gnome-disk-utility dconf-editor gnome-screenshot baobab empathy gnome-contacts
 
 #Add PPAs
 sudo apt-add-repository ppa:webupd8team/sublime-text-2 -s -y
@@ -29,7 +29,7 @@ sudo dpkg -i $chrome_pack_name
 rm -f $chrome_pack_name
 
 #Set up development enviroment
-sudo apt-get -y install sublime-text vim meld subversion git terminator openjdk-7-jdk mysql-client mysql-workbench alacarte wiznote cairo-dock ubuntu-tweak gimp shutter gparted filezilla numix-gtk-theme numix-icon-theme
+sudo apt-get -y install sublime-text vim meld subversion git terminator openjdk-7-jdk mysql-client alacarte wiznote cairo-dock ubuntu-tweak gimp shutter gparted filezilla numix-gtk-theme numix-icon-theme
 
 #install fonts
 target_fonts_dir=/usr/share/fonts/truetype/myfonts
