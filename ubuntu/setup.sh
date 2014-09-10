@@ -14,22 +14,12 @@ sudo apt-add-repository ppa:chris-lea/node.js -s -y
 sudo apt-add-repository ppa:tualatrix/ppa -s -y
 sudo apt-add-repository ppa:wiznote-team/ppa -s -y
 sudo apt-add-repository ppa:numix/ppa -s -y
+sudo apt-add-repository 'deb http://dl.google.com/linux/chrome/deb/ stable main' -s -y
 
 sudo apt-get update
 
-#install chrome
-if [ "$(uname -m)" = "x86_64" ]; then
-	chrome_pack_name=google-chrome-stable_current_amd64.deb
-else
-	chrome_pack_name=google-chrome-stable_current_i386.deb
-fi
-sudo apt-get -y install libxss1
-wget https://dl.google.com/linux/direct/$chrome_pack_name
-sudo dpkg -i $chrome_pack_name
-rm -f $chrome_pack_name
-
-#Set up development enviroment
-sudo apt-get -y install sublime-text vim meld subversion git terminator openjdk-7-jdk mysql-client alacarte wiznote cairo-dock ubuntu-tweak gimp shutter gparted filezilla numix-gtk-theme numix-icon-theme
+#Install apps
+sudo apt-get -y install google-chrome-stable sublime-text vim meld subversion git terminator openjdk-7-jdk mysql-client alacarte wiznote cairo-dock ubuntu-tweak gimp shutter gparted filezilla numix-gtk-theme numix-icon-theme
 
 #install fonts
 target_fonts_dir=/usr/share/fonts/truetype/myfonts
