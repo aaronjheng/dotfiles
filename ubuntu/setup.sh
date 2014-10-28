@@ -15,6 +15,7 @@ sudo apt-add-repository ppa:tualatrix/ppa -s -y
 sudo apt-add-repository ppa:wiznote-team/ppa -s -y
 sudo apt-add-repository ppa:numix/ppa -s -y
 sudo apt-add-repository 'deb http://dl.google.com/linux/chrome/deb/ stable main' -s -y
+sudo apt-add-repository 'deb http://apt.spideroak.com/ubuntu-spideroak-hardy/ release restricted' -s -y
 
 sudo apt-get update
 
