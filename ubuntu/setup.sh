@@ -14,13 +14,18 @@ sudo apt-add-repository ppa:chris-lea/node.js -s -y
 sudo apt-add-repository ppa:tualatrix/ppa -s -y
 sudo apt-add-repository ppa:wiznote-team/ppa -s -y
 sudo apt-add-repository ppa:numix/ppa -s -y
-sudo apt-add-repository 'deb http://dl.google.com/linux/chrome/deb/ stable main' -s -y
-sudo apt-add-repository 'deb http://apt.spideroak.com/ubuntu-spideroak-hardy/ release restricted' -s -y
+
+wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
+
+curl https://spideroak.com/dist/spideroak-apt-2013.asc | sudo apt-key add -
+sudo sh -c 'echo "deb http://apt.spideroak.com/ubuntu-spideroak-hardy/ release restricted" >> /etc/apt/sources.list.d/spideroak.list'
+
 
 sudo apt-get update
 
 #Install apps
-sudo apt-get -y install google-chrome-stable sublime-text vim meld subversion git terminator openjdk-7-jdk mysql-client alacarte wiznote cairo-dock ubuntu-tweak gimp shutter gparted filezilla numix-gtk-theme numix-icon-theme
+sudo apt-get -y install google-chrome-stable spideroak sublime-text vim meld subversion git terminator openjdk-7-jdk mysql-client alacarte wiznote cairo-dock ubuntu-tweak gimp shutter gparted filezilla numix-gtk-theme numix-icon-theme
 
 #install fonts
 target_fonts_dir=/usr/share/fonts/truetype/myfonts
