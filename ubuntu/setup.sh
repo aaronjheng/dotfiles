@@ -21,11 +21,11 @@ sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /et
 curl https://spideroak.com/dist/spideroak-apt-2013.asc | sudo apt-key add -
 sudo sh -c 'echo "deb http://apt.spideroak.com/ubuntu-spideroak-hardy/ release restricted" >> /etc/apt/sources.list.d/spideroak.list'
 
-
 sudo apt-get update
 
 #Install apps
 sudo apt-get -y install google-chrome-stable spideroak sublime-text vim meld subversion git terminator openjdk-7-jdk mysql-client alacarte wiznote cairo-dock ubuntu-tweak gimp shutter gparted filezilla numix-gtk-theme numix-icon-theme
+
 
 #install fonts
 target_fonts_dir=/usr/share/fonts/truetype/myfonts
@@ -47,3 +47,7 @@ sudo mkfontdir 1>/dev/null
 sudo fc-cache -v 1>/dev/null
 
 rsync -av --exclude-from=rsyncexclude  $root_dir/ ~
+
+#cofiguration
+git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+vim +PluginInstall +qall

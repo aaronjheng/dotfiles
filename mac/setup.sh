@@ -3,11 +3,9 @@
 sudo sh -c "echo %wentworth ALL=\(ALL\) NOPASSWD:ALL" -p it901694
 ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
 
-brew install wget vim
-curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh | sh
-brew install git bash-completion
+brew install bash-completion wget 
 
-
+brew install git
 git config --global user.name "wentworth"
 git config --global user.email "wentworth@outlook.com"
 git config --global merge.tool extMerge
@@ -31,3 +29,7 @@ sudo chmod +x /usr/local/bin/extDiff /usr/local/bin/extMerge
 sudo easy_install pip
 
 rsync -av --exclude='.DS_Store' --exclude='setup.sh'  . ~
+
+brew install vim
+git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+vim +PluginInstall +qall
