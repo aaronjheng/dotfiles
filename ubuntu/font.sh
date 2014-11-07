@@ -8,7 +8,7 @@ target_fonts_dir=/usr/share/fonts/truetype/myfonts
 source_fonts_dir=$root_dir/fonts
 
 sudo mkdir $target_fonts_dir 2>/dev/null
-sudo cp -rf -t $target_fonts_dir $source_fonts_dir
+sudo cp -rf -t $target_fonts_dir $source_fonts_dir/*
 
 sudo mv /etc/fonts/conf.avail/51-local.conf /etc/fonts/conf.avail/51-local.conf.old
 sudo cp -f $root_dir/local.fonts.conf /etc/fonts/conf.avail/51-local.conf

@@ -28,7 +28,7 @@ sudo apt-get -y install google-chrome-stable spideroak sublime-text vim meld sub
 
 
 #install fonts
-. ./fonts.sh
+bash ./fonts.sh
 
 rsync -av --exclude-from=rsyncexclude  $root_dir/ ~
 
