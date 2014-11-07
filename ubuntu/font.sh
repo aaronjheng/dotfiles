@@ -5,6 +5,11 @@ root_dir=$(cd "$(dirname "$0")"; pwd)
 
 #install fonts
 target_fonts_dir=/usr/share/fonts/truetype/myfonts
+
+if [ -d "$target_fonts_dir" ]; then
+    sudo rm -rf  $target_fonts_dir
+fi
+
 source_fonts_dir=$root_dir/fonts
 
 sudo mkdir $target_fonts_dir 2>/dev/null
