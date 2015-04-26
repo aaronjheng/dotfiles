@@ -3,7 +3,7 @@
 sudo sh -c "echo %wentworth ALL=\(ALL\) NOPASSWD:ALL" -p it901694
 ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
 
-brew install bash-completion wget 
+brew install bash-completion wget homebrew/completions/pip-completion
 
 brew install git
 git config --global user.name "wentworth"
