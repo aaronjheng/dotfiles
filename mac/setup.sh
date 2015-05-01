@@ -30,6 +30,6 @@ sudo easy_install pip
 
 rsync -av --exclude='.DS_Store' --exclude='setup.sh'  . ~
 
-brew install vim
-git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-vim +PluginInstall +qall
+# brew install vim
+# git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+# vim +PluginInstall +qall
