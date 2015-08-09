@@ -1,11 +1,6 @@
 [user]
 	name = wentworth
 	email = wentworth@outlook.com
-[merge]
-  tool = extMerge
-[mergetool "extMerge"]
-  cmd = extMerge "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
-  trustExitCode = false
-[difftool]
-  external = extDiff
+[http]
+  proxy = socks5://127.0.0.1:1080
 
