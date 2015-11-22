@@ -1,0 +1,1 @@
+rsync -av --exclude='.DS_Store' --exclude='setup.sh'  . ~
