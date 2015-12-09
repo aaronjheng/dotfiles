@@ -1,16 +1,15 @@
 #!/bin/bash
 
-sudo sh -c "echo %wentworth ALL=\(ALL\) NOPASSWD: ALL /etc/sudoers" -p it901694
+sudo sh -c "echo %`whoami` ALL=\(ALL\) NOPASSWD: ALL >>/etc/sudoers"
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-brew install bash-completion wget git
-
-sudo easy_install pip
+. sync.sh
 
 mkdir ~/goproject
 
-brew install vim
+sudo easy_install pip
+
+brew install bash-completion git vim tmux wget go gpm
+
 git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim +PluginInstall +qall
-
-. sync.sh
