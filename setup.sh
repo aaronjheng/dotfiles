@@ -8,6 +8,10 @@ if [ "$OS" = "Darwin" ]
 then
     postfix="mac"
     sublime_text_preferences_dir="~/Library/Application\ Support/Sublime\ Text\ 2/Packages/User/"
+elif [ "$OS" = "Linux" ]
+then
+    postfix="ubuntu"
+    sublime_text_preferences_dir="~/.config/Sublime\ Text\ 2/Packages/User/"
 else
     echo "OS not suported"
     exit 1
