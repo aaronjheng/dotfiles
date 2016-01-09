@@ -47,7 +47,7 @@ install_ubuntu(){
 
     sudo apt-get update
     sudo apt-get -y purge apturl gnome-sudoku gnome-mines gnome-mahjongg gnome-orca simple-scan onboard webbrowser-app totem libreoffic* xterm xdiagnose remmina transmission-gtk brasero software-center rhythmbox gnome-disk-utility dconf-editor gnome-screenshot baobab empathy gnome-contacts
-    sudo apt-get autoremove
+    sudo apt-get autoremove -y
     #Add PPAs
     sudo apt-add-repository ppa:webupd8team/sublime-text-2 -s -y
     sudo apt-add-repository ppa:wiznote-team/ppa -s -y
