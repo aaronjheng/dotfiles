@@ -11,7 +11,7 @@ then
 elif [ "$OS" = "Linux" ]
 then
     postfix="ubuntu"
-    sublime_text_preferences_dir="~/.config/Sublime\ Text\ 2/Packages/User/"
+    sublime_text_preferences_dir="~/.config/sublime-text-2/Packages/User/"
 else
     echo "OS not suported"
     exit 1
@@ -47,7 +47,7 @@ install_ubuntu(){
 
     sudo apt-get update
     sudo apt-get -y purge apturl gnome-sudoku gnome-mines gnome-mahjongg gnome-orca simple-scan onboard webbrowser-app totem libreoffic* xterm xdiagnose remmina transmission-gtk brasero software-center rhythmbox gnome-disk-utility dconf-editor gnome-screenshot baobab empathy gnome-contacts
-    sudo apt-get auto-remove
+    sudo apt-get autoremove
     #Add PPAs
     sudo apt-add-repository ppa:webupd8team/sublime-text-2 -s -y
     sudo apt-add-repository ppa:wiznote-team/ppa -s -y
@@ -65,41 +65,11 @@ install_ubuntu(){
     sync_files
 
     _install_vundle
-
-    _install_fonts
 }
 
 _install_vundle(){
     git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
     vim +PluginInstall +qall
-}
-
-_install_fonts(){
-
-    pushd $ROOT/ubuntu
-
-    #install fonts
-    target_fonts_dir=/usr/share/fonts/truetype/myfonts
-
-    if [ -d "$target_fonts_dir" ]; then
-        sudo rm -rf  $target_fonts_dir
-    fi
-
-    sudo mkdir $target_fonts_dir 2>/dev/null
-    sudo cp -rf -t $target_fonts_dir fonts/*
-
-    sudo mv /etc/fonts/conf.avail/51-local.conf /etc/fonts/conf.avail/51-local.conf.old
-    sudo cp -f local.fonts.conf /etc/fonts/conf.avail/51-local.conf
-
-    pushd /etc/fonts/conf.avail
-    sudo mv 69-language-selector-zh-cn.conf 69-language-selector-zh-cn.conf.old 2>/dev/null
-    popd
-
-    sudo chmod 555 *
-    sudo mkfontscale 1>/dev/null
-    sudo mkfontdir 1>/dev/null
-    sudo fc-cache -v 1>/dev/null
-    popd
 }
 
 pushd $ROOT
