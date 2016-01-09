@@ -17,7 +17,7 @@ else
     exit 1
 fi
 
-sync_files(){
+sync_dotfiles(){
     pushd $ROOT/common
     rsync -av --exclude-from=rsyncexclude  . ~
     popd
@@ -35,7 +35,7 @@ install_mac(){
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     brew install bash-completion git tmux wget go gpm python
 
-    sync_files
+    sync_dotfiles
 
     _install_vundle
 
@@ -62,7 +62,9 @@ install_ubuntu(){
     #Install apps
     sudo apt-get -y install sublime-text vim meld git terminator alacarte wiznote cairo-dock gparted numix-gtk-theme numix-icon-theme
 
-    sync_files
+    rsync -av $ROOT/icons/sublime/ /usr/share/icons/hicolor/
+
+    sync_dotfiles
 
     _install_vundle
 }
@@ -76,7 +78,7 @@ pushd $ROOT
 
 if [ "$1" = "sync" ]
 then
-    sync_files
+    sync_dotfiles
 elif [ "$1" = "install" ]
 then
     install_$postfix
