@@ -50,7 +50,6 @@ install_ubuntu(){
     sudo apt-get auto-remove
     #Add PPAs
     sudo apt-add-repository ppa:webupd8team/sublime-text-2 -s -y
-    sudo apt-add-repository ppa:tualatrix/ppa -s -y
     sudo apt-add-repository ppa:wiznote-team/ppa -s -y
     sudo apt-add-repository ppa:numix/ppa -s -y
 
@@ -61,7 +60,7 @@ install_ubuntu(){
     sudo apt-get update
 
     #Install apps
-    sudo apt-get -y install sublime-text vim meld subversion git terminator openjdk-7-jdk mysql-client alacarte wiznote cairo-dock ubuntu-tweak gimp shutter gparted filezilla numix-gtk-theme numix-icon-theme
+    sudo apt-get -y install sublime-text vim meld git terminator alacarte wiznote cairo-dock gparted numix-gtk-theme numix-icon-theme
 
     sync_files
 
