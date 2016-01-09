@@ -28,7 +28,7 @@ sync_dotfiles(){
 }
 
 sync_sublime_text_preferences() {
-    eval rsync -av $ROOT/sublime-text/ $sublime_text_preferences_dir
+    eval rsync -av $ROOT/common/sublime-text/ $sublime_text_preferences_dir
 }
 
 install_mac(){

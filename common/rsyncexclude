@@ -1,3 +1,4 @@
 rsyncexclude
+sublime-text/
 .DS_Store
 *.swp
