@@ -62,7 +62,7 @@ install_ubuntu(){
     #Install apps
     sudo apt-get -y install sublime-text vim meld git terminator alacarte wiznote cairo-dock gparted numix-gtk-theme numix-icon-theme
 
-    rsync -av $ROOT/icons/sublime/ /usr/share/icons/hicolor/
+    sudo rsync -av ubuntu/sublime-icons/ /usr/share/icons/hicolor/
 
     sync_dotfiles
 
