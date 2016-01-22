@@ -8,7 +8,7 @@ set autoindent
 set autoread
 set cursorline
 
-set mouse=a
+"set mouse=a
 set tabstop=4
 set encoding=utf-8
 
