@@ -7,11 +7,9 @@ OS=`uname -s`
 if [ "$OS" = "Darwin" ]
 then
     postfix="mac"
-    sublime_text_preferences_dir="~/Library/Application\ Support/Sublime\ Text\ 2/Packages/User/"
 elif [ "$OS" = "Linux" ]
 then
     postfix="ubuntu"
-    sublime_text_preferences_dir="~/.config/sublime-text-2/Packages/User/"
 else
     echo "OS not suported"
     exit 1
@@ -24,11 +22,6 @@ sync_dotfiles(){
     pushd $ROOT/$postfix
     rsync -av --exclude-from=rsyncexclude  . ~
     popd
-    sync_sublime_text_preferences
-}
-
-sync_sublime_text_preferences() {
-    eval rsync -av $ROOT/common/sublime-text/ $sublime_text_preferences_dir
 }
 
 install_mac(){
