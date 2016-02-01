@@ -1,5 +1,5 @@
 #!/bin/bash
-set +e
+set -e
 
 ROOT=$(cd "$(dirname "$0")"; pwd)
 OS=`uname -s`
