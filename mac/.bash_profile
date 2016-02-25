@@ -7,3 +7,7 @@ fi
 if [ -f ~/.bashrc ]; then
     . ~/.bashrc
 fi
+
+if [ -f ~/.bashrc2 ]; then
+    . ~/.bashrc2
+fi
