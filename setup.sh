@@ -15,12 +15,20 @@ else
     exit 1
 fi
 
+pushd () {
+    command pushd "$@" > /dev/null
+}
+
+popd () {
+    command popd "$@" > /dev/null
+}
+
 sync_dotfiles(){
     pushd $ROOT/common
-    rsync -av --exclude-from=rsyncexclude  . ~
+    rsync -aq --exclude-from=rsyncexclude  . ~
     popd
     pushd $ROOT/$postfix
-    rsync -av --exclude-from=rsyncexclude  . ~
+    rsync -aq --exclude-from=rsyncexclude  . ~
     popd
 }
 

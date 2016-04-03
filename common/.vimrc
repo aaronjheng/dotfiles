@@ -7,6 +7,7 @@ set nocompatible
 set autoindent
 set autoread
 set cursorline
+set ruler
 
 "set mouse=a
 set tabstop=4
