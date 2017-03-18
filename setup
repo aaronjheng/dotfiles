@@ -34,13 +34,13 @@ sync_dotfiles(){
 
 install_mac(){
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-    brew install bash-completion git tmux wget go gpm python
+    brew install bash-completion git wget go glide python python3
 
     sync_dotfiles
 
     _install_vundle
 
-    mkdir ~/goproject
+    mkdir ~/go
 }
 
 install_ubuntu(){
