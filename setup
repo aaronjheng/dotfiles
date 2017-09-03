@@ -31,7 +31,7 @@ sync_dotfiles(){
 
 install_mac(){
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-    brew install bash-completion git wget go glide python python3
+    brew install bash-completion git wget go python python3 iproute2mac
 
     sync_dotfiles
 
