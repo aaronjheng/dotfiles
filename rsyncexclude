@@ -1,0 +1,10 @@
+.DS_Store
+rsyncexclude
+fonts/
+Icon/
+*.swp
+sync.sh
+README.md
+setup
+common/
+mac/

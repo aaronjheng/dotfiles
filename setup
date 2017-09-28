@@ -21,12 +21,7 @@ popd () {
 }
 
 sync_dotfiles(){
-    pushd $ROOT/common
     rsync -aq --exclude-from=rsyncexclude  . ~
-    popd
-    pushd $ROOT/$postfix
-    rsync -aq --exclude-from=rsyncexclude  . ~
-    popd
 }
 
 install_mac(){
