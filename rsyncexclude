@@ -3,7 +3,6 @@
 *.plist
 .code/
 rsyncexclude
-sync.sh
 README.md
 setup
-dev.ipalias.plist
+dev.ip.alias.plist

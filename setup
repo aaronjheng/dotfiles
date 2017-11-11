@@ -30,9 +30,11 @@ install_mac(){
 }
 
 _install_ipalias(){
-	cat $ROOT/dev.ipalias.plist | sudo tee -a /Library/LaunchDaemons/dev.ipalias.plist
-	sudo chmod 0644 /Library/LaunchDaemons/dev.ipalias.plist
-	sudo launchctl load /Library/LaunchDaemons/dev.ipalias.plist
+	pushd /Library/LaunchDaemons
+	cat $ROOT/dev.ipalias.plist | sudo tee -a dev.ip.alias.plist
+	sudo chmod 0644 dev.ip.alias.plist
+	sudo launchctl load dev.ip.alias.plist
+	popd
 }
 
 _install_vundle(){
