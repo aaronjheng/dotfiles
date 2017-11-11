@@ -11,7 +11,7 @@ popd () {
 	command popd "$@" > /dev/null
 }
 
-sync_dotfiles(){
+sync_confs(){
 	rsync -aq --exclude-from=rsyncexclude  . ~
 	rsync -qa --exclude-from=rsyncexclude .code/ ~/Library/Application\ Support/Code/User/
 }
@@ -20,7 +20,7 @@ install_mac(){
 	ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 	brew install bash-completion git wget go python python3 iproute2mac
 
-	sync_dotfiles
+	sync_confs
 
 	_install_ipalias
 
@@ -46,7 +46,7 @@ pushd $ROOT
 
 if [ "$1" = "sync" ]
 then
-	sync_dotfiles
+	sync_confs
 elif [ "$1" = "install" ]
 then
 	install_mac
