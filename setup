@@ -1,55 +1,56 @@
 #!/bin/bash
-# set -ex
+set -ex
 
 ROOT=$(cd "$(dirname "$0")"; pwd)
 
 pushd () {
-    command pushd "$@" > /dev/null
+	command pushd "$@" > /dev/null
 }
 
 popd () {
-    command popd "$@" > /dev/null
+	command popd "$@" > /dev/null
 }
 
 sync_dotfiles(){
-    rsync -aq --exclude-from=rsyncexclude  . ~
+	rsync -aq --exclude-from=rsyncexclude  . ~
+	rsync -qa --exclude-from=rsyncexclude .code/ ~/Library/Application\ Support/Code/User/
 }
 
 install_mac(){
-    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-    brew install bash-completion git wget go python python3 iproute2mac
+	ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+	brew install bash-completion git wget go python python3 iproute2mac
 
-    sync_dotfiles
+	sync_dotfiles
 
-    _install_ipalias
+	_install_ipalias
 
-    _install_vundle
+	_install_vundle
 
-    mkdir ~/go
+	mkdir ~/go
 }
 
 _install_ipalias(){
-    cat $ROOT/dev.ipalias.plist | sudo tee -a /Library/LaunchDaemons/dev.ipalias.plist
-    sudo chmod 0644 /Library/LaunchDaemons/dev.ipalias.plist
-    sudo launchctl load /Library/LaunchDaemons/dev.ipalias.plist
+	cat $ROOT/dev.ipalias.plist | sudo tee -a /Library/LaunchDaemons/dev.ipalias.plist
+	sudo chmod 0644 /Library/LaunchDaemons/dev.ipalias.plist
+	sudo launchctl load /Library/LaunchDaemons/dev.ipalias.plist
 }
 
 _install_vundle(){
-    git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-    vim +PluginInstall +qall
+	git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+	vim +PluginInstall +qall
 }
 
 pushd $ROOT
 
 if [ "$1" = "sync" ]
 then
-    sync_dotfiles
+	sync_dotfiles
 elif [ "$1" = "install" ]
 then
-    install_mac
+	install_mac
 else
-    echo "Invalid action"
-    exit 1
+	echo "Invalid action"
+	exit 1
 fi
 
 popd

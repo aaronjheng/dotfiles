@@ -1,11 +1,9 @@
-.DS_Store
-rsyncexclude
-fonts/
-Icon/
+**/.DS_Store
 *.swp
+*.plist
+.code/
+rsyncexclude
 sync.sh
 README.md
 setup
-common/
-mac/
-*.plist
+dev.ipalias.plist
