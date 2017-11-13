@@ -9,7 +9,7 @@
 	"editor.renderIndentGuides": false,
 	"editor.scrollBeyondLastLine": false,
 	"editor.tabSize": 4,
-	"editor.detectIndentation": false,
+	"editor.detectIndentation": true,
 	"editor.insertSpaces": false,
 	"editor.overviewRulerBorder": false,
 	"editor.minimap.enabled": false,
@@ -31,7 +31,6 @@
 	"python.formatting.formatOnSave": false,
 	"python.linting.pylintEnabled": false,
 	"[python]": {
-		"editor.detectIndentation": true,
 		"editor.insertSpaces": true
 	},
 	"workbench.colorCustomizations": {
@@ -46,5 +45,13 @@
 	},
 	"typescript.check.npmIsInstalled": false,
 	"window.zoomLevel": 0,
-	"workbench.startupEditor": "newUntitledFile"
+	"workbench.startupEditor": "newUntitledFile",
+	"files.exclude": {
+		"**/.git": true,
+		"**/.svn": true,
+		"**/.hg": true,
+		"**/CVS": true,
+		"**/.DS_Store": true,
+		"**/*.pyc": true
+	}
 }
