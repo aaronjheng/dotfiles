@@ -2,6 +2,7 @@
 *.swp
 *.plist
 .code/
+.git/
 rsyncexclude
 README.md
 setup
