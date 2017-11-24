@@ -53,5 +53,7 @@
 		"**/CVS": true,
 		"**/.DS_Store": true,
 		"**/*.pyc": true
-	}
+	},
+	"extensions.ignoreRecommendations": true,
+	"docker.showExplorer": false
 }
