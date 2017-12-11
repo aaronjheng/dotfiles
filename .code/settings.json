@@ -37,7 +37,7 @@
 		"badge.background": "#1c1f26",
 		"editorGroupHeader.tabsBackground": "#232830",
 		"editorLineNumber.foreground": "#65737e",
-		"editorGroup.border": "#2b303b",
+		"editorGroup.border": "#232830",
 		"foreground": "#65737e",
 		"notification.background": "#2b303b",
 		"statusBar.noFolderBackground": "#1c1f26",
