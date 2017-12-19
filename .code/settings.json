@@ -26,7 +26,7 @@
 	"go.coverOnSave": false,
 	"go.lintOnSave": "off",
 	"go.vetOnSave": "off",
-	"python.pythonPath": "python3",
+	"python.pythonPath": "/usr/local/bin/python3",
 	"python.formatting.provider": "yapf",
 	"python.formatting.formatOnSave": false,
 	"python.linting.pylintEnabled": false,
