@@ -7,3 +7,4 @@ rsyncexclude
 README.md
 setup
 dev.ip.alias.plist
+Makefile
