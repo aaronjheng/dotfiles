@@ -22,7 +22,6 @@
 	"telemetry.enableCrashReporter": false,
 	"git.enabled": false,
 	"extensions.autoUpdate": false,
-	"go.buildOnSave": "off",
 	"go.coverOnSave": false,
 	"go.lintOnSave": "off",
 	"go.vetOnSave": "off",
