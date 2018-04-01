@@ -29,9 +29,10 @@
 		"editorGroupHeader.tabsBackground": "#232830",
 		"editorLineNumber.foreground": "#65737e",
 		"editorGroup.border": "#232830",
-		"foreground": "#65737e",
+		"foreground": "#7f8f9b",
 		"statusBar.noFolderBackground": "#1c1f26",
-		"tab.inactiveBackground": "#232830"
+		"tab.inactiveBackground": "#232830",
+		"tab.inactiveForeground": "#7f8f9b"
 	},
 	"typescript.check.npmIsInstalled": false,
 	"window.zoomLevel": 0,
