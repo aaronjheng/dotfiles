@@ -37,7 +37,6 @@
 		"editorLineNumber.foreground": "#65737e",
 		"editorGroup.border": "#232830",
 		"foreground": "#65737e",
-		"notification.background": "#2b303b",
 		"statusBar.noFolderBackground": "#1c1f26",
 		"tab.inactiveBackground": "#232830"
 	},
