@@ -39,6 +39,7 @@
 	"typescript.check.npmIsInstalled": false,
 	"window.zoomLevel": 0,
 	"workbench.startupEditor": "newUntitledFile",
+	"workbench.statusBar.feedback.visible": false,
 	"files.exclude": {
 		"**/.git": true,
 		"**/.svn": true,
