@@ -2,7 +2,7 @@
 [
 	{
         "key": "ctrl+shift+u",
-        "command": "editor.action.transformToUppercase",
+        "command": "editor.action.transformtouppercase",
         "when": "editorTextFocus"
     },
     {

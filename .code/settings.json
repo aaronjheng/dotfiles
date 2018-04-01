@@ -21,13 +21,6 @@
 	"telemetry.enableTelemetry": false,
 	"telemetry.enableCrashReporter": false,
 	"git.enabled": false,
-	"extensions.autoUpdate": false,
-	"go.coverOnSave": false,
-	"go.lintOnSave": "off",
-	"go.vetOnSave": "off",
-	"python.pythonPath": "/usr/local/bin/python3",
-	"python.formatting.provider": "yapf",
-	"python.linting.pylintEnabled": false,
 	"[python]": {
 		"editor.insertSpaces": true
 	},
@@ -52,6 +45,15 @@
 		"**/*.pyc": true,
         "**/__pycache__/": true
 	},
+	"extensions.autoUpdate": false,
 	"extensions.ignoreRecommendations": true,
-	"docker.showExplorer": false
+	
+	// Extension specific
+	"go.coverOnSave": false,
+	"go.lintOnSave": "off",
+	"go.vetOnSave": "off",
+
+	"python.pythonPath": "/usr/local/bin/python3",
+	"python.formatting.provider": "yapf",
+	"python.linting.pylintEnabled": false,
 }
