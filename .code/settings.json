@@ -29,7 +29,7 @@
 		"badge.background": "#1c1f26",
 		"badge.foreground": "#7f8f9b",
 		"editorGroupHeader.tabsBackground": "#232830",
-		"editorLineNumber.foreground": "#7f8f9b",
+		"editorLineNumber.foreground": "#65737e",
 		"editorGroup.border": "#232830",
 		"foreground": "#7f8f9b",
 		"statusBar.noFolderBackground": "#1c1f26",
