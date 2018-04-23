@@ -22,7 +22,8 @@
 	"telemetry.enableCrashReporter": false,
 	"git.enabled": false,
 	"[python]": {
-		"editor.insertSpaces": true
+		"editor.insertSpaces": true,
+		"editor.formatOnSave": true
 	},
 	"workbench.colorCustomizations": {
 		"focusBorder": "#63717c",
