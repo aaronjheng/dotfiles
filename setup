@@ -29,7 +29,7 @@ install_mac(){
 	mkdir ~/go
 }
 
-LOOPBACK_ALIAS=loopback-alias.plist
+LOOPBACK_ALIAS=loopback.alias.plist
 
 _install_ipalias(){
 	pushd /Library/LaunchDaemons
