@@ -29,11 +29,13 @@ install_mac(){
 	mkdir ~/go
 }
 
+LOOPBACK_ALIAS=loopback-alias.plist
+
 _install_ipalias(){
 	pushd /Library/LaunchDaemons
-	cat $ROOT/dev.ipalias.plist | sudo tee -a dev.ip.alias.plist
-	sudo chmod 0644 dev.ip.alias.plist
-	sudo launchctl load dev.ip.alias.plist
+	sudo cp $ROOT/$LOOPBACK_ALIAS $LOOPBACK_ALIAS
+	sudo chmod 0644 $LOOPBACK_ALIAS
+	sudo launchctl load $LOOPBACK_ALIAS
 	popd
 }
 
