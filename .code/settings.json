@@ -26,9 +26,11 @@
 	},
 	"[c]": {
 		"editor.formatOnSave": true,
+		"editor.tabSize": 2
 	},
 	"[cpp]": {
 		"editor.formatOnSave": true,
+		"editor.tabSize": 2
 	},
 	"workbench.colorCustomizations": {
 		"focusBorder": "#63717c",
