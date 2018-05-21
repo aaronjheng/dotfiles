@@ -24,12 +24,6 @@
 	"[python]": {
 		"editor.insertSpaces": true
 	},
-	"[c]": {
-		"editor.formatOnSave": true
-	},
-	"[cpp]": {
-		"editor.formatOnSave": true
-	},
 	"workbench.colorCustomizations": {
 		"focusBorder": "#63717c",
 		"badge.background": "#1c1f26",
