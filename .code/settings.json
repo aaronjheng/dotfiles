@@ -25,12 +25,10 @@
 		"editor.insertSpaces": true
 	},
 	"[c]": {
-		"editor.formatOnSave": true,
-		"editor.tabSize": 2
+		"editor.formatOnSave": true
 	},
 	"[cpp]": {
-		"editor.formatOnSave": true,
-		"editor.tabSize": 2
+		"editor.formatOnSave": true
 	},
 	"workbench.colorCustomizations": {
 		"focusBorder": "#63717c",
