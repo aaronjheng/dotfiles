@@ -7,4 +7,4 @@ alias nproc='sysctl -n hw.ncpu'
 export ETCDCTL_API=3
 export PS1='\u@\h:\W$ '
 export HOMEBREW_NO_AUTO_UPDATE=1
-export PYTHON_BUILD_CACHE_PATH=~/.pyenv/cache
+export PYTHON_BUILD_CACHE_PATH=~/.cache/pyenv

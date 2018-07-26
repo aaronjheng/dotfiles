@@ -8,3 +8,4 @@ README.md
 setup
 dev.ip.alias.plist
 Makefile
+.gitignore
