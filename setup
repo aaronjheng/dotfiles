@@ -13,7 +13,6 @@ popd () {
 
 sync_confs(){
 	rsync -aq --exclude-from=rsyncexclude  . ~
-	rsync -qa --exclude-from=rsyncexclude .code/ ~/Library/Application\ Support/Code/User/
 }
 
 install_mac(){
