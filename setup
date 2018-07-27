@@ -15,7 +15,7 @@ sync_confs(){
 	rsync -aq --exclude-from=rsyncexclude  . ~
 }
 
-install_mac(){
+install(){
 	ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 	brew install bash-completion git wget go python python3 iproute2mac
 
@@ -50,7 +50,7 @@ then
 	sync_confs
 elif [ "$1" = "install" ]
 then
-	install_mac
+	install
 else
 	echo "Invalid action"
 	exit 1
