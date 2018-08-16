@@ -2,7 +2,7 @@
 syntax enable
 
 set number
-set expandtab
+"set expandtab
 set nocompatible
 set autoindent
 set autoread
