@@ -8,6 +8,6 @@ if [ -f ~/.bashrc ]; then
     . ~/.bashrc
 fi
 
-if [ -f ~/.bashrc2 ]; then
-    . ~/.bashrc2
+if [ -f ~/.bashrc_local ]; then
+    . ~/.bashrc_local
 fi
