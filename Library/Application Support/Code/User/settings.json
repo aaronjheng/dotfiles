@@ -64,5 +64,7 @@
 
 	"docker.showExplorer": false,
 	"explorer.confirmDelete": false,
-	"extensions.showRecommendationsOnlyOnDemand": true
+	"extensions.showRecommendationsOnlyOnDemand": true,
+
+	"restructuredtext.linter.run": "off"
 }
