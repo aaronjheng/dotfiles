@@ -1,5 +1,6 @@
 [core]
-    ignorecase = false
+	ignorecase = false
+	autocrlf = input
 
 [user]
-    useconfigonly = true
+	useconfigonly = true
