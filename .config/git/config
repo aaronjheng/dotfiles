@@ -1,6 +1,7 @@
 [core]
 	ignorecase = false
 	autocrlf = input
-
 [user]
 	useconfigonly = true
+[commit]
+	gpgSign = true
