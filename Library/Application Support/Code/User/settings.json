@@ -59,7 +59,7 @@
 	"go.vetOnSave": "off",
 
 	"python.pythonPath": "python3",
-	"python.formatting.provider": "yapf",
+	"python.formatting.provider": "black",
 	"python.linting.pylintEnabled": false,
 
 	"docker.showExplorer": false,
