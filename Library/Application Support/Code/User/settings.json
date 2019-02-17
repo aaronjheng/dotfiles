@@ -3,26 +3,9 @@
 	"workbench.colorTheme": "Spacegray Ocean Dark",
 	"workbench.editor.showIcons": false,
 	"workbench.iconTheme": null,
-	"editor.fontFamily": "'Lucida Console', Menlo, Monaco, 'Courier New', monospace",
-	"editor.fontSize": 14,
-	"editor.lineHeight": 16,
-	"editor.renderIndentGuides": false,
-	"editor.scrollBeyondLastLine": false,
-	"editor.tabSize": 4,
-	"editor.detectIndentation": true,
-	"editor.insertSpaces": false,
-	"editor.overviewRulerBorder": false,
-	"editor.minimap.enabled": false,
-	"terminal.integrated.fontSize": 14,
-	"terminal.integrated.fontFamily": "'Lucida Console', Menlo, Monaco, 'Courier New', monospace",
-	"explorer.openEditors.visible": 0,
-	"terminal.external.osxExec": "iTerm.app",
-	"telemetry.enableTelemetry": false,
-	"telemetry.enableCrashReporter": false,
-	"git.enabled": false,
-	"[python]": {
-		"editor.insertSpaces": true
-	},
+	"workbench.startupEditor": "newUntitledFile",
+	"workbench.statusBar.feedback.visible": false,
+	"workbench.settings.editor": "json",
 	"workbench.colorCustomizations": {
 		"focusBorder": "#232830",
 		"badge.background": "#1c1f26",
@@ -36,11 +19,22 @@
 		"tab.inactiveForeground": "#7f8f9b"
 	},
 	"window.titleBarStyle": "custom",
-	"typescript.check.npmIsInstalled": false,
 	"window.zoomLevel": 0,
-	"workbench.startupEditor": "newUntitledFile",
-	"workbench.statusBar.feedback.visible": false,
-	"workbench.settings.editor": "json",
+	"editor.fontFamily": "'Lucida Console', Menlo, Monaco, 'Courier New', monospace",
+	"editor.fontSize": 14,
+	"editor.lineHeight": 16,
+	"editor.renderIndentGuides": false,
+	"editor.scrollBeyondLastLine": false,
+	"editor.tabSize": 4,
+	"editor.detectIndentation": true,
+	"editor.insertSpaces": false,
+	"editor.overviewRulerBorder": false,
+	"editor.minimap.enabled": false,
+	"explorer.confirmDelete": false,
+	"explorer.openEditors.visible": 0,
+	"extensions.showRecommendationsOnlyOnDemand": true
+	"extensions.autoUpdate": false,
+	"extensions.ignoreRecommendations": true,
 	"files.exclude": {
 		"**/.git": true,
 		"**/.svn": true,
@@ -48,23 +42,23 @@
 		"**/CVS": true,
 		"**/.DS_Store": true,
 		"**/*.pyc": true,
-        "**/__pycache__/": true
+		"**/__pycache__/": true
 	},
-	"extensions.autoUpdate": false,
-	"extensions.ignoreRecommendations": true,
-	
+	"git.enabled": false,
+	"terminal.integrated.fontSize": 14,
+	"terminal.integrated.fontFamily": "'Lucida Console', Menlo, Monaco, 'Courier New', monospace",
+	"terminal.external.osxExec": "iTerm.app",
+	"telemetry.enableTelemetry": false,
+	"telemetry.enableCrashReporter": false,
+	"typescript.check.npmIsInstalled": false,
+	"[python]": {
+		"editor.insertSpaces": true
+	},
 	// Extension specific
 	"go.coverOnSave": false,
 	"go.lintOnSave": "off",
 	"go.vetOnSave": "off",
-
 	"python.pythonPath": "python3",
 	"python.formatting.provider": "black",
 	"python.linting.pylintEnabled": false,
-
-	"docker.showExplorer": false,
-	"explorer.confirmDelete": false,
-	"extensions.showRecommendationsOnlyOnDemand": true,
-
-	"restructuredtext.linter.run": "off"
 }
