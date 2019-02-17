@@ -16,7 +16,6 @@
 	"terminal.integrated.fontSize": 14,
 	"terminal.integrated.fontFamily": "'Lucida Console', Menlo, Monaco, 'Courier New', monospace",
 	"explorer.openEditors.visible": 0,
-	"http.proxy": "http://127.0.0.1:1080",
 	"terminal.external.osxExec": "iTerm.app",
 	"telemetry.enableTelemetry": false,
 	"telemetry.enableCrashReporter": false,
@@ -36,6 +35,7 @@
 		"tab.inactiveBackground": "#232830",
 		"tab.inactiveForeground": "#7f8f9b"
 	},
+	"window.titleBarStyle": "custom",
 	"typescript.check.npmIsInstalled": false,
 	"window.zoomLevel": 0,
 	"workbench.startupEditor": "newUntitledFile",
