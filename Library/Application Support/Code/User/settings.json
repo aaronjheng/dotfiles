@@ -32,7 +32,7 @@
 	"editor.minimap.enabled": false,
 	"explorer.confirmDelete": false,
 	"explorer.openEditors.visible": 0,
-	"extensions.showRecommendationsOnlyOnDemand": true
+	"extensions.showRecommendationsOnlyOnDemand": true,
 	"extensions.autoUpdate": false,
 	"extensions.ignoreRecommendations": true,
 	"files.exclude": {
