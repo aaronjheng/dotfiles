@@ -60,5 +60,5 @@
 	"go.vetOnSave": "off",
 	"python.pythonPath": "python3",
 	"python.formatting.provider": "black",
-	"python.linting.pylintEnabled": false,
+	"python.linting.pylintEnabled": false
 }
