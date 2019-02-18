@@ -54,6 +54,9 @@
 	"[python]": {
 		"editor.insertSpaces": true
 	},
+	"[rust]": {
+		"editor.formatOnSave": true
+	},
 	// Extension specific
 	"go.coverOnSave": false,
 	"go.lintOnSave": "off",
