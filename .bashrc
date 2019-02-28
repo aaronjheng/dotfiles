@@ -8,5 +8,18 @@ export ETCDCTL_API=3
 export PS1='\u@\h:\W$ '
 export HOMEBREW_NO_AUTO_UPDATE=1
 export PYTHON_BUILD_CACHE_PATH=~/.cache/pyenv
-export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
-export PATH="~/.cargo/bin:$PATH"
+
+CURL_BIN_DIR=/usr/local/opt/curl-openssl/bin
+if [ -d "$CURL_BIN_DIR" ]; then
+	export PATH="$CURL_BIN_DIR:$PATH"
+fi
+
+OPENSSL_BIN_DIR=/usr/local/opt/openssl@1.1/bin
+if [ -d "$OPENSSL_BIN_DIR" ]; then
+	export PATH="$OPENSSL_BIN_DIR:$PATH"
+fi
+
+CARGO_BIN_DIR="~/.cargo/bin"
+if [ -d "$CARGO_BIN_DIR" ]; then
+	export PATH="$CARGO_BIN_DIR:$PATH"
+fi
