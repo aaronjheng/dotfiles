@@ -9,7 +9,7 @@ export PS1='\u@\h:\W$ '
 export HOMEBREW_NO_AUTO_UPDATE=1
 export PYTHON_BUILD_CACHE_PATH=~/.cache/pyenv
 
-CURL_BIN_DIR=/usr/local/opt/curl-openssl/bin
+CURL_BIN_DIR=/usr/local/opt/curl/bin
 if [ -d "$CURL_BIN_DIR" ]; then
 	export PATH="$CURL_BIN_DIR:$PATH"
 fi
