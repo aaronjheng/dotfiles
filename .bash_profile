@@ -1,14 +1,13 @@
 source ~/.z.sh
 
-if [ -f `brew --prefix`/etc/bash_completion ]; then
-    . `brew --prefix`/etc/bash_completion
-fi
+[[ -r "`brew --prefix`/etc/profile.d/bash_completion.sh" ]] \
+    && . "`brew --prefix`/etc/profile.d/bash_completion.sh"
 
-if [ -f ~/.bashrc ]; then
+if [ -r ~/.bashrc ]; then
     . ~/.bashrc
 fi
 
-if [ -f ~/.bashrc_local ]; then
+if [ -r ~/.bashrc_local ]; then
     . ~/.bashrc_local
 fi
 
