@@ -23,3 +23,7 @@ CARGO_BIN_DIR="~/.cargo/bin"
 if [ -d "$CARGO_BIN_DIR" ]; then
 	export PATH="$CARGO_BIN_DIR:$PATH"
 fi
+
+if [ -r ~/.bashrc_local ]; then
+    . ~/.bashrc_local
+fi
