@@ -52,7 +52,8 @@
 	"telemetry.enableCrashReporter": false,
 	"typescript.check.npmIsInstalled": false,
 	"[python]": {
-		"editor.insertSpaces": true
+		"editor.insertSpaces": true,
+		"editor.formatOnSave": true
 	},
 	"[rust]": {
 		"editor.formatOnSave": true
