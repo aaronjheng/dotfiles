@@ -51,6 +51,7 @@
 	"telemetry.enableTelemetry": false,
 	"telemetry.enableCrashReporter": false,
 	"typescript.check.npmIsInstalled": false,
+	"update.mode": "none",
 	"[python]": {
 		"editor.insertSpaces": true
 	},
