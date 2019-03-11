@@ -24,6 +24,8 @@ if [ -d "$CARGO_BIN_DIR" ]; then
 	export PATH="$CARGO_BIN_DIR:$PATH"
 fi
 
-if [ -r ~/.bashrc_local ]; then
-    . ~/.bashrc_local
+POETRY_BIN_DIR="~/.poetry/bin"
+if [ -d "$POETRY_BIN_DIR" ]; then
+	export PATH="$POETRY_BIN_DIR:$PATH"
 fi
+
