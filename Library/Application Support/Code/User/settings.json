@@ -62,6 +62,7 @@
 	"go.coverOnSave": false,
 	"go.lintOnSave": "off",
 	"go.vetOnSave": "off",
+	"go.useLanguageServer": true,
 	"python.pythonPath": "python",
 	"python.formatting.provider": "black",
 	"python.linting.pylintEnabled": false
