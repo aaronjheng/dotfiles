@@ -8,6 +8,9 @@ export ETCDCTL_API=3
 export PS1='\u@\h:\W$ '
 export HOMEBREW_NO_AUTO_UPDATE=1
 export PYTHON_BUILD_CACHE_PATH=~/.cache/pyenv
+export GOPROXY="https://athens.azurefd.net"
+export GOBIN="$HOME/.go/bin"
+export GOPATH="$HOME/.go"
 
 CURL_BIN_DIR=/usr/local/opt/curl/bin
 if [ -d "$CURL_BIN_DIR" ]; then
