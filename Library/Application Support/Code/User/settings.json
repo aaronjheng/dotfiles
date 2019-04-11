@@ -52,13 +52,6 @@
 	"telemetry.enableCrashReporter": false,
 	"typescript.check.npmIsInstalled": false,
 	"update.mode": "none",
-	"[go]": {
-		"editor.snippetSuggestions": "none",
-		"editor.formatOnSave": true,
-		"editor.codeActionsOnSave": {
-			"source.organizeImports": true
-		},
-	},
 	"[python]": {
 		"editor.insertSpaces": true
 	},
@@ -68,21 +61,6 @@
 	// Extension specific
 	"go.lintOnSave": "off",
 	"go.vetOnSave": "off",
-	"go.buildOnSave": "off",
-	"go.useLanguageServer": true,
-	"go.alternateTools": {
-		"go-langserver": "gopls"
-	},
-	"go.languageServerExperimentalFeatures": {
-		"format": true,
-		"autoComplete": true,
-		"diagnostics": true,
-		"goToDefinition": true,
-		"hover": true,
-		"signatureHelp": true,
-		"goToTypeDefinition": true,
-		"findReferences": true
-	},
 	"python.pythonPath": "python",
 	"python.formatting.provider": "black",
 	"python.linting.pylintEnabled": false
