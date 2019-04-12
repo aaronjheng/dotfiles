@@ -11,6 +11,7 @@ export PYTHON_BUILD_CACHE_PATH=~/.cache/pyenv
 export GOPROXY="https://athens.azurefd.net"
 export GOBIN="$HOME/.go/bin"
 export GOPATH="$HOME/.go"
+export PATH="$GOBIN:$PATH"
 
 CURL_BIN_DIR=/usr/local/opt/curl/bin
 if [ -d "$CURL_BIN_DIR" ]; then
@@ -31,4 +32,3 @@ POETRY_BIN_DIR="$HOME/.poetry/bin"
 if [ -d "$POETRY_BIN_DIR" ]; then
 	export PATH="$POETRY_BIN_DIR:$PATH"
 fi
-
