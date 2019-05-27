@@ -1,6 +1,5 @@
 {
 	"workbench.activityBar.visible": false,
-	"workbench.colorTheme": "Spacegray Ocean Dark",
 	"workbench.editor.showIcons": false,
 	"workbench.iconTheme": null,
 	"workbench.startupEditor": "newUntitledFile",
@@ -82,6 +81,17 @@
 	"typescript.check.npmIsInstalled": false,
 	"update.mode": "none",
 	"update.showReleaseNotes": false,
+	"[c]": {
+		"editor.defaultFormatter": "ms-vscode.cpptools",
+		"editor.formatOnSave": true
+	},
+	"[go]": {
+		"editor.snippetSuggestions": "none",
+		"editor.formatOnSave": true,
+		"editor.codeActionsOnSave": {
+			"source.organizeImports": true
+		},
+	},
 	"[python]": {
 		"editor.insertSpaces": true
 	},
@@ -89,8 +99,11 @@
 		"editor.formatOnSave": true
 	},
 	// Extension specific
+	"go.coverOnSave": false,
 	"go.lintOnSave": "off",
+	"go.buildOnSave": "off",
 	"go.vetOnSave": "off",
+	"go.useLanguageServer": true,
 	"python.pythonPath": "python",
 	"python.formatting.provider": "black",
 	"python.linting.pylintEnabled": false
