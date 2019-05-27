@@ -5,6 +5,7 @@
 	"workbench.startupEditor": "newUntitledFile",
 	"workbench.statusBar.feedback.visible": false,
 	"workbench.settings.editor": "json",
+	"workbench.colorTheme": "Spacegray Ocean Dark",
 	"workbench.colorCustomizations": {
         "activityBar.background": "#1c1f26",
 		"badge.background": "#1c1f26",
