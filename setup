@@ -17,7 +17,7 @@ sync_confs(){
 
 install(){
 	ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-	brew install bash-completion git wget go python python3 iproute2mac
+	brew install bash-completion git wget iproute2mac
 
 	sync_confs
 
