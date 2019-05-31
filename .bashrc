@@ -12,22 +12,17 @@ export GOBIN="$HOME/.go/bin"
 export GOPATH="$HOME/.go"
 export PATH="$GOBIN:$PATH"
 
-CURL_BIN_DIR=/usr/local/opt/curl/bin
-if [ -d "$CURL_BIN_DIR" ]; then
-	export PATH="$CURL_BIN_DIR:$PATH"
-fi
+BIN_DIRS=(
+	/usr/local/opt/python/libexec/bin
+	/usr/local/opt/curl/bin
+	/usr/local/opt/openssl@1.1/bin
+	$HOME/.cargo/bin
+	$HOME/.poetry/bin
+)
 
-OPENSSL_BIN_DIR=/usr/local/opt/openssl@1.1/bin
-if [ -d "$OPENSSL_BIN_DIR" ]; then
-	export PATH="$OPENSSL_BIN_DIR:$PATH"
-fi
-
-CARGO_BIN_DIR="$HOME/.cargo/bin"
-if [ -d "$CARGO_BIN_DIR" ]; then
-	export PATH="$CARGO_BIN_DIR:$PATH"
-fi
-
-POETRY_BIN_DIR="$HOME/.poetry/bin"
-if [ -d "$POETRY_BIN_DIR" ]; then
-	export PATH="$POETRY_BIN_DIR:$PATH"
-fi
+for BIN_DIR in ${BIN_DIRS[@]}
+do
+	if [ -d "$BIN_DIR" ]; then
+		export PATH="$BIN_DIR:$PATH"
+	fi
+done
