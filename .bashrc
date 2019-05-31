@@ -10,7 +10,6 @@ export HOMEBREW_NO_AUTO_UPDATE=1
 export GOPROXY="https://athens.azurefd.net"
 export GOBIN="$HOME/.go/bin"
 export GOPATH="$HOME/.go"
-export PATH="$GOBIN:$PATH"
 
 BIN_DIRS=(
 	/usr/local/opt/python/libexec/bin
@@ -18,6 +17,7 @@ BIN_DIRS=(
 	/usr/local/opt/openssl@1.1/bin
 	$HOME/.cargo/bin
 	$HOME/.poetry/bin
+	$HOME/.go/bin
 )
 
 for BIN_DIR in ${BIN_DIRS[@]}
