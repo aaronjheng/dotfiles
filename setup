@@ -1,56 +1,74 @@
 #!/bin/bash
 set -e
 
-ROOT=$(cd "$(dirname "$0")"; pwd)
+ROOT=$(
+	cd "$(dirname "$0")"
+	pwd
+)
 
-pushd () {
-	command pushd "$@" > /dev/null
+pushd() {
+	command pushd "$@" >/dev/null
 }
 
-popd () {
-	command popd "$@" > /dev/null
+popd() {
+	command popd "$@" >/dev/null
 }
 
-sync_confs(){
-	rsync -aq --exclude-from=rsyncexclude  . ~
+sync_confs() {
+	rsync -aq --exclude-from=rsyncexclude . ~
 }
 
-install(){
-	echo "%admin ALL=(ALL) NOPASSWD: ALL" | sudo tee /etc/sudoers.d/admin 1>/dev/null
-	ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-	brew install bash-completion git wget iproute2mac
+install() {
+	_ensure_sudo_no_password
 
-	sync_confs
+	_install_homebrew
 
-	_install_ipalias
+	_install_formulas
+
+	_install_z
+
+	_install_loopback_alias
 
 	_install_vundle
 
-	mkdir ~/go
+	sync_confs
 }
 
-LOOPBACK_ALIAS=loopback.alias.plist
+_ensure_sudo_no_password() {
+	echo "%admin ALL=(ALL) NOPASSWD: ALL" | sudo tee /etc/sudoers.d/admin 1>/dev/null
+}
 
-_install_ipalias(){
+_install_homebrew() {
+	ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+}
+
+_install_formulas() {
+	brew install bash-completion git wget iproute2mac
+}
+
+_install_z() {
+	curl -fsSL -o ~/.z.sh https://raw.githubusercontent.com/rupa/z/master/z.sh
+}
+
+_install_loopback_alias() {
+	LOOPBACK_ALIAS=loopback.alias.plist
 	pushd /Library/LaunchDaemons
-	sudo cp $ROOT/$LOOPBACK_ALIAS $LOOPBACK_ALIAS
+	sudo cp $ROOT/contrib/$LOOPBACK_ALIAS $LOOPBACK_ALIAS
 	sudo chmod 0644 $LOOPBACK_ALIAS
 	sudo launchctl load $LOOPBACK_ALIAS
 	popd
 }
 
-_install_vundle(){
+_install_vundle() {
 	git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 	vim +PluginInstall +qall
 }
 
 pushd $ROOT
 
-if [ "$1" = "sync" ]
-then
+if [ "$1" = "sync" ]; then
 	sync_confs
-elif [ "$1" = "install" ]
-then
+elif [ "$1" = "install" ]; then
 	install
 else
 	echo "Invalid action"

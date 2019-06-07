@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
     <key>Label</key>
-    <string>dev.ipalias</string>
+    <string>loopback.ipalias</string>
     <key>RunAtLoad</key>
     <true/>
     <key>ProgramArguments</key>

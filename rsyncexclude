@@ -6,6 +6,7 @@
 rsyncexclude
 README.md
 setup
-dev.ip.alias.plist
+loopback.alias.plist
 Makefile
 .gitignore
+contrib/
