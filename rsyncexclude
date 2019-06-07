@@ -6,7 +6,6 @@
 rsyncexclude
 README.md
 setup
-loopback.alias.plist
 Makefile
 .gitignore
 contrib/
