@@ -19,6 +19,8 @@ sync_files() {
 }
 
 install() {
+	_ensure_root_password
+
 	_ensure_sudo_no_password
 
 	_install_homebrew
@@ -32,6 +34,10 @@ install() {
 	_install_vundle
 
 	sync_files
+}
+
+_ensure_root_password() {
+	sudo passwd root
 }
 
 _ensure_sudo_no_password() {
