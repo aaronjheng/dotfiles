@@ -5,7 +5,6 @@ alias brew='ALL_PROXY=http://127.0.0.1:8118 brew'
 alias nproc='sysctl -n hw.ncpu'
 
 export ETCDCTL_API=3
-export PS1='\u@\h:\W$ '
 export HOMEBREW_NO_AUTO_UPDATE=1
 export GOPROXY="https://athens.azurefd.net"
 export GOBIN="$HOME/.go/bin"
@@ -26,3 +25,7 @@ do
 		export PATH="$BIN_DIR:$PATH"
 	fi
 done
+
+if [ -r ~/.bashrc_local ]; then
+    . ~/.bashrc_local
+fi
