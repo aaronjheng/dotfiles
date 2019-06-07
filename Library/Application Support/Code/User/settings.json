@@ -49,6 +49,7 @@
 		"statusBar.foreground": "#7f8f9b",
 		"statusBar.noFolderBackground": "#1c1f26",
 	},
+	"breadcrumbs.enabled": false,
 	"editor.fontFamily": "'Lucida Console', Menlo, Monaco, 'Courier New', monospace",
 	"editor.fontSize": 14,
 	"editor.lineHeight": 16,
@@ -102,9 +103,10 @@
 	// Extension specific
 	"go.coverOnSave": false,
 	"go.lintOnSave": "off",
-	"go.buildOnSave": "off",
+	"go.buildOnSave": "package",
 	"go.vetOnSave": "off",
-	"go.useLanguageServer": true,
+	"go.formatTool": "gofmt",
+	// "go.useLanguageServer": true,
 	"python.pythonPath": "python",
 	"python.formatting.provider": "black",
 	"python.linting.pylintEnabled": false
