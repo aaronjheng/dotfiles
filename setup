@@ -14,7 +14,7 @@ popd() {
 	command popd "$@" >/dev/null
 }
 
-sync_confs() {
+sync_files() {
 	rsync -aq --exclude-from=rsyncexclude . ~
 }
 
@@ -31,7 +31,7 @@ install() {
 
 	_install_vundle
 
-	sync_confs
+	sync_files
 }
 
 _ensure_sudo_no_password() {
@@ -43,7 +43,7 @@ _install_homebrew() {
 }
 
 _install_formulas() {
-	brew install bash-completion git wget iproute2mac
+	brew install bash-completion rsync git wget iproute2mac
 }
 
 _install_z() {
@@ -67,7 +67,7 @@ _install_vundle() {
 pushd $ROOT
 
 if [ "$1" = "sync" ]; then
-	sync_confs
+	sync_files
 elif [ "$1" = "install" ]; then
 	install
 else
