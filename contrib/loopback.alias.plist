@@ -11,7 +11,7 @@
         <string>/usr/local/bin/ip</string>
         <string>addr</string>
         <string>add</string>
-        <string>192.168.17.100/24</string>
+        <string>192.168.6.17/24</string>
         <string>dev</string>
         <string>lo0</string>
     </array>
