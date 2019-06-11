@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 set -e
 
 ROOT=$(
@@ -49,7 +49,7 @@ _install_homebrew() {
 }
 
 _install_formulas() {
-	brew install bash-completion rsync git wget iproute2mac
+	brew install zsh-completions rsync git wget iproute2mac
 }
 
 _install_z() {
