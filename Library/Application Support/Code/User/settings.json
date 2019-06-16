@@ -48,7 +48,8 @@
         "statusBar.debuggingBackground": "#230000",
 		"statusBar.foreground": "#7f8f9b",
 		"statusBar.noFolderBackground": "#1c1f26",
-		"statusBarItem.remoteBackground": "#1c1f26"
+		"statusBarItem.remoteBackground": "#1c1f26",
+		"statusBarItem.remoteForeground": "#7f8f9b"
 	},
 	"breadcrumbs.enabled": false,
 	"editor.fontFamily": "'Lucida Console', Menlo, Monaco, 'Courier New', monospace",
