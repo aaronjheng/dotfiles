@@ -105,7 +105,6 @@
 		"editor.formatOnSave": true
 	},
 	// Extension specific
-	"go.coverOnSave": false,
 	"go.lintOnSave": "off",
 	"go.buildOnSave": "package",
 	"go.vetOnSave": "off",
