@@ -16,7 +16,7 @@ BIN_DIRS=(
 	/usr/local/opt/openssl@1.1/bin
 	$HOME/.cargo/bin
 	$HOME/.poetry/bin
-	$HOME/.go/bin
+	$GOBIN
 )
 
 for BIN_DIR in ${BIN_DIRS[@]}
