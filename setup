@@ -6,14 +6,6 @@ ROOT=$(
 	pwd
 )
 
-pushd() {
-	command pushd "$@" >/dev/null
-}
-
-popd() {
-	command popd "$@" >/dev/null
-}
-
 sync_files() {
 	rsync -aq --exclude-from=rsyncexclude . ~
 }
