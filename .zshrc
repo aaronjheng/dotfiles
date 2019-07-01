@@ -6,8 +6,6 @@ alias nproc='sysctl -n hw.ncpu'
 
 export ETCDCTL_API=3
 export HOMEBREW_NO_AUTO_UPDATE=1
-export GOPROXY="https://athens.azurefd.net"
-export GOBIN="$HOME/.go/bin"
 export GOPATH="$HOME/.go"
 
 BIN_DIRS=(
