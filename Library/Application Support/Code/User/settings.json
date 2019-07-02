@@ -108,10 +108,10 @@
 	},
 	// Extension specific
 	"go.lintOnSave": "off",
-	"go.buildOnSave": "package",
+	"go.buildOnSave": "off",
 	"go.vetOnSave": "off",
 	"go.formatTool": "goimports",
-	// "go.useLanguageServer": true,
+	"go.useLanguageServer": true,
 	"python.pythonPath": "python",
 	"python.formatting.provider": "black",
 	"python.linting.pylintEnabled": false
