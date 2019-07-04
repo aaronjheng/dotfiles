@@ -3,7 +3,6 @@
 	"workbench.editor.showIcons": false,
 	"workbench.iconTheme": null,
 	"workbench.startupEditor": "newUntitledFile",
-	"workbench.statusBar.feedback.visible": false,
 	"workbench.settings.editor": "json",
 	"workbench.colorTheme": "Spacegray Ocean Dark",
 	"workbench.colorCustomizations": {
