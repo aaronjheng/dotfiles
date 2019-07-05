@@ -1,7 +1,7 @@
 alias ll='ls -alv'
 alias la='ls -A'
 alias l='ls -CF'
-alias brew='ALL_PROXY=http://127.0.0.1:8118 brew'
+alias brew='HTTP_PROXY=http://127.0.0.1:8118 HTTPS_PROXY=http://127.0.0.1:8118 brew'
 alias nproc='sysctl -n hw.ncpu'
 
 export ETCDCTL_API=3
