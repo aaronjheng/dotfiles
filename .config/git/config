@@ -7,3 +7,5 @@
 	gpgSign = true
 [log]
 	showSignature = true
+[fetch]
+	prune = true
