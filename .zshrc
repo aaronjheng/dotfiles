@@ -10,7 +10,6 @@ export GOPATH="$HOME/.go"
 
 BIN_DIRS=(
 	/usr/local/sbin
-	/usr/local/opt/python/libexec/bin
 	/usr/local/opt/curl/bin
 	/usr/local/opt/openssl@1.1/bin
 	$HOME/.cargo/bin
