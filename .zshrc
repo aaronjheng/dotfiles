@@ -7,6 +7,7 @@ alias nproc='sysctl -n hw.ncpu'
 export ETCDCTL_API=3
 export HOMEBREW_NO_AUTO_UPDATE=1
 export GOPATH="$HOME/.go"
+export PYTHON_BUILD_CACHE_PATH="$HOME/.poetry/cache"
 
 BIN_DIRS=(
 	/usr/local/sbin
