@@ -111,7 +111,8 @@
 		"editor.codeActionsOnSaveTimeout": 3000
 	},
 	"[python]": {
-		"editor.insertSpaces": true
+		"editor.insertSpaces": true,
+		"editor.formatOnSave": true
 	},
 	"[rust]": {
 		"editor.formatOnSave": true
