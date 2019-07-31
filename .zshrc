@@ -3,6 +3,7 @@ alias la='ls -A'
 alias l='ls -CF'
 alias brew='HTTP_PROXY=http://127.0.0.1:8118 HTTPS_PROXY=http://127.0.0.1:8118 brew'
 alias nproc='sysctl -n hw.ncpu'
+alias pj="pbpaste | jq ."
 
 export ETCDCTL_API=3
 export HOMEBREW_NO_AUTO_UPDATE=1
