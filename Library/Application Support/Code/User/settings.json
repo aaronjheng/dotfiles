@@ -88,6 +88,7 @@
 		"**/vendor": true,
 	},
 	"files.eol": "\n",
+	"git.enabled": false,
 	"http.proxy": "http://127.0.0.1:8118",
 	"terminal.integrated.fontSize": 14,
 	"terminal.integrated.fontFamily": "'Lucida Console', Menlo, Monaco, 'Courier New', monospace",
