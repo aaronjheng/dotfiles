@@ -13,7 +13,6 @@ export PYTHON_BUILD_CACHE_PATH="$HOME/.poetry/cache"
 BIN_DIRS=(
 	/usr/local/sbin
 	/usr/local/opt/curl/bin
-	/usr/local/opt/openssl@1.1/bin
 	$HOME/.cargo/bin
 	$HOME/.poetry/bin
 	$GOPATH/bin
