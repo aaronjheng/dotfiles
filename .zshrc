@@ -28,5 +28,3 @@ done
 if [ -r ~/.zshrc_local ]; then
     . ~/.zshrc_local
 fi
-
-export PROMPT='%n@%m:%1~ %% '

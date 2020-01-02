@@ -1,3 +1,5 @@
+export PROMPT='%n@%m:%1~ %% '
+
 if [ -r ~/.z.sh ]; then
     . ~/.z.sh
 fi
