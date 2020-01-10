@@ -8,13 +8,11 @@ alias pj="pbpaste | jq ."
 export ETCDCTL_API=3
 export HOMEBREW_NO_AUTO_UPDATE=1
 export GOPATH="$HOME/.go"
-export PYTHON_BUILD_CACHE_PATH="$HOME/.poetry/cache"
 
 BIN_DIRS=(
 	/usr/local/sbin
 	/usr/local/opt/curl/bin
 	$HOME/.cargo/bin
-	$HOME/.poetry/bin
 	$GOPATH/bin
 )
 
