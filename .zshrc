@@ -12,6 +12,7 @@ export GOPATH="$HOME/.go"
 BIN_DIRS=(
 	/usr/local/sbin
 	/usr/local/opt/curl/bin
+	/usr/local/opt/make/libexec/gnubin
 	$HOME/.cargo/bin
 	$GOPATH/bin
 )
