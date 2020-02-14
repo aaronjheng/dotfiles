@@ -110,6 +110,7 @@
 		}
 	},
 	"[python]": {
+		"editor.defaultFormatter": "ms-python.python",
 		"editor.insertSpaces": true,
 		"editor.formatOnSave": true
 	},
