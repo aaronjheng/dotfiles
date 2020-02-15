@@ -6,8 +6,11 @@ alias nproc='sysctl -n hw.ncpu'
 alias pj="pbpaste | jq ."
 
 export ETCDCTL_API=3
-export HOMEBREW_NO_AUTO_UPDATE=1
 export GOPATH="$HOME/.go"
+export HOMEBREW_NO_AUTO_UPDATE=1
+export PYTHON_BUILD_CACHE_PATH="$HOME/Library/Caches/pyenv"
+
+mkdir -p $PYTHON_BUILD_CACHE_PATH
 
 BIN_DIRS=(
 	/usr/local/sbin
