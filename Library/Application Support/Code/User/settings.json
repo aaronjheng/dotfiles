@@ -112,7 +112,10 @@
 	"[python]": {
 		"editor.defaultFormatter": "ms-python.python",
 		"editor.insertSpaces": true,
-		"editor.formatOnSave": true
+		"editor.formatOnSave": true,
+		"editor.codeActionsOnSave": {
+			"source.organizeImports": true
+		}
 	},
 	"[rust]": {
 		"editor.formatOnSave": true
@@ -124,5 +127,6 @@
 	"go.formatTool": "goimports",
 	"go.useLanguageServer": true,
 	"python.formatting.provider": "black",
-	"python.linting.pylintEnabled": false
+	"python.linting.pylintEnabled": false,
+	"python.languageServer": "Microsoft"
 }
