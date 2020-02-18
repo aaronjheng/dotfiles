@@ -21,7 +21,7 @@ sudo_no_password:
 
 .PHONY: bootstrap_homebrew
 bootstrap_homebrew:
-	ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+	ruby -e "$$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 	brew install zsh-completions rsync git wget iproute2mac
 
 .PHONY: bootstrap_z
