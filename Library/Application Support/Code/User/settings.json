@@ -127,6 +127,15 @@
 	"go.vetOnSave": "off",
 	"go.formatTool": "goimports",
 	"go.useLanguageServer": true,
+	"gopls": {
+		"usePlaceholders": true,
+		"staticcheck": false,
+	},
+	"go.languageServerExperimentalFeatures": {
+		"format": true,
+		"diagnostics": false,
+		"documentLink": true
+	},
 	"python.formatting.provider": "black",
 	"python.linting.pylintEnabled": false,
 	"python.languageServer": "Microsoft"
