@@ -20,13 +20,12 @@ BIN_DIRS=(
 	$GOPATH/bin
 )
 
-for BIN_DIR in ${BIN_DIRS[@]}
-do
+for BIN_DIR in ${BIN_DIRS[@]}; do
 	if [ -d "$BIN_DIR" ]; then
 		export PATH="$BIN_DIR:$PATH"
 	fi
 done
 
 if [ -r ~/.zshrc_local ]; then
-    . ~/.zshrc_local
+	. ~/.zshrc_local
 fi

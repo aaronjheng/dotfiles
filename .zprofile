@@ -5,11 +5,11 @@ if [ -r ~/.z.sh ]; then
 fi
 
 if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init -)"
+    eval "$(pyenv init -)"
 fi
 
 if [ -r ~/.zfunc ]; then
-  fpath+=~/.zfunc
+    fpath+=~/.zfunc
 fi
 
 autoload -U compinit
