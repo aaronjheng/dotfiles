@@ -132,7 +132,6 @@
 		"staticcheck": false,
 	},
 	"go.languageServerExperimentalFeatures": {
-		"format": true,
 		"diagnostics": false,
 		"documentLink": true
 	},
