@@ -14,3 +14,7 @@ fi
 
 autoload -U compinit
 compinit -i
+
+if [ $commands[kubectl] ]; then
+    source <(kubectl completion zsh)
+fi
