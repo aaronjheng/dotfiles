@@ -9,7 +9,7 @@ sync:
 
 .PHONY: install
 install: root_password sudo_no_password bootstrap_homebrew \
-			bootstrap_z bootstrap_loopback_alias bootstrap_vundle sync \
+			bootstrap_loopback_alias bootstrap_vundle sync
 
 .PHONY: root_password
 root_password:
@@ -23,10 +23,6 @@ sudo_no_password:
 bootstrap_homebrew:
 	ruby -e "$$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 	brew install zsh-completions rsync git wget iproute2mac
-
-.PHONY: bootstrap_z
-bootstrap_z:
-	curl -fsSL -o ~/.z.sh https://raw.githubusercontent.com/rupa/z/master/z.sh
 
 LOOPBACK_ALIAS_FILE:= loopback.alias.plist
 LOOPBACK_ALIAS := /Library/LaunchDaemons/$(LOOPBACK_ALIAS_FILE)

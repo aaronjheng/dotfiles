@@ -1,7 +1,7 @@
 export PROMPT='%n@%m:%1~ %% '
 
-if [ -r ~/.z.sh ]; then
-    . ~/.z.sh
+if [ -r "`brew --prefix`/etc/profile.d/z.sh" ]; then
+    . `brew --prefix`/etc/profile.d/z.sh
 fi
 
 if command -v pyenv 1>/dev/null 2>&1; then
