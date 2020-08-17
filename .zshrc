@@ -7,6 +7,7 @@ alias pj="pbpaste | jq ."
 
 export ETCDCTL_API=3
 export GOPATH="$HOME/.go"
+export GOMODCACHE=$HOME/.go/mod
 export HOMEBREW_NO_AUTO_UPDATE=1
 export PYTHON_BUILD_CACHE_PATH="$HOME/Library/Caches/pyenv"
 
