@@ -17,6 +17,7 @@ BIN_DIRS=(
 	/usr/local/sbin
 	/usr/local/opt/curl/bin
 	/usr/local/opt/make/libexec/gnubin
+	/usr/local/opt/openssl@1.1/bin
 	$HOME/.cargo/bin
 	$GOPATH/bin
 )
