@@ -21,8 +21,12 @@ sudo_no_password:
 
 .PHONY: bootstrap_homebrew
 bootstrap_homebrew:
-	ruby -e "$$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+	/bin/bash -c "`curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh`"
 	brew install zsh-completions rsync git wget iproute2mac
+
+.PHONY: uninstall_homebrew
+uninstall_homebrew:
+	/bin/bash -c "`curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/uninstall.sh`"
 
 LOOPBACK_ALIAS_FILE:= loopback.alias.plist
 LOOPBACK_ALIAS := /Library/LaunchDaemons/$(LOOPBACK_ALIAS_FILE)
