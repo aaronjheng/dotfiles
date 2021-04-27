@@ -8,7 +8,7 @@ sync:
 	chmod 700 ~/.gnupg ~/.gnupg/gpg.conf
 
 .PHONY: install
-install: root_password sudo_no_password bootstrap_homebrew \
+install: root_password sudo_no_password bootstrap_homebrew install_formula \
 			bootstrap_loopback_alias bootstrap_vundle sync
 
 .PHONY: root_password
@@ -22,7 +22,15 @@ sudo_no_password:
 .PHONY: bootstrap_homebrew
 bootstrap_homebrew:
 	/bin/bash -c "`curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh`"
-	brew install zsh-completions rsync git wget iproute2mac
+
+.PHONY: install_formula
+install_formula:
+	brew install trojan-gfw/trojan/trojan
+	brew install zsh-completions rsync git wget iproute2mac gnupg privoxy
+
+install_cask:
+	brew install --cask appcleaner calibre imazing keka postman typora wireshark baidunetdisk \
+		iina iterm2 rectangle visual-studio-code wiznote
 
 .PHONY: uninstall_homebrew
 uninstall_homebrew:
