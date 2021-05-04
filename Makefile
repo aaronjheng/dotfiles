@@ -28,6 +28,7 @@ install_formula:
 	brew install trojan-gfw/trojan/trojan
 	brew install zsh-completions rsync git wget iproute2mac gnupg privoxy
 
+.PHONY: install_cask
 install_cask:
 	brew install --cask appcleaner calibre imazing keka postman typora wireshark baidunetdisk \
 		iina iterm2 rectangle visual-studio-code wiznote alfred
