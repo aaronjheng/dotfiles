@@ -30,7 +30,7 @@ install_formula:
 
 install_cask:
 	brew install --cask appcleaner calibre imazing keka postman typora wireshark baidunetdisk \
-		iina iterm2 rectangle visual-studio-code wiznote
+		iina iterm2 rectangle visual-studio-code wiznote alfred
 
 .PHONY: uninstall_homebrew
 uninstall_homebrew:
