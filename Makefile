@@ -36,8 +36,8 @@ install_cask:
 uninstall_homebrew:
 	/bin/bash -c "`curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/uninstall.sh`"
 
-LOOPBACK_ALIAS_FILE:= loopback.alias.plist
-LOOPBACK_ALIAS := /Library/LaunchDaemons/$(LOOPBACK_ALIAS_FILE)
+LOOPBACK_ALIAS_FILE := loopback.alias.plist
+LOOPBACK_ALIAS      := /Library/LaunchDaemons/$(LOOPBACK_ALIAS_FILE)
 .PHONY: bootstrap_loopback_alias
 bootstrap_loopback_alias:
 	sudo cp contrib/$(LOOPBACK_ALIAS_FILE) $(LOOPBACK_ALIAS); \
