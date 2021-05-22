@@ -1,11 +1,7 @@
 export PROMPT='%n@%m:%1~ %% '
 
-if type brew &>/dev/null; then
-    FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
-
-    autoload -Uz compinit
-    compinit
-fi
+autoload -Uz compinit
+compinit
 
 if [ -r "$(brew --prefix)/etc/profile.d/z.sh" ]; then
     . $(brew --prefix)/etc/profile.d/z.sh
