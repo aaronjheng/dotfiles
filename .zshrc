@@ -28,6 +28,10 @@ for BIN_DIR in ${BIN_DIRS[@]}; do
 	fi
 done
 
+if command -v pyenv 1>/dev/null 2>&1; then
+    eval "$(pyenv init -)"
+fi
+
 if [ -r ~/.zshrc_local ]; then
 	. ~/.zshrc_local
 fi
