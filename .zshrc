@@ -15,7 +15,6 @@ export PYTHON_BUILD_CACHE_PATH="$HOME/Library/Caches/pyenv"
 mkdir -p $PYTHON_BUILD_CACHE_PATH
 
 BIN_DIRS=(
-	/usr/local/sbin
 	/usr/local/opt/curl/bin
 	/usr/local/opt/make/libexec/gnubin
 	/usr/local/opt/openssl@1.1/bin
@@ -30,7 +29,7 @@ for BIN_DIR in ${BIN_DIRS[@]}; do
 done
 
 if command -v pyenv 1>/dev/null 2>&1; then
-    eval "$(pyenv init -)"
+	eval "$(pyenv init -)"
 fi
 
 if [ -r ~/.zshrc_local ]; then
