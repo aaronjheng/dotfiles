@@ -12,6 +12,9 @@ fi
 
 if type brew &>/dev/null; then
     FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+	if [[ "$(uname -s)" == "Linux" ]]; then
+		FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+	fi
     autoload -Uz compinit && compinit
 fi
 
