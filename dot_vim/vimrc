@@ -1,0 +1,11 @@
+"general settings
+syntax enable
+
+set number
+set nocompatible
+set autoindent
+set autoread
+set cursorline
+set ruler
+set tabstop=4
+set encoding=utf-8
