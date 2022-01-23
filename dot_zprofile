@@ -11,15 +11,15 @@ else
 fi
 
 if type brew &>/dev/null; then
-    FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+	FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
 	if [[ "$(uname -s)" == "Linux" ]]; then
 		FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
 	fi
-    autoload -Uz compinit && compinit
+	autoload -Uz compinit && compinit
 fi
 
 if command -v pyenv 1>/dev/null 2>&1; then
-    eval "$(pyenv init --path)"
+	eval "$(pyenv init --path)"
 fi
 
 if command -v kafkactl 1>/dev/null 2>&1; then
@@ -27,6 +27,6 @@ if command -v kafkactl 1>/dev/null 2>&1; then
 fi
 
 if command -v zoxide 1>/dev/null 2>&1; then
-    eval "$(zoxide init zsh)"
+	eval "$(zoxide init zsh)"
 fi
 
