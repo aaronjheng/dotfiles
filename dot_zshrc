@@ -2,19 +2,28 @@ alias ll='ls -alv'
 alias la='ls -A'
 alias l='ls -CF'
 alias brew='HTTP_PROXY=http://127.0.0.1:7890 HTTPS_PROXY=http://127.0.0.1:7890 brew'
-alias nproc='sysctl -n hw.ncpu'
-alias pj="pbpaste | jq ."
-alias typora="open -a typora"
+
+if [ "$(uname -s)" == "Darwin" ]; then
+	alias nproc='sysctl -n hw.ncpu'
+	alias pj="pbpaste | jq ."
+	alias typora="open -a typora"
+fi
+
+CACHE_DIR=$HOME/.cache
+if [ "$(uname -s)" == "Darwin" ]; then
+	CACHE_DIR=$HOME/Library/Caches
+fi
 
 export ETCDCTL_API=3
 export GOPATH="$HOME/.go"
-export GOCACHE="$HOME/Library/Caches/go/build"
-export GOMODCACHE="$HOME/Library/Caches/go/mod"
+export GOCACHE="$CACHE_DIR/go/build"
+export GOMODCACHE="$CACHE_DIR/go/mod"
 export HOMEBREW_NO_AUTO_UPDATE=1
 export HOMEBREW_CASK_OPTS="--no-quarantine"
-export PYTHON_BUILD_CACHE_PATH="$HOME/Library/Caches/pyenv"
+export PYTHON_BUILD_CACHE_PATH="$CACHE_DIR/pyenv"
 
 mkdir -p $PYTHON_BUILD_CACHE_PATH
+
 BREW_PREFIX=$(brew --prefix)
 BIN_DIRS=(
 	$BREW_PREFIX/opt/curl/bin
