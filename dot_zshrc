@@ -15,11 +15,11 @@ export HOMEBREW_CASK_OPTS="--no-quarantine"
 export PYTHON_BUILD_CACHE_PATH="$HOME/Library/Caches/pyenv"
 
 mkdir -p $PYTHON_BUILD_CACHE_PATH
-
+BREW_PREFIX=$(brew --prefix)
 BIN_DIRS=(
-	/usr/local/opt/curl/bin
-	/usr/local/opt/make/libexec/gnubin
-	/usr/local/opt/openssl/bin
+	$BREW_PREFIX/opt/curl/bin
+	$BREW_PREFIX/opt/make/libexec/gnubin
+	$BREW_PREFIX/opt/openssl/bin
 	$HOME/.cargo/bin
 	$GOPATH/bin
 )
@@ -37,3 +37,4 @@ fi
 if [ -r ~/.zshrc_local ]; then
 	. ~/.zshrc_local
 fi
+
