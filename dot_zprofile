@@ -1,6 +1,10 @@
 export PROMPT='%n@%m:%1~ %% '
 
-eval $(brew shellenv)
+if [[ "$(uname -s)" == "Darwin" ]]; then
+	eval $(brew shellenv)
+else
+	eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+fi
 
 if type brew &>/dev/null; then
     FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
