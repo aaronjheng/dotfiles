@@ -1,5 +1,7 @@
 export PROMPT='%n@%m:%1~ %% '
 
+eval $(brew shellenv)
+
 if type brew &>/dev/null; then
     FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
 
@@ -11,6 +13,11 @@ if command -v pyenv 1>/dev/null 2>&1; then
     eval "$(pyenv init --path)"
 fi
 
+if command -v kafkactl 1>/dev/null 2>&1; then
+	source <(kafkactl completion bash)
+fi
+
 if command -v zoxide 1>/dev/null 2>&1; then
     eval "$(zoxide init zsh)"
 fi
+
