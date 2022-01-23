@@ -46,9 +46,12 @@ if [ -r ~/.zshrc_local ]; then
 	. ~/.zshrc_local
 fi
 
-function proxyon () {
+function proxyon() {
 	export HTTP_PROXY=http://127.0.0.1:7890
 	export HTTPS_PROXY=http://127.0.0.1:7890
 }
 
+if [ -e /home/mihoyo/.nix-profile/etc/profile.d/nix.sh ]; then
+	. /home/mihoyo/.nix-profile/etc/profile.d/nix.sh
+fi
 
