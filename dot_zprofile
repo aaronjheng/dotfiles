@@ -1,4 +1,8 @@
-export PROMPT='%n@%m:%1~ %% '
+if [[ "$(uname -s)" == "Darwin" ]]; then
+	export PROMPT='%n@%m:%1~ %% '
+else
+	export PROMPT='%F{green}%n@%m%f:%1~ %% '
+fi
 
 if [[ "$(uname -s)" == "Darwin" ]]; then
 	eval $(brew shellenv)
