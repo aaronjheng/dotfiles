@@ -30,3 +30,7 @@ if command -v zoxide 1>/dev/null 2>&1; then
 	eval "$(zoxide init zsh)"
 fi
 
+if [ -d ~/.nix-profile ]; then
+	FPATH=~/.nix-profile/share/zsh/site-functions:$FPATH
+	autoload -Uz compinit && compinit
+fi
