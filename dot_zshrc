@@ -68,9 +68,9 @@ function proxyon() {
 
 # Completions
 if type brew &>/dev/null; then
-	FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+	FPATH=$$HOMEBREW_PREFIX/share/zsh-completions:$FPATH
 	if [[ "$(uname -s)" == "Linux" ]]; then
-		FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+		FPATH=$HOMEBREW_PREFIX/share/zsh/site-functions:$FPATH
 	fi
 	autoload -Uz compinit && compinit
 fi
@@ -86,6 +86,10 @@ fi
 if [ -d ~/.nix-profile ]; then
 	FPATH=~/.nix-profile/share/zsh/site-functions:$FPATH
 	autoload -Uz compinit && compinit
+fi
+
+if [ -f "$HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ]; then
+	. $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 fi
 
 if [ -r ~/.zshrc_local ]; then
