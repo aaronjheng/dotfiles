@@ -18,7 +18,7 @@ export PYTHON_BUILD_CACHE_PATH="$CACHE_DIR/pyenv"
 
 # Homebrew
 if [[ "$(uname -s)" == "Darwin" ]]; then
-	eval $(brew shellenv)
+	eval $(/usr/local/bin/brew shellenv)
 else
 	eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 fi
