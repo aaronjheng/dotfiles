@@ -1,3 +1,54 @@
+if [[ "$(uname -s)" == "Darwin" ]]; then
+	export PROMPT='%n@%m:%1~ %% '
+else
+	export PROMPT='%F{green}%n@%m%f:%1~ %% '
+fi
+
+CACHE_DIR=$HOME/.cache
+if [[ "$(uname -s)" == "Darwin" ]]; then
+	CACHE_DIR=$HOME/Library/Caches
+fi
+export ETCDCTL_API=3
+export GOPATH="$HOME/.go"
+export GOCACHE="$CACHE_DIR/go/build"
+export GOMODCACHE="$CACHE_DIR/go/mod"
+export HOMEBREW_NO_AUTO_UPDATE=1
+export HOMEBREW_CASK_OPTS="--no-quarantine"
+export PYTHON_BUILD_CACHE_PATH="$CACHE_DIR/pyenv"
+
+# Homebrew
+if [[ "$(uname -s)" == "Darwin" ]]; then
+	eval $(brew shellenv)
+else
+	eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+fi
+
+# Nix
+if [ -e ~/.nix-profile/etc/profile.d/nix.sh ]; then
+	. ~/.nix-profile/etc/profile.d/nix.sh
+fi
+
+# Pyenv
+if command -v pyenv 1>/dev/null 2>&1; then
+	eval "$(pyenv init --path)"
+	eval "$(pyenv init -)"
+	mkdir -p $PYTHON_BUILD_CACHE_PATH
+fi
+
+BIN_DIRS=(
+	$HOMEBREW_PREFIX/opt/curl/bin
+	$HOMEBREW_PREFIX/opt/make/libexec/gnubin
+	$HOMEBREW_PREFIX/opt/openssl/bin
+	$HOME/.cargo/bin
+	$GOPATH/bin
+)
+for BIN_DIR in ${BIN_DIRS[@]}; do
+	if [ -d "$BIN_DIR" ]; then
+		export PATH="$BIN_DIR:$PATH"
+	fi
+done
+
+# Aliases
 alias ll='ls -alv'
 alias la='ls -A'
 alias l='ls -CF'
@@ -9,49 +60,35 @@ if [[ "$(uname -s)" == "Darwin" ]]; then
 	alias typora="open -a typora"
 fi
 
-CACHE_DIR=$HOME/.cache
-if [[ "$(uname -s)" == "Darwin" ]]; then
-	CACHE_DIR=$HOME/Library/Caches
-fi
-
-export ETCDCTL_API=3
-export GOPATH="$HOME/.go"
-export GOCACHE="$CACHE_DIR/go/build"
-export GOMODCACHE="$CACHE_DIR/go/mod"
-export HOMEBREW_NO_AUTO_UPDATE=1
-export HOMEBREW_CASK_OPTS="--no-quarantine"
-export PYTHON_BUILD_CACHE_PATH="$CACHE_DIR/pyenv"
-
-mkdir -p $PYTHON_BUILD_CACHE_PATH
-
-BIN_DIRS=(
-	$HOMEBREW_PREFIX/opt/curl/bin
-	$HOMEBREW_PREFIX/opt/make/libexec/gnubin
-	$HOMEBREW_PREFIX/opt/openssl/bin
-	$HOME/.cargo/bin
-	$GOPATH/bin
-)
-
-for BIN_DIR in ${BIN_DIRS[@]}; do
-	if [ -d "$BIN_DIR" ]; then
-		export PATH="$BIN_DIR:$PATH"
-	fi
-done
-
-if command -v pyenv 1>/dev/null 2>&1; then
-	eval "$(pyenv init -)"
-fi
-
-if [ -r ~/.zshrc_local ]; then
-	. ~/.zshrc_local
-fi
-
+# Functions
 function proxyon() {
 	export HTTP_PROXY=http://127.0.0.1:7890
 	export HTTPS_PROXY=http://127.0.0.1:7890
 }
 
-if [ -e ~/.nix-profile/etc/profile.d/nix.sh ]; then
-	. ~/.nix-profile/etc/profile.d/nix.sh
+# Completions
+if type brew &>/dev/null; then
+	FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+	if [[ "$(uname -s)" == "Linux" ]]; then
+		FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+	fi
+	autoload -Uz compinit && compinit
+fi
+
+if command -v kafkactl 1>/dev/null 2>&1; then
+	source <(kafkactl completion zsh)
+fi
+
+if command -v zoxide 1>/dev/null 2>&1; then
+	eval "$(zoxide init zsh)"
+fi
+
+if [ -d ~/.nix-profile ]; then
+	FPATH=~/.nix-profile/share/zsh/site-functions:$FPATH
+	autoload -Uz compinit && compinit
+fi
+
+if [ -r ~/.zshrc_local ]; then
+	. ~/.zshrc_local
 fi
 
