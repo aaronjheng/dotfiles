@@ -68,7 +68,6 @@ function proxyon() {
 
 # Completions
 if type brew &>/dev/null; then
-	FPATH=$HOMEBREW_PREFIX/share/zsh-completions:$FPATH
 	if [[ "$(uname -s)" == "Linux" ]]; then
 		FPATH=$HOMEBREW_PREFIX/share/zsh/site-functions:$FPATH
 	fi
