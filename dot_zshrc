@@ -36,9 +36,6 @@ if command -v pyenv 1>/dev/null 2>&1; then
 fi
 
 BIN_DIRS=(
-	$HOMEBREW_PREFIX/opt/curl/bin
-	$HOMEBREW_PREFIX/opt/make/libexec/gnubin
-	$HOMEBREW_PREFIX/opt/openssl/bin
 	$HOME/.cargo/bin
 	$GOPATH/bin
 )
