@@ -63,15 +63,22 @@ function proxyon() {
 }
 
 # Completions
-if type brew &>/dev/null; then
-	if [[ "$(uname -s)" == "Linux" ]]; then
-		FPATH=$HOMEBREW_PREFIX/share/zsh/site-functions:/usr/share/zsh/site-functions:$FPATH
-	fi
-	autoload -Uz compinit && compinit
-fi
-
 if [ -d ~/.nix-profile ]; then
     FPATH=~/.nix-profile/share/zsh/site-functions:$FPATH
+    autoload -Uz compinit && compinit
+elif type brew &>/dev/null; then
+	if [ -d "$HOMEBREW_PREFIX/share/zsh-completion" ]; then
+		FPATH=$HOMEBREW_PREFIX/share/zsh-completions:$FPATH
+	fi
+    if [[ "$(uname -s)" == "Linux" ]]; then
+        FPATH=$HOMEBREW_PREFIX/share/zsh/site-functions:$FPATH
+    fi
+    autoload -Uz compinit && compinit
+fi
+
+# For Debian derivations
+if [[ "$(uname -s)" == "Linux" ]]; then
+    FPATH=/usr/share/zsh/site-functions:$FPATH
     autoload -Uz compinit && compinit
 fi
 
@@ -85,6 +92,8 @@ fi
 
 if [ -f ~/.nix-profile/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
 	. ~/.nix-profile/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+elif [ -f "$HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ]; then
+	. $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 fi
 
 if [ -r ~/.zshrc_local ]; then
