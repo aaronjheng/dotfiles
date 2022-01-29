@@ -71,6 +71,12 @@ if type brew &>/dev/null; then
 	autoload -Uz compinit && compinit
 fi
 
+# For Debian derivations
+if [[ "$(uname -s)" == "Linux" ]]; then
+    FPATH=/usr/share/zsh/site-functions:$FPATH
+    autoload -Uz compinit && compinit
+fi
+
 if command -v kafkactl 1>/dev/null 2>&1; then
 	source <(kafkactl completion zsh)
 fi
