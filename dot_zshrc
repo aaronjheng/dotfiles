@@ -23,7 +23,7 @@ fi
 
 # Nix
 if [ -e ~/.nix-profile/etc/profile.d/nix.sh ]; then
-	. ~/.nix-profile/etc/profile.d/nix.sh
+	source ~/.nix-profile/etc/profile.d/nix.sh
 fi
 
 # Pyenv
@@ -87,12 +87,12 @@ if command -v zoxide 1>/dev/null 2>&1; then
 fi
 
 if [ -f ~/.nix-profile/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
-	. ~/.nix-profile/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+	source ~/.nix-profile/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 elif [ -f "$HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ]; then
-	. $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+	source $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 fi
 
 if [ -r ~/.zshrc_local ]; then
-	. ~/.zshrc_local
+	source ~/.zshrc_local
 fi
 
