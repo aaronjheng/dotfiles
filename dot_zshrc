@@ -86,6 +86,7 @@ if command -v zoxide 1>/dev/null 2>&1; then
 	eval "$(zoxide init zsh)"
 fi
 
+# Zsh autosuggestions
 if [ -f ~/.nix-profile/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
 	source ~/.nix-profile/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 elif [ -f "$HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ]; then
