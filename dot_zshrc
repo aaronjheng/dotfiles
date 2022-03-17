@@ -51,7 +51,7 @@ alias brew='HTTP_PROXY=http://127.0.0.1:7890 HTTPS_PROXY=http://127.0.0.1:7890 b
 alias rustup='HTTP_PROXY=http://127.0.0.1:7890 HTTPS_PROXY=http://127.0.0.1:7890 rustup'
 
 if [[ "$(uname -s)" == "Darwin" ]]; then
-	alias pj="pbpaste | jq ."
+	alias pj="pbpaste | gojq ."
 	alias typora="open -a typora"
 fi
 
