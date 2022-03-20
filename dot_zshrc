@@ -95,7 +95,3 @@ elif [ -f "$HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ]
 	source $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 fi
 
-if [ -r ~/.zshrc_local ]; then
-	source ~/.zshrc_local
-fi
-
