@@ -9,6 +9,7 @@ if [[ "$(uname -s)" == "Darwin" ]]; then
 	CACHE_DIR=$HOME/Library/Caches
 fi
 export ETCDCTL_API=3
+export CARGO_HOME=$"$HOME/.cargo"
 export GOPATH="$HOME/.go"
 export GOCACHE="$CACHE_DIR/go/build"
 export GOMODCACHE="$CACHE_DIR/go/mod"
@@ -34,7 +35,7 @@ if command -v pyenv 1>/dev/null 2>&1; then
 fi
 
 BIN_DIRS=(
-	$HOME/.cargo/bin
+	$CARGO_HOME/bin
 	$GOPATH/bin
 )
 for BIN_DIR in ${BIN_DIRS[@]}; do
