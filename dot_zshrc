@@ -8,6 +8,10 @@ CACHE_DIR=$HOME/.cache
 if [[ "$(uname -s)" == "Darwin" ]]; then
 	CACHE_DIR=$HOME/Library/Caches
 fi
+
+STATE_DIR=$HOME/.local/state
+mkdir -p $STATE_DIR
+
 export ETCDCTL_API=3
 export CARGO_HOME=$"$HOME/.cargo"
 export GOPATH="$HOME/.go"
@@ -16,6 +20,9 @@ export GOMODCACHE="$CACHE_DIR/go/mod"
 export HOMEBREW_NO_AUTO_UPDATE=1
 export HOMEBREW_CASK_OPTS="--no-quarantine"
 export PYTHON_BUILD_CACHE_PATH="$CACHE_DIR/pyenv"
+
+export REDISCLI_HISTFILE="$STATE_DIR/redis/rediscli_history"
+mkdir -p `dirname $REDISCLI_HISTFILE`
 
 # Homebrew
 if [[ "$(uname -s)" == "Darwin" ]]; then
