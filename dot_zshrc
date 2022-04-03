@@ -66,6 +66,10 @@ if [[ "$(uname -s)" == "Darwin" ]]; then
 fi
 
 # Functions
+function goworkspace {
+    ssh -t workspace 'tmux -CC new -A -s workspace'
+}
+
 function proxyon() {
 	export HTTP_PROXY=http://127.0.0.1:7890
 	export HTTPS_PROXY=http://127.0.0.1:7890
