@@ -9,3 +9,6 @@ set cursorline
 set ruler
 set tabstop=4
 set encoding=utf-8
+
+let vim_state_dir=$HOME."/.local/state/vim" | call mkdir(vim_state_dir, "p")
+let &viminfofile=vim_state_dir."/viminfo"
