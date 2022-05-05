@@ -24,8 +24,6 @@ export PYTHON_BUILD_CACHE_PATH="$CACHE_DIR/pyenv"
 export REDISCLI_HISTFILE="$STATE_DIR/redis/rediscli_history"
 mkdir -p `dirname $REDISCLI_HISTFILE`
 
-export WGETRC="$HOME/.config/wgetrc"
-
 # Homebrew
 if [[ "$(uname -s)" == "Darwin" ]]; then
 	eval $(/usr/local/bin/brew shellenv)
