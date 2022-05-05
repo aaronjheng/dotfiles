@@ -92,8 +92,9 @@ if [[ "$(uname -s)" == "Linux" ]]; then
     autoload -Uz compinit && compinit
 fi
 
+# Kafkactl
 if command -v kafkactl 1>/dev/null 2>&1; then
-	source <(kafkactl completion zsh)
+	source <(kafkactl completion zsh) && compdef _kafkactl kafkactl
 fi
 
 # Zoxide
