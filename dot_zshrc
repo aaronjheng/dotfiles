@@ -57,7 +57,7 @@ alias ll='ls -alv'
 alias la='ls -A'
 alias l='ls -CF'
 alias brew='HTTP_PROXY=http://127.0.0.1:7890 HTTPS_PROXY=http://127.0.0.1:7890 brew'
-alias brew_no_proxy='/usr/local/bin/brew'
+alias brew-noproxy='/usr/local/bin/brew'
 alias rustup='HTTP_PROXY=http://127.0.0.1:7890 HTTPS_PROXY=http://127.0.0.1:7890 rustup'
 
 if [[ "$(uname -s)" == "Darwin" ]]; then
