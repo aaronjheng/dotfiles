@@ -67,7 +67,7 @@ fi
 
 # Functions
 function goworkspace {
-    ssh -t workspace 'tmux -CC new -A -s workspace'
+    ssh -t workspace '/home/mihoyo/.nix-profile/bin/tmux -CC new -A -s workspace'
 }
 
 function proxyon() {
