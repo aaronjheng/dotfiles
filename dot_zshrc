@@ -57,11 +57,11 @@ done
 alias ll='ls -alv'
 alias la='ls -A'
 alias l='ls -CF'
-alias brew='HTTP_PROXY=http://127.0.0.1:7890 HTTPS_PROXY=http://127.0.0.1:7890 brew'
-alias brew-noproxy='/usr/local/bin/brew'
 alias rustup='HTTP_PROXY=http://127.0.0.1:7890 HTTPS_PROXY=http://127.0.0.1:7890 rustup'
 
 if [[ "$(uname -s)" == "Darwin" ]]; then
+	alias brew='HTTP_PROXY=http://127.0.0.1:7890 HTTPS_PROXY=http://127.0.0.1:7890 brew'
+	alias brew-noproxy='/usr/local/bin/brew'
 	alias pj="pbpaste | gojq ."
 	alias typora="open -a typora"
 fi
@@ -82,7 +82,7 @@ if [ -d ~/.nix-profile ]; then
     autoload -Uz compinit && compinit
 fi
 
-if type brew &>/dev/null; then
+if command -v brew &>/dev/null; then
 	FPATH=$HOMEBREW_PREFIX/share/zsh-completions:$FPATH
 	autoload -Uz compinit && compinit
 fi
