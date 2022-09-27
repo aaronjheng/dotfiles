@@ -18,9 +18,11 @@ export GOPATH="$HOME/.go"
 export GOCACHE="$CACHE_DIR/go/build"
 export GOMODCACHE="$CACHE_DIR/go/mod"
 export GOSUMDB=sum.golang.google.cn
-export HOMEBREW_NO_AUTO_UPDATE=1
-export HOMEBREW_NO_INSTALL_CLEANUP=1
-export HOMEBREW_CASK_OPTS="--no-quarantine"
+if [[ "$(uname -s)" == "Darwin" ]]; then
+	export HOMEBREW_NO_AUTO_UPDATE=1
+	export HOMEBREW_NO_INSTALL_CLEANUP=1
+	export HOMEBREW_CASK_OPTS="--no-quarantine"
+fi
 export PYTHON_BUILD_CACHE_PATH="$CACHE_DIR/pyenv"
 
 export REDISCLI_HISTFILE="$STATE_DIR/redis/rediscli_history"
