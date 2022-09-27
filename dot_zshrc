@@ -21,6 +21,7 @@ export GOSUMDB=sum.golang.google.cn
 export HOMEBREW_NO_AUTO_UPDATE=1
 export HOMEBREW_NO_INSTALL_CLEANUP=1
 export HOMEBREW_CASK_OPTS="--no-quarantine"
+export NIXPKGS_ALLOW_UNFREE=1
 
 export REDISCLI_HISTFILE="$STATE_DIR/redis/rediscli_history"
 mkdir -p `dirname $REDISCLI_HISTFILE`
