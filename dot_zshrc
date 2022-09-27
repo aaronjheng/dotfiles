@@ -1,7 +1,6 @@
+export PROMPT='%F{green}%n@%m%f:%1~ %% '
 if [[ "$(uname -s)" == "Darwin" ]]; then
 	export PROMPT='%n@%m:%1~ %% '
-else
-	export PROMPT='%F{green}%n@%m%f:%1~ %% '
 fi
 
 CACHE_DIR=$HOME/.cache
@@ -12,8 +11,8 @@ fi
 STATE_DIR=$HOME/.local/state
 mkdir -p $STATE_DIR
 
-export ETCDCTL_API=3
 export CARGO_HOME=$"$HOME/.cargo"
+export ETCDCTL_API=3
 export GOPATH="$HOME/.go"
 export GOCACHE="$CACHE_DIR/go/build"
 export GOMODCACHE="$CACHE_DIR/go/mod"
