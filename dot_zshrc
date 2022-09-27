@@ -23,8 +23,6 @@ if [[ "$(uname -s)" == "Darwin" ]]; then
 	export HOMEBREW_NO_INSTALL_CLEANUP=1
 	export HOMEBREW_CASK_OPTS="--no-quarantine"
 fi
-export PYTHON_BUILD_CACHE_PATH="$CACHE_DIR/pyenv"
-
 export REDISCLI_HISTFILE="$STATE_DIR/redis/rediscli_history"
 mkdir -p `dirname $REDISCLI_HISTFILE`
 
@@ -36,13 +34,6 @@ fi
 # Nix
 if [ -e ~/.nix-profile/etc/profile.d/nix.sh ]; then
 	source ~/.nix-profile/etc/profile.d/nix.sh
-fi
-
-# Pyenv
-if command -v pyenv 1>/dev/null 2>&1; then
-	eval "$(pyenv init --path)"
-	eval "$(pyenv init -)"
-	mkdir -p $PYTHON_BUILD_CACHE_PATH
 fi
 
 BIN_DIRS=(
