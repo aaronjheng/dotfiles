@@ -74,8 +74,8 @@ if [ -d ~/.nix-profile/share/zsh/site-functions ]; then
 fi
 
 # For Debian derivations
-if [[ "$(uname -s)" == "Linux" ]]; then
-    FPATH=/usr/share/zsh/site-functions:/usr/share/zsh/vendor-completions:$FPATH
+if [ -d /usr/share/zsh/vendor-completions ]; then
+    FPATH=/usr/share/zsh/vendor-completions:$FPATH
 fi
 
 autoload -Uz compinit && compinit
