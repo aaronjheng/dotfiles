@@ -26,7 +26,7 @@ export REDISCLI_HISTFILE="$STATE_DIR/redis/rediscli_history"
 mkdir -p `dirname $REDISCLI_HISTFILE`
 
 # Homebrew
-if [[ "$(uname -s)" == "Darwin" ]]; then
+if [ -f /usr/local/bin/brew ]; then
 	eval $(/usr/local/bin/brew shellenv)
 fi
 
@@ -103,3 +103,4 @@ if [ -f ~/.nix-profile/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 elif [ -f "$HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]; then
     source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
+
