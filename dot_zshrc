@@ -69,7 +69,7 @@ function proxyon() {
 }
 
 # Completions
-if [ -d ~/.nix-profile ]; then
+if [ -d ~/.nix-profile/share/zsh/site-functions ]; then
     FPATH=~/.nix-profile/share/zsh/site-functions:$FPATH
 fi
 
@@ -90,10 +90,16 @@ if command -v zoxide 1>/dev/null 2>&1; then
 	eval "$(zoxide init zsh)"
 fi
 
-# Zsh autosuggestions
+# zsh-autosuggestions
 if [ -f ~/.nix-profile/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
 	source ~/.nix-profile/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 elif [ -f "$HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ]; then
 	source $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 fi
 
+# zsh-syntax-highlighting
+if [ -f ~/.nix-profile/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
+    source ~/.nix-profile/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+elif [ -f "$HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]; then
+    source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi
