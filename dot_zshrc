@@ -1,4 +1,7 @@
-export PROMPT='%F{green}%n@%m%f:%1~ %% '
+export PROMPT='%n@%m:%1~ %% '
+if [ ! -z "$SSH_CLIENT" ]; then
+	export PROMPT='%F{green}%n@%m%f:%1~ %% '
+fi
 
 CACHE_DIR=$HOME/.cache
 if [ -d "$HOME/Library/Caches" ]; then
