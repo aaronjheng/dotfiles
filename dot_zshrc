@@ -1,10 +1,7 @@
 export PROMPT='%F{green}%n@%m%f:%1~ %% '
-if [[ "$(uname -s)" == "Darwin" ]]; then
-	export PROMPT='%n@%m:%1~ %% '
-fi
 
 CACHE_DIR=$HOME/.cache
-if [[ "$(uname -s)" == "Darwin" ]]; then
+if [ -d "$HOME/Library/Caches" ]; then
 	CACHE_DIR=$HOME/Library/Caches
 fi
 
@@ -50,12 +47,12 @@ alias ll='ls -alv'
 alias la='ls -A'
 alias l='ls -CF'
 alias rustup='HTTP_PROXY=http://127.0.0.1:7890 HTTPS_PROXY=http://127.0.0.1:7890 rustup'
+alias pj="pbpaste | gojq ."
+alias typora="open -a typora"
 
-if [[ "$(uname -s)" == "Darwin" ]]; then
+if command -v brew 1>/dev/null 2>&1; then
 	alias brew='HTTP_PROXY=http://127.0.0.1:7890 HTTPS_PROXY=http://127.0.0.1:7890 brew'
-	alias brew-noproxy='/usr/local/bin/brew'
-	alias pj="pbpaste | gojq ."
-	alias typora="open -a typora"
+	alias brew-noproxy="${HOMEBREW_PREFIX}/bin/brew"
 fi
 
 # Functions
