@@ -75,7 +75,7 @@ fi
 
 # For Debian derivations
 if [ -d /usr/share/zsh/vendor-completions ]; then
-    FPATH=/usr/share/zsh/vendor-completions:$FPATH
+    FPATH=/usr/share/zsh/vendor-completions:/usr/share/zsh/site-functions:$FPATH
 fi
 
 autoload -Uz compinit && compinit
