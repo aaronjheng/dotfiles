@@ -15,5 +15,5 @@ proxy-groups:
     proxies:
       - {{ .clash.name }}
 rules:
-  - DOMAIN-SUFFIX,cn,DIRECT
+  - GEOIP,CN,DIRECT
   - MATCH,{{ .clash.group }}
