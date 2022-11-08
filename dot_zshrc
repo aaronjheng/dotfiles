@@ -9,7 +9,6 @@ if [ -d "$HOME/Library/Caches" ]; then
 fi
 
 STATE_DIR=$HOME/.local/state
-mkdir -p $STATE_DIR
 
 export CARGO_HOME=$"$HOME/.cargo"
 export ETCDCTL_API=3
@@ -22,9 +21,6 @@ export HOMEBREW_NO_INSTALL_CLEANUP=1
 export HOMEBREW_CASK_OPTS="--no-quarantine"
 export NIXPKGS_ALLOW_INSECURE=1
 export NIXPKGS_ALLOW_UNFREE=1
-
-export REDISCLI_HISTFILE="$STATE_DIR/redis/rediscli_history"
-mkdir -p `dirname $REDISCLI_HISTFILE`
 
 # Homebrew
 if [ -f /usr/local/bin/brew ]; then
