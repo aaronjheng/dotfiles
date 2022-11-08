@@ -1,12 +1,10 @@
 README.md
 
-{{- if eq .chezmoi.os "darwin" }}
-.config/nix	
-{{- end }}
-
 {{ if ne .chezmoi.os "darwin" }}
-Library/Preferences/pypoetry/config.toml
+Library
 {{ end }}
+
 {{ if ne .chezmoi.os "linux" }}
-.config/pypoetry/config.toml
+.config/pypoetry
+.config/nix
 {{ end }}
