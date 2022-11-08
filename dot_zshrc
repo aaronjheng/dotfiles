@@ -1,8 +1,10 @@
+# Prompt
 export PROMPT='%n@%m:%1~ %% '
 if [ ! -z "$SSH_CLIENT" ]; then
 	export PROMPT='%F{green}%n@%m%f:%1~ %% '
 fi
 
+# Base Directories
 CACHE_DIR=$HOME/.cache
 if [ -d "$HOME/Library/Caches" ]; then
 	CACHE_DIR=$HOME/Library/Caches
@@ -10,6 +12,7 @@ fi
 
 STATE_DIR=$HOME/.local/state
 
+# Env
 export CARGO_HOME=$"$HOME/.cargo"
 export ETCDCTL_API=3
 export GOPATH="$HOME/.go"
@@ -32,6 +35,7 @@ if [ -e ~/.nix-profile/etc/profile.d/nix.sh ]; then
 	source ~/.nix-profile/etc/profile.d/nix.sh
 fi
 
+# Path
 BIN_DIRS=(
 	$CARGO_HOME/bin
 	$GOPATH/bin
