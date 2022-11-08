@@ -1,0 +1,19 @@
+mixed-port: 7890
+allow-lan: true
+bind-address: '*'
+log-level: info
+mode: rule
+proxies:
+  - name: {{ .clash.name }}
+    type: {{ .clash.type }}
+    server: {{ .clash.host }}
+    port: {{ .clash.port }}
+    password: {{ .clash.password }}
+proxy-groups:
+  - name: {{ .clash.group }}
+    type: select
+    proxies:
+      - {{ .clash.name }}
+rules:
+  - DOMAIN,mirrors.ustc.edu.cn,DIRECT
+  - MATCH,{{ .clash.group }}
