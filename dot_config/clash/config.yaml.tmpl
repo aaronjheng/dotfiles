@@ -9,11 +9,7 @@ proxies:
     server: {{ .clash.host }}
     port: {{ .clash.port }}
     password: {{ .clash.password }}
-proxy-groups:
-  - name: {{ .clash.group }}
-    type: select
-    proxies:
-      - {{ .clash.name }}
 rules:
+  - DOMAIN-SUFFIX,gstatic.com,{{ .clash.name }}
   - GEOIP,CN,DIRECT
-  - MATCH,{{ .clash.group }}
+  - MATCH,{{ .clash.name }}
