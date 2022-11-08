@@ -16,4 +16,5 @@ proxy-groups:
       - {{ .clash.name }}
 rules:
   - DOMAIN,mirrors.ustc.edu.cn,DIRECT
+  - DOMAIN,wiz.cn,DIRECT
   - MATCH,{{ .clash.group }}
