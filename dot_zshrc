@@ -62,7 +62,7 @@ if command -v rustup 1>/dev/null 2>&1; then
 fi
 
 # Functions
-function goworkspace {
+function goworkspace() {
     ssh -t workspace '/home/aaron/.nix-profile/bin/tmux -CC new -A -s workspace'
 }
 
