@@ -52,14 +52,8 @@ alias la='ls -A'
 alias l='ls -CF'
 alias pj="pbpaste | gojq ."
 alias typora="open -a typora"
-
-if command -v brew 1>/dev/null 2>&1; then
-	alias brew='HTTP_PROXY=http://127.0.0.1:7890 HTTPS_PROXY=http://127.0.0.1:7890 brew'
-fi
-
-if command -v rustup 1>/dev/null 2>&1; then
-    alias rustup='HTTP_PROXY=http://127.0.0.1:7890 HTTPS_PROXY=http://127.0.0.1:7890 rustup'
-fi
+alias brew='HTTP_PROXY=http://127.0.0.1:7890 HTTPS_PROXY=http://127.0.0.1:7890 brew'
+alias rustup='HTTP_PROXY=http://127.0.0.1:7890 HTTPS_PROXY=http://127.0.0.1:7890 rustup'
 
 # Functions
 function goworkspace() {
@@ -107,4 +101,3 @@ if [ -f ~/.nix-profile/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 elif [ -f "$HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]; then
     source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
-
