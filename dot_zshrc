@@ -25,16 +25,6 @@ export HOMEBREW_CASK_OPTS="--no-quarantine"
 export NIXPKGS_ALLOW_INSECURE=1
 export NIXPKGS_ALLOW_UNFREE=1
 
-# Homebrew
-if [ -f /usr/local/bin/brew ]; then
-	eval $(/usr/local/bin/brew shellenv)
-fi
-
-# Nix
-if [ -e ~/.nix-profile/etc/profile.d/nix.sh ]; then
-	source ~/.nix-profile/etc/profile.d/nix.sh
-fi
-
 # Path
 BIN_DIRS=(
 	$CARGO_HOME/bin
@@ -42,8 +32,18 @@ BIN_DIRS=(
 )
 for BIN_DIR in ${BIN_DIRS[@]}; do
 	if [ -d "$BIN_DIR" ]; then
-		export PATH="$BIN_DIR:$PATH"
+		PATH="$BIN_DIR:$PATH"
 	fi
+done
+
+# FPATH
+FUNC_DIRS=(
+	~/.nix-profile/share/zsh/site-functions
+	/usr/share/zsh/site-functions
+	/usr/share/zsh/vendor-completions
+)
+for FUNC_DIR in ${FUNC_DIRS[@]}; do
+	FPATH="$FUNC_DIR:$FPATH"
 done
 
 # Aliases
@@ -70,16 +70,17 @@ function proxyon() {
 }
 
 # Completions
-if [ -d ~/.nix-profile/share/zsh/site-functions ]; then
-    FPATH=~/.nix-profile/share/zsh/site-functions:$FPATH
-fi
-
-# For Debian derivations
-if [ -d /usr/share/zsh/vendor-completions ]; then
-    FPATH=/usr/share/zsh/vendor-completions:/usr/share/zsh/site-functions:$FPATH
-fi
-
 autoload -Uz compinit && compinit
+
+# Homebrew
+if [ -f /usr/local/bin/brew ]; then
+    eval $(/usr/local/bin/brew shellenv)
+fi
+
+# Nix
+if [ -e ~/.nix-profile/etc/profile.d/nix.sh ]; then
+    source ~/.nix-profile/etc/profile.d/nix.sh
+fi
 
 # Kafkactl
 if command -v kafkactl 1>/dev/null 2>&1; then
