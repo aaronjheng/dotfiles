@@ -50,13 +50,15 @@ done
 alias ll='ls -alv'
 alias la='ls -A'
 alias l='ls -CF'
-alias rustup='HTTP_PROXY=http://127.0.0.1:7890 HTTPS_PROXY=http://127.0.0.1:7890 rustup'
 alias pj="pbpaste | gojq ."
 alias typora="open -a typora"
 
 if command -v brew 1>/dev/null 2>&1; then
 	alias brew='HTTP_PROXY=http://127.0.0.1:7890 HTTPS_PROXY=http://127.0.0.1:7890 brew'
-	alias brew-noproxy="${HOMEBREW_PREFIX}/bin/brew"
+fi
+
+if command -v rustup 1>/dev/null 2>&1; then
+    alias rustup='HTTP_PROXY=http://127.0.0.1:7890 HTTPS_PROXY=http://127.0.0.1:7890 rustup'
 fi
 
 # Functions
