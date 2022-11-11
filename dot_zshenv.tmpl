@@ -1,0 +1,60 @@
+# Prompt
+export PROMPT='%n@%m:%1~ %% '
+if [ ! -z "$SSH_CLIENT" ]; then
+	export PROMPT='%F{green}%n@%m%f:%1~ %% '
+fi
+
+# Base Directories
+CACHE_DIR=$HOME/.cache
+if [ -d "$HOME/Library/Caches" ]; then
+	CACHE_DIR=$HOME/Library/Caches
+fi
+
+STATE_DIR=$HOME/.local/state
+
+export CARGO_HOME=$"$HOME/.cargo"
+export ETCDCTL_API=3
+export GOPATH="$HOME/.go"
+export GOCACHE="$CACHE_DIR/go/build"
+export GOMODCACHE="$CACHE_DIR/go/mod"
+export GOSUMDB=sum.golang.google.cn
+export HOMEBREW_NO_AUTO_UPDATE=1
+export HOMEBREW_NO_INSTALL_CLEANUP=1
+export HOMEBREW_CASK_OPTS="--no-quarantine"
+export NIXPKGS_ALLOW_INSECURE=1
+export NIXPKGS_ALLOW_UNFREE=1
+export GOPROXY=https://goproxy.cn,direct
+
+# Path
+BIN_DIRS=(
+	$CARGO_HOME/bin
+	$GOPATH/bin
+)
+for BIN_DIR in ${BIN_DIRS[@]}; do
+	if [ -d "$BIN_DIR" ]; then
+		PATH="$BIN_DIR:$PATH"
+	fi
+done
+
+# FPATH
+FUNC_DIRS=(
+	~/.nix-profile/share/zsh/site-functions
+	/usr/share/zsh/site-functions
+	/usr/share/zsh/vendor-completions
+)
+for FUNC_DIR in ${FUNC_DIRS[@]}; do
+	FPATH="$FUNC_DIR:$FPATH"
+done
+
+# Completions
+autoload -Uz compinit && compinit
+
+# Nix
+if [ -e ~/.nix-profile/etc/profile.d/nix.sh ]; then
+    source ~/.nix-profile/etc/profile.d/nix.sh
+fi
+
+# Homebrew
+if [ -f /usr/local/bin/brew ]; then
+    eval $(/usr/local/bin/brew shellenv)
+fi

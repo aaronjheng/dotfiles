@@ -1,51 +1,3 @@
-# Prompt
-export PROMPT='%n@%m:%1~ %% '
-if [ ! -z "$SSH_CLIENT" ]; then
-	export PROMPT='%F{green}%n@%m%f:%1~ %% '
-fi
-
-# Base Directories
-CACHE_DIR=$HOME/.cache
-if [ -d "$HOME/Library/Caches" ]; then
-	CACHE_DIR=$HOME/Library/Caches
-fi
-
-STATE_DIR=$HOME/.local/state
-
-# Env
-export CARGO_HOME=$"$HOME/.cargo"
-export ETCDCTL_API=3
-export GOPATH="$HOME/.go"
-export GOCACHE="$CACHE_DIR/go/build"
-export GOMODCACHE="$CACHE_DIR/go/mod"
-export GOSUMDB=sum.golang.google.cn
-export HOMEBREW_NO_AUTO_UPDATE=1
-export HOMEBREW_NO_INSTALL_CLEANUP=1
-export HOMEBREW_CASK_OPTS="--no-quarantine"
-export NIXPKGS_ALLOW_INSECURE=1
-export NIXPKGS_ALLOW_UNFREE=1
-
-# Path
-BIN_DIRS=(
-	$CARGO_HOME/bin
-	$GOPATH/bin
-)
-for BIN_DIR in ${BIN_DIRS[@]}; do
-	if [ -d "$BIN_DIR" ]; then
-		PATH="$BIN_DIR:$PATH"
-	fi
-done
-
-# FPATH
-FUNC_DIRS=(
-	~/.nix-profile/share/zsh/site-functions
-	/usr/share/zsh/site-functions
-	/usr/share/zsh/vendor-completions
-)
-for FUNC_DIR in ${FUNC_DIRS[@]}; do
-	FPATH="$FUNC_DIR:$FPATH"
-done
-
 # Aliases
 alias ll='ls -alv'
 alias la='ls -A'
@@ -57,26 +9,13 @@ alias rustup='HTTP_PROXY=http://127.0.0.1:7890 HTTPS_PROXY=http://127.0.0.1:7890
 
 # Functions
 function goworkspace() {
-    ssh -t workspace '/home/aaron/.nix-profile/bin/tmux -CC new -A -s workspace'
+	ssh -t workspace '/home/aaron/.nix-profile/bin/tmux -CC new -A -s workspace'
 }
 
 function proxyon() {
 	export HTTP_PROXY=http://127.0.0.1:7890
 	export HTTPS_PROXY=http://127.0.0.1:7890
 }
-
-# Completions
-autoload -Uz compinit && compinit
-
-# Homebrew
-if [ -f /usr/local/bin/brew ]; then
-    eval $(/usr/local/bin/brew shellenv)
-fi
-
-# Nix
-if [ -e ~/.nix-profile/etc/profile.d/nix.sh ]; then
-    source ~/.nix-profile/etc/profile.d/nix.sh
-fi
 
 # Kafkactl
 if command -v kafkactl 1>/dev/null 2>&1; then
@@ -97,7 +36,7 @@ fi
 
 # zsh-syntax-highlighting
 if [ -f ~/.nix-profile/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
-    source ~/.nix-profile/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+	source ~/.nix-profile/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 elif [ -f "$HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]; then
-    source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+	source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
