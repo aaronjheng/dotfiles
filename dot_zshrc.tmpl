@@ -2,15 +2,19 @@
 alias ll='ls -alv'
 alias la='ls -A'
 alias l='ls -CF'
+{{- if eq .chezmoi.os "darwin" }}
 alias pj="pbpaste | gojq ."
 alias typora="open -a typora"
 alias brew='HTTP_PROXY=http://127.0.0.1:7890 HTTPS_PROXY=http://127.0.0.1:7890 brew'
+{{ end }}
 alias rustup='HTTP_PROXY=http://127.0.0.1:7890 HTTPS_PROXY=http://127.0.0.1:7890 rustup'
 
 # Functions
+{{ if eq .chezmoi.os "darwin" -}}
 function goworkspace() {
 	ssh -t workspace 'tmux -CC new -A -s workspace'
 }
+{{ end -}}
 
 function proxyon() {
 	export HTTP_PROXY=http://127.0.0.1:7890
@@ -27,16 +31,25 @@ if command -v zoxide 1>/dev/null 2>&1; then
 	eval "$(zoxide init zsh)"
 fi
 
+{{ if eq .chezmoi.os "linux" -}}
 # zsh-autosuggestions
 if [ -f ~/.nix-profile/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
 	source ~/.nix-profile/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-elif [ -f "$HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ]; then
-	source $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 fi
 
 # zsh-syntax-highlighting
 if [ -f ~/.nix-profile/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
 	source ~/.nix-profile/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-elif [ -f "$HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]; then
+fi
+{{ end }}
+{{ if eq .chezmoi.os "darwin" -}}
+# zsh-autosuggestions
+if [ -f "$HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ]; then
+	source $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+fi
+
+# zsh-syntax-highlighting
+if [ -f "$HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]; then
 	source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
+{{ end -}}
