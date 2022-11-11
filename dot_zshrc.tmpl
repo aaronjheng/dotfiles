@@ -10,16 +10,16 @@ alias brew='HTTP_PROXY=http://127.0.0.1:7890 HTTPS_PROXY=http://127.0.0.1:7890 b
 alias rustup='HTTP_PROXY=http://127.0.0.1:7890 HTTPS_PROXY=http://127.0.0.1:7890 rustup'
 
 # Functions
-{{ if eq .chezmoi.os "darwin" -}}
-function goworkspace() {
-	ssh -t workspace 'tmux -CC new -A -s workspace'
-}
-{{- end }}
-
 function proxyon() {
 	export HTTP_PROXY=http://127.0.0.1:7890
 	export HTTPS_PROXY=http://127.0.0.1:7890
 }
+
+{{- if eq .chezmoi.os "darwin" }}
+function goworkspace() {
+	ssh -t workspace 'tmux -CC new -A -s workspace'
+}
+{{- end }}
 
 # Kafkactl
 if command -v kafkactl 1>/dev/null 2>&1; then
