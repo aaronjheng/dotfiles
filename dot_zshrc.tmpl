@@ -15,11 +15,11 @@ function proxyon() {
 	export HTTPS_PROXY=http://127.0.0.1:7890
 }
 
-{{- if eq .chezmoi.os "darwin" }}
+{{- if eq .chezmoi.os "darwin" -}}
 function goworkspace() {
 	ssh -t workspace 'tmux -CC new -A -s workspace'
 }
-{{- end }}
+{{ end }}
 
 # Kafkactl
 if command -v kafkactl 1>/dev/null 2>&1; then
