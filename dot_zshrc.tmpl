@@ -14,7 +14,7 @@ alias rustup='HTTP_PROXY=http://127.0.0.1:7890 HTTPS_PROXY=http://127.0.0.1:7890
 function goworkspace() {
 	ssh -t workspace 'tmux -CC new -A -s workspace'
 }
-{{ end -}}
+{{- end }}
 
 function proxyon() {
 	export HTTP_PROXY=http://127.0.0.1:7890
@@ -42,7 +42,8 @@ if [ -f ~/.nix-profile/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 	source ~/.nix-profile/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
 {{ end }}
-{{ if eq .chezmoi.os "darwin" -}}
+
+{{- if eq .chezmoi.os "darwin" -}}
 # zsh-autosuggestions
 if [ -f "$HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ]; then
 	source $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
