@@ -9,7 +9,7 @@ alias rustup='HTTP_PROXY=http://127.0.0.1:7890 HTTPS_PROXY=http://127.0.0.1:7890
 
 # Functions
 function goworkspace() {
-	ssh -t workspace '/home/aaron/.nix-profile/bin/tmux -CC new -A -s workspace'
+	ssh -t workspace 'tmux -CC new -A -s workspace'
 }
 
 function proxyon() {
