@@ -11,47 +11,47 @@ alias rustup='HTTP_PROXY=http://127.0.0.1:7890 HTTPS_PROXY=http://127.0.0.1:7890
 
 # Functions
 function proxyon() {
-	export HTTP_PROXY=http://127.0.0.1:7890
-	export HTTPS_PROXY=http://127.0.0.1:7890
+  export HTTP_PROXY=http://127.0.0.1:7890
+  export HTTPS_PROXY=http://127.0.0.1:7890
 }
 
 {{ if eq .chezmoi.os "darwin" -}}
 function goworkspace() {
-	ssh -t workspace 'tmux -CC new -A -s workspace'
+  ssh -t workspace 'tmux -CC new -A -s workspace'
 }
 
 {{ end -}}
 
 # Kafkactl
 if command -v kafkactl 1>/dev/null 2>&1; then
-	source <(kafkactl completion zsh) && compdef _kafkactl kafkactl
+  source <(kafkactl completion zsh) && compdef _kafkactl kafkactl
 fi
 
 # Zoxide
 if command -v zoxide 1>/dev/null 2>&1; then
-	eval "$(zoxide init zsh)"
+  eval "$(zoxide init zsh)"
 fi
 
 {{ if eq .chezmoi.os "linux" -}}
 # zsh-autosuggestions
 if [ -f ~/.nix-profile/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
-	source ~/.nix-profile/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+  source ~/.nix-profile/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 fi
 
 # zsh-syntax-highlighting
 if [ -f ~/.nix-profile/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
-	source ~/.nix-profile/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+  source ~/.nix-profile/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
 {{ end }}
 
 {{- if eq .chezmoi.os "darwin" -}}
 # zsh-autosuggestions
 if [ -f "$HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ]; then
-	source $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+  source $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 fi
 
 # zsh-syntax-highlighting
 if [ -f "$HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]; then
-	source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+  source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
 {{ end -}}

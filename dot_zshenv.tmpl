@@ -1,14 +1,14 @@
 # Prompt
 export PROMPT='%n@%m:%1~ %% '
 if [ ! -z "$SSH_CLIENT" ]; then
-	export PROMPT='%F{green}%n@%m%f:%1~ %% '
+  export PROMPT='%F{green}%n@%m%f:%1~ %% '
 fi
 
 # Base Directories
 {{ if eq .chezmoi.os "darwin" -}}
-	CACHE_DIR=$HOME/Library/Caches
+CACHE_DIR=$HOME/Library/Caches
 {{- else -}}
-	CACHE_DIR=$HOME/.cache
+CACHE_DIR=$HOME/.cache
 {{- end }}
 STATE_DIR=$HOME/.local/state
 
@@ -27,23 +27,23 @@ export NIXPKGS_ALLOW_UNFREE=1
 
 # Path
 BIN_DIRS=(
-	$CARGO_HOME/bin
-	$GOPATH/bin
+  $CARGO_HOME/bin
+  $GOPATH/bin
 )
 for BIN_DIR in ${BIN_DIRS[@]}; do
-	if [ -d "$BIN_DIR" ]; then
-		PATH="$BIN_DIR:$PATH"
-	fi
+  if [ -d "$BIN_DIR" ]; then
+    PATH="$BIN_DIR:$PATH"
+  fi
 done
 
 # FPATH
 FUNC_DIRS=(
-	~/.nix-profile/share/zsh/site-functions
-	/usr/share/zsh/site-functions
-	/usr/share/zsh/vendor-completions
+  ~/.nix-profile/share/zsh/site-functions
+  /usr/share/zsh/site-functions
+  /usr/share/zsh/vendor-completions
 )
 for FUNC_DIR in ${FUNC_DIRS[@]}; do
-	FPATH="$FUNC_DIR:$FPATH"
+  FPATH="$FUNC_DIR:$FPATH"
 done
 
 # Completions
@@ -51,10 +51,10 @@ autoload -Uz compinit && compinit
 
 # Nix
 if [ -e ~/.nix-profile/etc/profile.d/nix.sh ]; then
-    source ~/.nix-profile/etc/profile.d/nix.sh
+  source ~/.nix-profile/etc/profile.d/nix.sh
 fi
 
 # Homebrew
 if [ -f /usr/local/bin/brew ]; then
-    eval $(/usr/local/bin/brew shellenv)
+  eval $(/usr/local/bin/brew shellenv)
 fi
