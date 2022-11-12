@@ -5,11 +5,11 @@ if [ ! -z "$SSH_CLIENT" ]; then
 fi
 
 # Base Directories
-CACHE_DIR=$HOME/.cache
-if [ -d "$HOME/Library/Caches" ]; then
+{{ if eq .chezmoi.os "darwin" -}}
 	CACHE_DIR=$HOME/Library/Caches
-fi
-
+{{- else -}}
+	CACHE_DIR=$HOME/.cache
+{{- end }}
 STATE_DIR=$HOME/.local/state
 
 export CARGO_HOME=$"$HOME/.cargo"
@@ -17,13 +17,13 @@ export ETCDCTL_API=3
 export GOPATH="$HOME/.go"
 export GOCACHE="$CACHE_DIR/go/build"
 export GOMODCACHE="$CACHE_DIR/go/mod"
+export GOPROXY=https://goproxy.cn,direct
 export GOSUMDB=sum.golang.google.cn
 export HOMEBREW_NO_AUTO_UPDATE=1
 export HOMEBREW_NO_INSTALL_CLEANUP=1
 export HOMEBREW_CASK_OPTS="--no-quarantine"
 export NIXPKGS_ALLOW_INSECURE=1
 export NIXPKGS_ALLOW_UNFREE=1
-export GOPROXY=https://goproxy.cn,direct
 
 # Path
 BIN_DIRS=(
