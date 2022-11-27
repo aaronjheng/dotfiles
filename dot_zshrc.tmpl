@@ -19,7 +19,8 @@ function proxyon() {
 
 {{ if eq .chezmoi.os "darwin" -}}
 function goworkspace() {
-  ssh -t workspace 'tmux -CC new -A -s workspace'
+  local serial=`system_profiler -json SPHardwareDataType | gojq -r '.SPHardwareDataType[0].serial_number'`
+  ssh -t workspace "tmux -CC new -A -s workspace-${serial}"
 }
 
 {{ end -}}
