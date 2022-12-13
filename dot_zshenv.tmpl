@@ -20,7 +20,6 @@ export GOCACHE="$CACHE_DIR/go/build"
 export GOMODCACHE="$CACHE_DIR/go/mod"
 export GOPROXY=https://goproxy.cn,direct
 export GOSUMDB=sum.golang.google.cn
-export HISTFILE=/dev/null
 export HOMEBREW_NO_AUTO_UPDATE=1
 export HOMEBREW_NO_INSTALL_CLEANUP=1
 export HOMEBREW_CASK_OPTS="--no-quarantine"
@@ -30,6 +29,8 @@ export NIXPKGS_ALLOW_UNFREE=1
 export NPM_CONFIG_USERCONFIG=$HOME/.config/npm/npmrc
 export REDISCLI_HISTFILE=/dev/null
 export VSCE_PAT={{ .vsce.token }}
+export SAVEHIST=0
+export HISTSIZE=0
 
 # Path
 BIN_DIRS=(
