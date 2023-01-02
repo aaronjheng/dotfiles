@@ -27,9 +27,9 @@ function goworkspace() {
 
 {{ end -}}
 
-# Kafkactl
-if command -v kafkactl 1>/dev/null 2>&1; then
-  source <(kafkactl completion zsh) && compdef _kafkactl kafkactl
+# kafka
+if command -v kafka 1>/dev/null 2>&1; then
+  source <(kafka completion zsh) && compdef _kafka kafka
 fi
 
 # Zoxide
