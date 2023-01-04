@@ -20,3 +20,6 @@
 [interactive]
     diffFilter = delta --color-only
 
+[http "https://github.com"]
+	proxy = http://127.0.0.1:7890
+
