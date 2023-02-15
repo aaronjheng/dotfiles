@@ -1,1 +1,11 @@
-{{- template "systemd/clash.service.tmpl" . -}}
+[Unit]
+Description=A rule-based tunnel in Go
+After=network.target
+
+[Service]
+Type=simple
+ExecStart={{ .chezmoi.homeDir }}/.nix-profile/bin/clash -f {{ .chezmoi.homeDir }}/.config/clash/config.yaml
+Restart=always
+
+[Install]
+WantedBy=default.target
