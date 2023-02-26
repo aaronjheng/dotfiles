@@ -27,9 +27,14 @@ function goworkspace() {
 
 {{ end -}}
 
-# kafka
+# Kafka
 if command -v kafka 1>/dev/null 2>&1; then
   source <(kafka completion zsh) && compdef _kafka kafka
+fi
+
+# Starship
+if command -v starship 1>/dev/null 2>&1; then
+  eval "$(starship init zsh)"
 fi
 
 # Zoxide
@@ -60,3 +65,5 @@ if [ -f "$HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.
   source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
 {{ end -}}
+
+
