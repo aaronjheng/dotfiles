@@ -32,11 +32,6 @@ if command -v kafka 1>/dev/null 2>&1; then
   source <(kafka completion zsh) && compdef _kafka kafka
 fi
 
-# Starship
-if command -v starship 1>/dev/null 2>&1; then
-  eval "$(starship init zsh)"
-fi
-
 # Zoxide
 if command -v zoxide 1>/dev/null 2>&1; then
   eval "$(zoxide init zsh)"
@@ -57,12 +52,12 @@ fi
 {{- if eq .chezmoi.os "darwin" -}}
 # zsh-autosuggestions
 if [ -f "$HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ]; then
-  source $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+  source "$HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 fi
 
 # zsh-syntax-highlighting
 if [ -f "$HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]; then
-  source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+  source "$HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 fi
 {{ end -}}
 
