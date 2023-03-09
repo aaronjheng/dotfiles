@@ -60,10 +60,6 @@ if [ -e ~/.nix-profile/etc/profile.d/nix.sh ]; then
   source ~/.nix-profile/etc/profile.d/nix.sh
 fi
 
-if [ -e /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh ]; then
-    . /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
-fi
-
 # Homebrew
 if [ -f /usr/local/bin/brew ]; then
   eval $(/usr/local/bin/brew shellenv)
