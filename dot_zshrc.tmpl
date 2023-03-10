@@ -3,7 +3,6 @@ alias ll='ls -alv'
 alias la='ls -A'
 alias l='ls -CF'
 {{- if eq .chezmoi.os "darwin" }}
-alias pj="pbpaste | gojq ."
 alias typora="open -a typora"
 alias brew='HTTP_PROXY=http://127.0.0.1:7890 HTTPS_PROXY=http://127.0.0.1:7890 brew'
 {{- end }}
@@ -21,7 +20,7 @@ function proxyon() {
 
 {{ if eq .chezmoi.os "darwin" -}}
 function goworkspace() {
-  local serial=`system_profiler -json SPHardwareDataType | gojq -r '.SPHardwareDataType[0].serial_number'`
+  local serial=`system_profiler -json SPHardwareDataType | yq -r '.SPHardwareDataType[0].serial_number'`
   ssh -t workspace "tmux -CC new -A -s workspace-${serial}"
 }
 
