@@ -12,7 +12,7 @@ CACHE_DIR=$HOME/.cache
 {{- end }}
 STATE_DIR=$HOME/.local/state
 
-export CARGO_HOME=$"$HOME/.cargo"
+export CARGO_HOME="$HOME/.cargo"
 export ETCDCTL_API=3
 export GITHUB_TOKEN={{ .github.token }}
 export GOPATH="$HOME/.go"
