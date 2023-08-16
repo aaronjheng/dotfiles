@@ -24,6 +24,14 @@ function goworkspace() {
   ssh -t workspace "tmux -CC new -A -s workspace-${serial}"
 }
 
+function launchctl() {
+	if [[ "$1" == "restart" ]]; then
+		command launchctl stop "$2" && command launchctl start "$2"
+	else
+		command launchctl "$@"
+	fi
+}
+
 {{ end -}}
 
 # Kafka
