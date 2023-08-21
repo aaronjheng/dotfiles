@@ -23,3 +23,8 @@
 [http "https://github.com"]
 	proxy = http://127.0.0.1:7890
 
+[http "https://git.savannah.gnu.org"]
+    proxy = http://127.0.0.1:7890
+
+[url "https://git.savannah.gnu.org/git"]
+	insteadOf = git://git.savannah.gnu.org
