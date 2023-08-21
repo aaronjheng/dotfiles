@@ -30,17 +30,6 @@ export REDISCLI_HISTFILE=/dev/null
 export TRUNK_MIXPANEL=off
 export VSCE_PAT={{ .vsce.token }}
 
-# Path
-BIN_DIRS=(
-  $CARGO_HOME/bin
-  $GOPATH/bin
-)
-for BIN_DIR in ${BIN_DIRS[@]}; do
-  if [ -d "$BIN_DIR" ]; then
-    PATH="$BIN_DIR:$PATH"
-  fi
-done
-
 # FPATH
 FUNC_DIRS=(
   ~/.nix-profile/share/zsh/site-functions
