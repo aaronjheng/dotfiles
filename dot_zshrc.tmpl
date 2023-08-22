@@ -51,6 +51,8 @@ function launchctl() {
 
 {{ end -}}
 
+disable -r time
+
 # Kafka
 if command -v kafka 1>/dev/null 2>&1; then
   source <(kafka completion zsh) && compdef _kafka kafka
