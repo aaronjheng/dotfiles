@@ -35,6 +35,7 @@ FUNC_DIRS=(
   ~/.nix-profile/share/zsh/site-functions
   /usr/share/zsh/site-functions
   /usr/share/zsh/vendor-completions
+  /opt/homebrew/share/zsh/site-functions
 )
 for FUNC_DIR in ${FUNC_DIRS[@]}; do
   FPATH="$FUNC_DIR:$FPATH"
