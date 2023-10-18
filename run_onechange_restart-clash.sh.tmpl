@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+{{ if eq .chezmoi.os "linux" -}}
+systemctl --user restart clash
+{{ else if eq .chezmoi.os "darwin" -}}
+launchctl stop clash
+launchctl start clash
+{{ end -}}
+
+# clash config digest: {{ include "dot_config/clash/config.yaml.tmpl" | sha256sum }}
