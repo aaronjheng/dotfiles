@@ -12,18 +12,18 @@ alias rustup='HTTP_PROXY=http://127.0.0.1:7890 HTTPS_PROXY=http://127.0.0.1:7890
 BIN_DIRS=(
   $CARGO_HOME/bin
   $GOPATH/bin
+
+{{- if eq .chezmoi.os "darwin"}}
+  /nix/var/nix/profiles/default/bin
+  $HOME/.nix-profile/bin
+
+{{- end }}
 )
 for BIN_DIR in ${BIN_DIRS[@]}; do
   if [ -d "$BIN_DIR" ]; then
     PATH="$BIN_DIR:$PATH"
   fi
 done
-
-{{ if eq .chezmoi.os "darwin" -}}
-
-PATH="$HOME/.nix-profile/bin:/nix/var/nix/profiles/default/bin:$PATH"
-
-{{ end -}}
 
 # Functions
 function proxyon() {
