@@ -42,11 +42,11 @@ function goworkspace() {
 }
 
 function launchctl() {
-	if [[ "$1" == "restart" ]]; then
-		command launchctl stop "$2" && command launchctl start "$2"
-	else
-		command launchctl "$@"
-	fi
+  if [[ "$1" == "restart" ]]; then
+    command launchctl stop "$2" && command launchctl start "$2"
+  else
+    command launchctl "$@"
+  fi
 }
 
 {{ end -}}
