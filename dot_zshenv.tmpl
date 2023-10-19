@@ -45,16 +45,22 @@ done
 autoload -Uz compinit && compinit -d $HOME/.cache/zsh/zcompdump-$ZSH_VERSION
 zstyle ':completion:*' cache-path $HOME/.cache/zsh/zcompcache
 
+{{ if eq .chezmoi.os "linux" -}}
 # Nix
 if [ -e ~/.nix-profile/etc/profile.d/nix.sh ]; then
   source ~/.nix-profile/etc/profile.d/nix.sh
 fi
+{{ end -}}
 
+{{ if eq .chezmoi.os "darwin" -}}
 # Homebrew
-if [ -f /usr/local/bin/brew ]; then
-  eval $(/usr/local/bin/brew shellenv)
-fi
-
+{{ if eq .chezmoi.arch "arm64" -}}
 if [ -f /opt/homebrew/bin/brew ]; then
   eval $(/opt/homebrew/bin/brew shellenv)
 fi
+{{ else -}}
+if [ -f /usr/local/bin/brew ]; then
+  eval $(/usr/local/bin/brew shellenv)
+fi
+{{ end -}}
+{{ end -}}
