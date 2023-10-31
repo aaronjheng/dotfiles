@@ -72,3 +72,12 @@ fi
 if [ -f ~/.nix-profile/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
   source ~/.nix-profile/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
+
+{{ if eq .chezmoi.os "darwin" -}}
+
+# iTerm2 Shell Integration
+if [ -f ~/.iterm2_shell_integration.zsh ]; then
+  source ~/.iterm2_shell_integration.zsh
+fi
+
+{{ end -}}
