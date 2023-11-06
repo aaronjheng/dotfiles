@@ -6,11 +6,11 @@ fi
 
 # Base Directories
 {{ if eq .chezmoi.os "darwin" -}}
-CACHE_DIR=$HOME/Library/Caches
+CACHE_DIR="$HOME/Library/Caches"
 {{- else -}}
-CACHE_DIR=$HOME/.cache
+CACHE_DIR="$HOME/.cache"
 {{- end }}
-STATE_DIR=$HOME/.local/state
+STATE_DIR="$HOME/.local/state"
 
 export CARGO_HOME="$HOME/.cargo"
 export ETCDCTL_API=3
@@ -29,7 +29,6 @@ export NPM_CONFIG_USERCONFIG="$HOME/.config/npm/npmrc"
 export REDISCLI_HISTFILE=/dev/null
 export TRUNK_MIXPANEL=off
 export VSCE_PAT={{ .vsce.token }}
-export HISTFILE="$STATE_DIR/zsh/history"
 
 # FPATH
 FUNC_DIRS=(
