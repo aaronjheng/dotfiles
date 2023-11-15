@@ -42,8 +42,8 @@ for FUNC_DIR in ${FUNC_DIRS[@]}; do
 done
 
 # Completions
-autoload -Uz compinit && compinit -d $HOME/.cache/zsh/zcompdump-$ZSH_VERSION
-zstyle ':completion:*' cache-path $HOME/.cache/zsh/zcompcache
+autoload -Uz compinit && compinit -d "$CACHE_DIR/zsh/zcompdump-$ZSH_VERSION"
+zstyle ':completion:*' cache-path "$CACHE_DIR/zsh/zcompcache"
 
 {{ if eq .chezmoi.os "linux" -}}
 # Nix

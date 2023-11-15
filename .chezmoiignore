@@ -5,6 +5,7 @@ Library
 {{ end }}
 
 {{ if ne .chezmoi.os "linux" }}
+.cache
 .config/pypoetry
 .config/nix
 .config/systemd
