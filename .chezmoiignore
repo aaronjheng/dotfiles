@@ -9,4 +9,5 @@ Library
 .config/pypoetry
 .config/nix
 .config/systemd
+.local
 {{ end }}
