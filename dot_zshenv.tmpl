@@ -33,7 +33,7 @@ export VSCE_PAT={{ .vsce.token }}
 
 # FPATH
 FUNC_DIRS=(
-  ~/.nix-profile/share/zsh/site-functions
+  ${HOME}/.local/state/nix/profile/share/zsh/site-functions
   /usr/share/zsh/site-functions
   /usr/share/zsh/vendor-completions
   /opt/homebrew/share/zsh/site-functions
@@ -48,8 +48,8 @@ zstyle ':completion:*' cache-path "$CACHE_DIR/zsh/zcompcache"
 
 {{ if eq .chezmoi.os "linux" -}}
 # Nix
-if [ -e ~/.nix-profile/etc/profile.d/nix.sh ]; then
-  source ~/.nix-profile/etc/profile.d/nix.sh
+if [ -e ${HOME}/.local/state/nix/profile/etc/profile.d/nix.sh ]; then
+  source ${HOME}/.local/state/nix/profile/etc/profile.d/nix.sh
 fi
 {{ end -}}
 

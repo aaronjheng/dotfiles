@@ -15,7 +15,7 @@ BIN_DIRS=(
 
 {{- if eq .chezmoi.os "darwin"}}
   /nix/var/nix/profiles/default/bin
-  $HOME/.nix-profile/bin
+  $HOME/.local/state/nix/profile/bin
 
 {{- end }}
 )
@@ -42,11 +42,16 @@ function goworkspace() {
 }
 
 function launchctl() {
-  if [[ "$1" == "restart" ]]; then
-    command launchctl stop "$2" && command launchctl start "$2"
-  else
-    command launchctl "$@"
-  fi
+	case "$1" in
+	"reload")
+		command launchctl unload "$2" && command launchctl load "$2"
+		;;
+	"restart")
+		command launchctl stop "$2" && command launchctl start "$2"
+		;;
+	*)
+		command launchctl "$@"
+	esac
 }
 
 {{ end -}}
@@ -69,13 +74,13 @@ if command -v zoxide 1>/dev/null 2>&1; then
 fi
 
 # zsh-autosuggestions
-if [ -f ~/.nix-profile/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
-  source ~/.nix-profile/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+if [ -f ${HOME}/.local/state/nix/profile/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
+  source ${HOME}/.local/state/nix/profile/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 fi
 
 # zsh-syntax-highlighting
-if [ -f ~/.nix-profile/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
-  source ~/.nix-profile/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+if [ -f ${HOME}/.local/state/nix/profile/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
+  source ${HOME}/.local/state/nix/profile/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
 
 {{ if eq .chezmoi.os "darwin" -}}

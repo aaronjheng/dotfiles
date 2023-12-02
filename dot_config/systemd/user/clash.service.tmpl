@@ -4,7 +4,7 @@ After=network.target
 
 [Service]
 Type=simple
-ExecStart={{ .chezmoi.homeDir }}/.nix-profile/bin/clash -f {{ .chezmoi.homeDir }}/.config/clash/config.yaml
+ExecStart={{ .chezmoi.homeDir }}/.local/state/nix/profile/bin/clash -f {{ .chezmoi.homeDir }}/.config/clash/config.yaml
 Restart=always
 
 [Install]
