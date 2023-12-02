@@ -73,23 +73,16 @@ if command -v zoxide 1>/dev/null 2>&1; then
   eval "$(zoxide init zsh)"
 fi
 
-# zsh-autosuggestions
-if [ -f ${HOME}/.local/state/nix/profile/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
-  source ${HOME}/.local/state/nix/profile/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-fi
+BOOTSTRAP_SCRIPTS=(
+  "${HOME}/.local/state/nix/profile/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+  "${HOME}/.local/state/nix/profile/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
-# zsh-syntax-highlighting
-if [ -f ${HOME}/.local/state/nix/profile/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
-  source ${HOME}/.local/state/nix/profile/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-fi
-
-{{ if eq .chezmoi.os "darwin" -}}
-
-# iTerm2 Shell Integration
-if [ -f ~/.iterm2_shell_integration.zsh ]; then
-  source ~/.iterm2_shell_integration.zsh
-fi
-
-{{ end -}}
+  "${HOME}/.iterm2_shell_integration.zsh"
+)
+for SCRIPT in ${BOOTSTRAP_SCRIPTS[@]}; do
+  if [ -f "${SCRIPT}" ]; then
+    source "${SCRIPT}"
+  fi
+done
 
 export HISTFILE="$STATE_DIR/zsh/history"
