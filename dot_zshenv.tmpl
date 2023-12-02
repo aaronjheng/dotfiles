@@ -1,9 +1,3 @@
-# Prompt
-export PROMPT='%n@%m:%1~ %% '
-if [ ! -z "$SSH_CLIENT" ]; then
-  export PROMPT='%F{green}%n@%m%f:%1~ %% '
-fi
-
 # Base Directories
 {{ if eq .chezmoi.os "darwin" -}}
 CACHE_DIR="${HOME}/Library/Caches"
