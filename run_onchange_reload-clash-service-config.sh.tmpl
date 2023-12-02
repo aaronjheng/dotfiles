@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+if command -v clash 1>/dev/null 2>&1; then
+{{ if eq .chezmoi.os "linux" -}}
+	systemctl --user daemon-reload
+{{ else if eq .chezmoi.os "darwin" -}}
+	launchctl unload {{ .chezmoi.homeDir }}/Library/LaunchAgents/clash.plist
+	launchctl load {{ .chezmoi.homeDir }}/Library/LaunchAgents/clash.plist
+{{ end -}}
+fi
+
+{{ if eq .chezmoi.os "linux" -}}
+# clash config digest: {{ include "dot_config/systemd/user/clash.service.tmpl" | sha256sum }}
+{{ else if eq .chezmoi.os "darwin" -}}
+# clash config digest: {{ include "Library/LaunchAgents/clash.plist.tmpl" | sha256sum }}
+{{ end -}}
