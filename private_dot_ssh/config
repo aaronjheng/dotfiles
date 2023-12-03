@@ -1,0 +1,14 @@
+Include ~/.ssh/config.d/*
+
+Host *
+	ServerAliveInterval 60
+	ServerAliveCountMax 3
+	StrictHostKeyChecking no
+	IdentityFile ~/.ssh/id_ed25519
+	IdentityFile ~/.ssh/id_rsa
+
+Host workspace
+	HostName example.xyz
+	Port 22
+	User aaron
+
