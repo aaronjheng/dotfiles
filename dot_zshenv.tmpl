@@ -26,6 +26,8 @@ export TRUNK_MIXPANEL=off
 export VSCE_PAT={{ .vsce.token }}
 export WGETRC="${HOME}/.config/wgetrc"
 
+skip_global_compinit=1
+
 # FPATH
 FUNC_DIRS=(
   ${HOME}/.local/state/nix/profile/share/zsh/site-functions
@@ -36,10 +38,6 @@ FUNC_DIRS=(
 for FUNC_DIR in ${FUNC_DIRS[@]}; do
   FPATH="$FUNC_DIR:$FPATH"
 done
-
-# Completions
-autoload -Uz compinit && compinit -d "$CACHE_DIR/zsh/zcompdump-$ZSH_VERSION"
-zstyle ':completion:*' cache-path "$CACHE_DIR/zsh/zcompcache"
 
 {{ if eq .chezmoi.os "linux" -}}
 # Nix

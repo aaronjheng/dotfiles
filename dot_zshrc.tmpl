@@ -26,6 +26,10 @@ for BIN_DIR in ${BIN_DIRS[@]}; do
   fi
 done
 
+# Completions
+autoload -Uz compinit && compinit -d "$CACHE_DIR/zsh/zcompdump-$ZSH_VERSION"
+zstyle ':completion:*' cache-path "$CACHE_DIR/zsh/zcompcache"
+
 # Functions
 function proxyon() {
   export HTTP_PROXY=http://127.0.0.1:7890
