@@ -9,8 +9,8 @@ STATE_DIR="${HOME}/.local/state"
 
 export CARGO_HOME="${HOME}/.cargo"
 export GOPATH="${HOME}/.go"
-export GOCACHE="$CACHE_DIR/go/build"
-export GOMODCACHE="$CACHE_DIR/go/mod"
+export GOCACHE="${CACHE_DIR}/go/build"
+export GOMODCACHE="${CACHE_DIR}/go/mod"
 export HOMEBREW_NO_INSTALL_CLEANUP=1
 export HOMEBREW_CASK_OPTS="--no-quarantine"
 export HOMEBREW_GITHUB_API_TOKEN={{ .github.token }}
@@ -30,22 +30,13 @@ export http_proxy=http://127.0.0.1:7890
 export https_proxy=http://127.0.0.1:7890
 export all_proxy=socks5://127.0.0.1:7890
 
-# FPATH
-FUNC_DIRS=(
-  ${HOME}/.local/state/nix/profile/share/zsh/site-functions
-  /usr/share/zsh/site-functions
-  /usr/share/zsh/vendor-completions
-  /opt/homebrew/share/zsh/site-functions
-)
-for FUNC_DIR in ${FUNC_DIRS[@]}; do
-  FPATH="$FUNC_DIR:$FPATH"
-done
-
 {{ if eq .chezmoi.os "linux" -}}
 # Nix
-if [ -e ${HOME}/.local/state/nix/profile/etc/profile.d/nix.sh ]; then
-  source ${HOME}/.local/state/nix/profile/etc/profile.d/nix.sh
+if [ -e "${STATE_DIR}/nix/profile/etc/profile.d/nix.sh" ]; then
+  source "${STATE_DIR}/nix/profile/etc/profile.d/nix.sh"
 fi
+
+skip_global_compinit=1
 {{ end -}}
 
 {{ if eq .chezmoi.os "darwin" -}}
@@ -60,5 +51,3 @@ if [ -f /usr/local/bin/brew ]; then
 fi
 {{ end -}}
 {{ end -}}
-
-skip_global_compinit=1

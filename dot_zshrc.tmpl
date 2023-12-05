@@ -9,24 +9,35 @@ alias wget=wget2
 
 # Paths
 BIN_DIRS=(
-  $CARGO_HOME/bin
-  $GOPATH/bin
+  "${CARGO_HOME}/bin"
+  "${GOPATH}/bin"
 
 {{- if eq .chezmoi.os "darwin"}}
   /nix/var/nix/profiles/default/bin
-  $HOME/.local/state/nix/profile/bin
+  "${STATE_DIR}/nix/profile/bin"
 
 {{- end }}
 )
 for BIN_DIR in ${BIN_DIRS[@]}; do
-  if [ -d "$BIN_DIR" ]; then
-    PATH="$BIN_DIR:$PATH"
+  if [ -d "${BIN_DIR}" ]; then
+    PATH="${BIN_DIR}:$PATH"
   fi
 done
 
+# FPATH
+FUNC_DIRS=(
+  "${STATE_DIR}/nix/profile/share/zsh/site-functions"
+  /usr/share/zsh/site-functions
+  /usr/share/zsh/vendor-completions
+  /opt/homebrew/share/zsh/site-functions
+)
+for FUNC_DIR in ${FUNC_DIRS[@]}; do
+  FPATH="${FUNC_DIR}:${FPATH}"
+done
+
 # Completions
-autoload -Uz compinit && compinit -d "$CACHE_DIR/zsh/zcompdump-$ZSH_VERSION"
-zstyle ':completion:*' cache-path "$CACHE_DIR/zsh/zcompcache"
+autoload -Uz compinit && compinit -d "${CACHE_DIR}/zsh/zcompdump-$ZSH_VERSION"
+zstyle ':completion:*' cache-path "${CACHE_DIR}/zsh/zcompcache"
 
 # Functions
 function proxyoff() {
@@ -73,8 +84,8 @@ if command -v zoxide 1>/dev/null 2>&1; then
 fi
 
 BOOTSTRAP_SCRIPTS=(
-  "${HOME}/.local/state/nix/profile/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
-  "${HOME}/.local/state/nix/profile/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+  "${STATE_DIR}/nix/profile/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+  "${STATE_DIR}/nix/profile/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
   "${HOME}/.iterm2_shell_integration.zsh"
 )
@@ -84,4 +95,4 @@ for SCRIPT in ${BOOTSTRAP_SCRIPTS[@]}; do
   fi
 done
 
-export HISTFILE="$STATE_DIR/zsh/history"
+export HISTFILE="${STATE_DIR}/zsh/history"
