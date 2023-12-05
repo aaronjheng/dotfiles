@@ -14,7 +14,7 @@ BIN_DIRS=(
 
 {{- if eq .chezmoi.os "darwin"}}
   /nix/var/nix/profiles/default/bin
-  "${STATE_DIR}/nix/profile/bin"
+  "${NIX_PROFILE_DIR}/bin"
 
 {{- end }}
 )
@@ -26,7 +26,7 @@ done
 
 # FPATH
 FUNC_DIRS=(
-  "${STATE_DIR}/nix/profile/share/zsh/site-functions"
+  "${NIX_PROFILE_DIR}/share/zsh/site-functions"
   /usr/share/zsh/site-functions
   /usr/share/zsh/vendor-completions
   /opt/homebrew/share/zsh/site-functions
@@ -84,8 +84,8 @@ if command -v zoxide 1>/dev/null 2>&1; then
 fi
 
 BOOTSTRAP_SCRIPTS=(
-  "${STATE_DIR}/nix/profile/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
-  "${STATE_DIR}/nix/profile/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+  "${NIX_PROFILE_DIR}/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+  "${NIX_PROFILE_DIR}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
   "${HOME}/.iterm2_shell_integration.zsh"
 )
