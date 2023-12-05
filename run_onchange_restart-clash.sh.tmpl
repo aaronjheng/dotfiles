@@ -9,4 +9,5 @@ if command -v clash 1>/dev/null 2>&1; then
 {{ end -}}
 fi
 
-# clash config digest: {{ include "dot_config/clash/config.yaml.tmpl" | sha256sum }}
+# clash config template digest: {{ include "dot_config/clash/config.yaml.tmpl" | sha256sum }}
+# clash config data digest: {{ toJson .clash | sha256sum }}
