@@ -4,9 +4,7 @@ alias la='ls -A'
 alias l='ls -CF'
 {{- if eq .chezmoi.os "darwin" }}
 alias typora="open -a typora"
-alias brew='HTTP_PROXY=http://127.0.0.1:7890 HTTPS_PROXY=http://127.0.0.1:7890 brew'
 {{- end }}
-alias rustup='HTTP_PROXY=http://127.0.0.1:7890 HTTPS_PROXY=http://127.0.0.1:7890 rustup'
 alias wget=wget2
 
 # Paths
@@ -31,13 +29,8 @@ autoload -Uz compinit && compinit -d "$CACHE_DIR/zsh/zcompdump-$ZSH_VERSION"
 zstyle ':completion:*' cache-path "$CACHE_DIR/zsh/zcompcache"
 
 # Functions
-function proxyon() {
-  export HTTP_PROXY=http://127.0.0.1:7890
-  export HTTPS_PROXY=http://127.0.0.1:7890
-  export ALL_PROXY=socks5://127.0.0.1:7890
-  export http_proxy=http://127.0.0.1:7890
-  export https_proxy=http://127.0.0.1:7890
-  export all_proxy=socks5://127.0.0.1:7890
+function proxyoff() {
+  unset HTTP_PROXY HTTPS_PROXY ALL_PROXY http_proxy https_proxy all_proxy
 }
 
 {{ if eq .chezmoi.os "darwin" -}}
