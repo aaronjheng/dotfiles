@@ -21,6 +21,21 @@ fi
 {{ end -}}
 {{ end -}}
 
+# zsh-autosuggestions
+if [ -f "${NIX_PROFILE_DIR}/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ]; then
+  source "${NIX_PROFILE_DIR}/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+fi
+
+# zsh-syntax-highlighting
+if [ -f "${NIX_PROFILE_DIR}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]; then
+  source "${NIX_PROFILE_DIR}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+fi
+
+# iTerm Shell Integration
+if [ -f "${HOME}/.iterm2_shell_integration.zsh" ]; then
+  source "${HOME}/.iterm2_shell_integration.zsh"
+fi
+
 # Aliases
 alias ll='ls -alv'
 alias la='ls -A'
@@ -100,18 +115,6 @@ fi
 if command -v zoxide 1>/dev/null 2>&1; then
   eval "$(zoxide init zsh)"
 fi
-
-BOOTSTRAP_SCRIPTS=(
-  "${NIX_PROFILE_DIR}/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
-  "${NIX_PROFILE_DIR}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
-
-  "${HOME}/.iterm2_shell_integration.zsh"
-)
-for SCRIPT in ${BOOTSTRAP_SCRIPTS[@]}; do
-  if [ -f "${SCRIPT}" ]; then
-    source "${SCRIPT}"
-  fi
-done
 
 export HISTFILE="${STATE_DIR}/zsh/history"
 
