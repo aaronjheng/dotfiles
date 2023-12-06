@@ -65,7 +65,7 @@ function proxyoff() {
 {{ if eq .chezmoi.os "darwin" -}}
 function goworkspace() {
   local serial=`system_profiler -json SPHardwareDataType | yq -r '.SPHardwareDataType[0].serial_number'`
-  ssh -t workspace "tmux -CC new -A -s workspace-${serial}"
+  ssh -t workspace "${NIX_PROFILE_DIR}/bin/tmux -CC new -A -s workspace-${serial}"
 }
 
 function launchctl() {
