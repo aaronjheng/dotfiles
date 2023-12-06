@@ -11,12 +11,6 @@ alias wget=wget2
 BIN_DIRS=(
   "${CARGO_HOME}/bin"
   "${GOPATH}/bin"
-
-{{- if eq .chezmoi.os "darwin"}}
-  /nix/var/nix/profiles/default/bin
-  "${NIX_PROFILE_DIR}/bin"
-
-{{- end }}
 )
 for BIN_DIR in ${BIN_DIRS[@]}; do
   if [ -d "${BIN_DIR}" ]; then
