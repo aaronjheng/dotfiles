@@ -37,7 +37,7 @@ BIN_DIRS=(
 )
 for BIN_DIR in ${BIN_DIRS[@]}; do
   if [ -d "${BIN_DIR}" ]; then
-    PATH="${BIN_DIR}:$PATH"
+    PATH="${BIN_DIR}:${PATH}"
   fi
 done
 
@@ -53,7 +53,7 @@ for FUNC_DIR in ${FUNC_DIRS[@]}; do
 done
 
 # Completions
-autoload -Uz compinit && compinit -d "${CACHE_DIR}/zsh/zcompdump-$ZSH_VERSION"
+autoload -Uz compinit && compinit -d "${CACHE_DIR}/zsh/zcompdump-${ZSH_VERSION}"
 zstyle ':completion:*' cache-path "${CACHE_DIR}/zsh/zcompcache"
 
 # Functions
