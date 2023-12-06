@@ -6,7 +6,6 @@ if [ -e "${NIX_PROFILE_DIR}/etc/profile.d/nix.sh" ]; then
   source "${NIX_PROFILE_DIR}/etc/profile.d/nix.sh"
 fi
 
-skip_global_compinit=1
 {{ end -}}
 
 {{ if eq .chezmoi.os "darwin" -}}

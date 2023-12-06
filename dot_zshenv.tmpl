@@ -1,5 +1,11 @@
 SHELL_SESSIONS_DISABLE=1
 
+{{ if eq .chezmoi.os "linux" -}}
+# For Ubuntu. See /etc/zsh/zshrc
+skip_global_compinit=1
+
+{{ end -}}
+
 # Base Directories
 {{ if eq .chezmoi.os "darwin" -}}
 CACHE_DIR="${HOME}/Library/Caches"
