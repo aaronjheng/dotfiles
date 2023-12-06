@@ -1,3 +1,27 @@
+NIX_PROFILE_DIR="${HOME}/.local/state/nix/profile"
+
+{{ if eq .chezmoi.os "linux" -}}
+# Nix
+if [ -e "${NIX_PROFILE_DIR}/etc/profile.d/nix.sh" ]; then
+  source "${NIX_PROFILE_DIR}/etc/profile.d/nix.sh"
+fi
+
+skip_global_compinit=1
+{{ end -}}
+
+{{ if eq .chezmoi.os "darwin" -}}
+# Homebrew
+{{ if eq .chezmoi.arch "arm64" -}}
+if [ -f /opt/homebrew/bin/brew ]; then
+  eval $(/opt/homebrew/bin/brew shellenv)
+fi
+{{ else -}}
+if [ -f /usr/local/bin/brew ]; then
+  eval $(/usr/local/bin/brew shellenv)
+fi
+{{ end -}}
+{{ end -}}
+
 # Aliases
 alias ll='ls -alv'
 alias la='ls -A'

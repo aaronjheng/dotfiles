@@ -6,7 +6,6 @@ STATE_DIR="${HOME}/Library/Application Support"
 CACHE_DIR="${HOME}/.cache"
 STATE_DIR="${HOME}/.local/state"
 {{- end }}
-NIX_PROFILE_DIR="${HOME}/.local/state/nix/profile"
 
 export CARGO_HOME="${HOME}/.cargo"
 export GOPATH="${HOME}/.go"
@@ -30,25 +29,3 @@ export ALL_PROXY=socks5://127.0.0.1:7890
 export http_proxy=http://127.0.0.1:7890
 export https_proxy=http://127.0.0.1:7890
 export all_proxy=socks5://127.0.0.1:7890
-
-{{ if eq .chezmoi.os "linux" -}}
-# Nix
-if [ -e "${NIX_PROFILE_DIR}/etc/profile.d/nix.sh" ]; then
-  source "${NIX_PROFILE_DIR}/etc/profile.d/nix.sh"
-fi
-
-skip_global_compinit=1
-{{ end -}}
-
-{{ if eq .chezmoi.os "darwin" -}}
-# Homebrew
-{{ if eq .chezmoi.arch "arm64" -}}
-if [ -f /opt/homebrew/bin/brew ]; then
-  eval $(/opt/homebrew/bin/brew shellenv)
-fi
-{{ else -}}
-if [ -f /usr/local/bin/brew ]; then
-  eval $(/usr/local/bin/brew shellenv)
-fi
-{{ end -}}
-{{ end -}}
