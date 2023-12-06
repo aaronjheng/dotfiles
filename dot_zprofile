@@ -1,7 +1,0 @@
-export SHELL_SESSIONS_DISABLE=1
-
-# Prompt
-export PROMPT='%n@%m:%1~ %% '
-if [ ! -z "$SSH_CLIENT" ]; then
-  export PROMPT='%F{green}%n@%m%f:%1~ %% '
-fi

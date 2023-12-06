@@ -114,3 +114,9 @@ for SCRIPT in ${BOOTSTRAP_SCRIPTS[@]}; do
 done
 
 export HISTFILE="${STATE_DIR}/zsh/history"
+
+# Prompt
+export PROMPT='%n@%m:%1~ %% '
+if [ ! -z "$SSH_CLIENT" ]; then
+  export PROMPT='%F{green}%n@%m%f:%1~ %% '
+fi
