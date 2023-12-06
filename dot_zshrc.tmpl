@@ -21,21 +21,6 @@ fi
 {{ end -}}
 {{ end -}}
 
-# zsh-autosuggestions
-if [ -f "${NIX_PROFILE_DIR}/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ]; then
-  source "${NIX_PROFILE_DIR}/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
-fi
-
-# zsh-syntax-highlighting
-if [ -f "${NIX_PROFILE_DIR}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]; then
-  source "${NIX_PROFILE_DIR}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
-fi
-
-# iTerm Shell Integration
-if [ -f "${HOME}/.iterm2_shell_integration.zsh" ]; then
-  source "${HOME}/.iterm2_shell_integration.zsh"
-fi
-
 # Aliases
 alias ll='ls -alv'
 alias la='ls -A'
@@ -71,6 +56,16 @@ done
 autoload -Uz compinit && compinit -d "${CACHE_DIR}/zsh/zcompdump-${ZSH_VERSION}"
 zstyle ':completion:*' cache-path "${CACHE_DIR}/zsh/zcompcache"
 
+# Kafka
+if command -v kafka 1>/dev/null 2>&1; then
+  source <(kafka completion zsh) && compdef _kafka kafka
+fi
+
+# Protogen
+if command -v protogen 1>/dev/null 2>&1; then
+  source <(protogen completion zsh) && compdef _protogen protogen
+fi
+
 # Functions
 function proxyoff() {
   unset HTTP_PROXY HTTPS_PROXY ALL_PROXY http_proxy https_proxy all_proxy
@@ -101,19 +96,24 @@ function launchctl() {
 # Disable builtin time command
 disable -r time
 
-# Kafka
-if command -v kafka 1>/dev/null 2>&1; then
-  source <(kafka completion zsh) && compdef _kafka kafka
-fi
-
-# Protogen
-if command -v protogen 1>/dev/null 2>&1; then
-  source <(protogen completion zsh) && compdef _protogen protogen
-fi
-
 # Zoxide
 if command -v zoxide 1>/dev/null 2>&1; then
   eval "$(zoxide init zsh)"
+fi
+
+# zsh-autosuggestions
+if [ -f "${NIX_PROFILE_DIR}/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ]; then
+  source "${NIX_PROFILE_DIR}/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+fi
+
+# zsh-syntax-highlighting
+if [ -f "${NIX_PROFILE_DIR}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]; then
+  source "${NIX_PROFILE_DIR}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+fi
+
+# iTerm Shell Integration
+if [ -f "${HOME}/.iterm2_shell_integration.zsh" ]; then
+  source "${HOME}/.iterm2_shell_integration.zsh"
 fi
 
 export HISTFILE="${STATE_DIR}/zsh/history"
