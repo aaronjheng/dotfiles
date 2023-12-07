@@ -7,17 +7,6 @@ alias typora="open -a typora"
 {{- end }}
 alias wget=wget2
 
-# Paths
-BIN_DIRS=(
-  "${CARGO_HOME}/bin"
-  "${GOPATH}/bin"
-)
-for BIN_DIR in ${BIN_DIRS[@]}; do
-  if [ -d "${BIN_DIR}" ]; then
-    PATH="${BIN_DIR}:${PATH}"
-  fi
-done
-
 # FPATH
 FUNC_DIRS=(
   "${NIX_PROFILE_DIR}/share/zsh/site-functions"
