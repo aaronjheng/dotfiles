@@ -121,10 +121,13 @@ if [ -f "${HOME}/.iterm2_shell_integration.zsh" ]; then
   source "${HOME}/.iterm2_shell_integration.zsh"
 fi
 
-export HISTFILE="${STATE_DIR}/zsh/history"
+# History
+HISTFILE="${STATE_DIR}/zsh/history"
+HISTSIZE=2000
+SAVEHIST=1000
 
 # Prompt
-export PROMPT='%n@%m:%1~ %% '
+PROMPT='%n@%m:%1~ %% '
 if [ ! -z "$SSH_CLIENT" ]; then
-  export PROMPT='%F{green}%n@%m%f:%1~ %% '
+  PROMPT='%F{green}%n@%m%f:%1~ %% '
 fi
