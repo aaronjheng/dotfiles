@@ -1,3 +1,21 @@
+# History
+HISTFILE="${STATE_DIR}/zsh/history"
+HISTSIZE=2000
+SAVEHIST=1000
+
+# Prompt
+PROMPT='%n@%m:%1~ %% '
+if [ ! -z "$SSH_CLIENT" ]; then
+  PROMPT='%F{green}%n@%m%f:%1~ %% '
+fi
+
+# Default programs
+export EDITOR="vim"
+export VISUAL="vim"
+
+# Disable builtin commands
+disable -r time
+
 # Aliases
 alias ll='ls -alv'
 alias la='ls -A'
@@ -32,6 +50,27 @@ if command -v protogen 1>/dev/null 2>&1; then
   source <(protogen completion zsh) && compdef _protogen protogen
 fi
 
+# Extensions
+# Zoxide
+if command -v zoxide 1>/dev/null 2>&1; then
+  eval "$(zoxide init zsh)"
+fi
+
+# zsh-autosuggestions
+if [ -f "${NIX_PROFILE_DIR}/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ]; then
+  source "${NIX_PROFILE_DIR}/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+fi
+
+# zsh-syntax-highlighting
+if [ -f "${NIX_PROFILE_DIR}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]; then
+  source "${NIX_PROFILE_DIR}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+fi
+
+# iTerm Shell Integration
+if [ -f "${HOME}/.iterm2_shell_integration.zsh" ]; then
+  source "${HOME}/.iterm2_shell_integration.zsh"
+fi
+
 # Functions
 function proxyoff() {
   unset HTTP_PROXY HTTPS_PROXY ALL_PROXY http_proxy https_proxy all_proxy
@@ -58,40 +97,3 @@ function launchctl() {
 }
 
 {{ end -}}
-
-# Disable builtin time command
-disable -r time
-
-# Zoxide
-if command -v zoxide 1>/dev/null 2>&1; then
-  eval "$(zoxide init zsh)"
-fi
-
-# zsh-autosuggestions
-if [ -f "${NIX_PROFILE_DIR}/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ]; then
-  source "${NIX_PROFILE_DIR}/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
-fi
-
-# zsh-syntax-highlighting
-if [ -f "${NIX_PROFILE_DIR}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]; then
-  source "${NIX_PROFILE_DIR}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
-fi
-
-# iTerm Shell Integration
-if [ -f "${HOME}/.iterm2_shell_integration.zsh" ]; then
-  source "${HOME}/.iterm2_shell_integration.zsh"
-fi
-
-# History
-HISTFILE="${STATE_DIR}/zsh/history"
-HISTSIZE=2000
-SAVEHIST=1000
-
-# Prompt
-PROMPT='%n@%m:%1~ %% '
-if [ ! -z "$SSH_CLIENT" ]; then
-  PROMPT='%F{green}%n@%m%f:%1~ %% '
-fi
-
-export EDITOR="vim"
-export VISUAL="vim"
