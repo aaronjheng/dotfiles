@@ -1,14 +1,4 @@
-{{ if eq .chezmoi.os "darwin" -}}
-# For macOS. See /etc/zshrc_Apple_Terminal
-SHELL_SESSIONS_DISABLE=1
-
-{{ end -}}
-
-{{ if eq .chezmoi.os "linux" -}}
-# For Ubuntu. See /etc/zsh/zshrc
-skip_global_compinit=1
-
-{{ end -}}
+unsetopt GLOBAL_RCS
 
 # Base Directories
 {{ if eq .chezmoi.os "darwin" -}}

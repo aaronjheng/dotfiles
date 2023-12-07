@@ -9,6 +9,11 @@ fi
 {{ end -}}
 
 {{ if eq .chezmoi.os "darwin" -}}
+# Nix
+if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
+    . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
+fi
+
 # Homebrew
 {{ if eq .chezmoi.arch "arm64" -}}
 if [ -f /opt/homebrew/bin/brew ]; then
