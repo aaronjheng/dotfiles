@@ -9,6 +9,9 @@ if [ ! -z "$SSH_CLIENT" ]; then
   PROMPT='%F{green}%n@%m%f:%1~ %% '
 fi
 
+# Key bindings
+bindkey -e
+
 # Default programs
 export EDITOR="vim"
 export VISUAL="vim"
