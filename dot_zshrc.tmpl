@@ -69,14 +69,6 @@ if [ -f "${NIX_PROFILE_DIR}/share/zsh-syntax-highlighting/zsh-syntax-highlightin
   source "${NIX_PROFILE_DIR}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 fi
 
-{{ if eq .chezmoi.os "darwin" -}}
-# iTerm Shell Integration
-if [ -f "${HOME}/.iterm2_shell_integration.zsh" ]; then
-  source "${HOME}/.iterm2_shell_integration.zsh"
-fi
-
-{{ end -}}
-
 # Functions
 function proxyoff() {
   unset HTTP_PROXY HTTPS_PROXY ALL_PROXY http_proxy https_proxy all_proxy
