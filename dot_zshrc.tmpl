@@ -79,6 +79,10 @@ function proxyoff() {
   unset HTTP_PROXY HTTPS_PROXY ALL_PROXY http_proxy https_proxy all_proxy
 }
 
+function ipython() {
+  nix-shell -p python3Packages.ipython --command "ipython $@"
+}
+
 {{ if eq .chezmoi.os "darwin" -}}
 function goworkspace() {
   local serial=`system_profiler -json SPHardwareDataType | yq -r '.SPHardwareDataType[0].serial_number'`
