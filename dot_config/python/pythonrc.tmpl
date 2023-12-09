@@ -12,18 +12,16 @@ histfile = os.path.join(os.path.expanduser("~"), "Library/Application Support/py
 
 {{ end -}}
 
-try:
-    readline.read_history_file(histfile)
-    h_len = readline.get_current_history_length()
-except FileNotFoundError:
-    open(histfile, "wb").close()
-    h_len = 0
+if readline.get_current_history_length() == 0:
+    try:
+        readline.read_history_file(histfile)
+    except OSError:  # Non existent
+        pass
 
+    def write_history():
+        try:
+            readline.write_history_file(histfile)
+        except OSError:
+            pass
 
-def save(prev_h_len, histfile):
-    new_h_len = readline.get_current_history_length()
-    readline.set_history_length(1000)
-    readline.append_history_file(new_h_len - prev_h_len, histfile)
-
-
-atexit.register(save, h_len, histfile)
+    atexit.register(write_history)
