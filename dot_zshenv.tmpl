@@ -61,11 +61,6 @@ fi
 {{ end -}}
 
 {{ if eq .chezmoi.os "darwin" -}}
-# Nix
-if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
-  source '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
-fi
-
 # Homebrew
 {{ if eq .chezmoi.arch "arm64" -}}
 if [ -f /opt/homebrew/bin/brew ]; then
@@ -75,5 +70,9 @@ fi
 if [ -f /usr/local/bin/brew ]; then
   eval $(/usr/local/bin/brew shellenv)
 fi
-{{ end -}}
+{{ end }}
+# Nix
+if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
+  source '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
+fi
 {{ end -}}
