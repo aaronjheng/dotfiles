@@ -8,7 +8,7 @@ Host *
 	IdentityFile ~/.ssh/id_rsa
 
 Host workspace
-	HostName example.xyz
+	HostName example.dev
 	Port 22
 	User aaron
 
