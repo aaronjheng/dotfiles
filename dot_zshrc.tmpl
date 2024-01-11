@@ -1,5 +1,5 @@
 # History
-HISTFILE="${STATE_DIR}/zsh/history"
+export HISTFILE="${STATE_DIR}/zsh/history"
 HISTSIZE=2000
 SAVEHIST=1000
 
@@ -57,6 +57,11 @@ fi
 # Zoxide
 if command -v zoxide 1>/dev/null 2>&1; then
   eval "$(zoxide init zsh)"
+fi
+
+# Atuin
+if command -v atuin 1>/dev/null 2>&1; then
+  eval "$(atuin init zsh)"
 fi
 
 # zsh-autosuggestions
