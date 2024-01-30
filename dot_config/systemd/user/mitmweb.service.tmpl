@@ -1,0 +1,11 @@
+[Unit]
+Description=A web-based interface for mitmproxy
+After=network.target
+
+[Service]
+Type=simple
+ExecStart={{ .chezmoi.homeDir }}/.local/state/nix/profile/bin/mitmweb -p 9118 --no-web-open-browser --web-host 0.0.0.0 --web-port 9119
+Restart=always
+
+[Install]
+WantedBy=default.target
