@@ -10,6 +10,12 @@ proxies:
     server: {{ .clash.host }}
     port: {{ .clash.port }}
     password: {{ .clash.password }}
+{{- if index .clash "sni" }}
+    sni: {{ .clash.sni }}
+{{- end }}
+{{- if index .clash "skip_cert_verify" }}
+    skip-cert-verify: {{ .clash.skip_cert_verify }}
+{{- end }}
 rules:
   # Apple
   - DOMAIN-SUFFIX,aaplimg.com,DIRECT
