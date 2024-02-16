@@ -12,7 +12,8 @@ CACHE_DIR="${HOME}/.cache"
 STATE_DIR="${HOME}/.local/state"
 {{- end }}
 
-NIX_PROFILE_DIR="${HOME}/.local/state/nix/profile"
+NIX_STATE_DIR="${HOME}/.local/state/nix"
+NIX_PROFILE_DIR="${NIX_STATE_DIR}/profile"
 
 export CARGO_HOME="${HOME}/.cargo"
 export GOPATH="${HOME}/.go"
@@ -60,6 +61,8 @@ done
 # Nix
 if [ -e "${NIX_PROFILE_DIR}/etc/profile.d/nix.sh" ]; then
   source "${NIX_PROFILE_DIR}/etc/profile.d/nix.sh"
+
+  export NIX_PATH="${NIX_STATE_DIR}/defexpr/channels"
 fi
 
 {{ end -}}
@@ -78,5 +81,7 @@ fi
 # Nix
 if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
   source '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
+
+  export NIX_PATH="${NIX_STATE_DIR}/defexpr/channels"
 fi
 {{ end -}}
