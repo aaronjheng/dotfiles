@@ -7,7 +7,7 @@ Host *
 	IdentityFile ~/.ssh/id_ed25519
 
 Host workspace
-	HostName example.dev
+	HostName aarons-nuc.local
 	Port 22
 	User aaron
 
