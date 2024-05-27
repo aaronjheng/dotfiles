@@ -65,6 +65,12 @@ if [ -e "${NIX_PROFILE_DIR}/etc/profile.d/nix.sh" ]; then
   export NIX_PATH="${NIX_STATE_DIR}/defexpr/channels"
 fi
 
+if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
+  source '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
+
+  export NIX_PATH="${NIX_STATE_DIR}/defexpr/channels"
+fi
+
 {{ end -}}
 
 {{ if eq .chezmoi.os "darwin" -}}
