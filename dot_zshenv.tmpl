@@ -57,14 +57,12 @@ for BIN_DIR in ${BIN_DIRS[@]}; do
   fi
 done
 
-{{ if eq .chezmoi.os "linux" -}}
+# Nix
 if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
   source '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
 
   export NIX_PATH="${NIX_STATE_DIR}/defexpr/channels"
 fi
-
-{{ end -}}
 
 {{ if eq .chezmoi.os "darwin" -}}
 # Homebrew
@@ -73,11 +71,4 @@ if [ -f /opt/homebrew/bin/brew ]; then
 fi
 
 PATH="/usr/local/bin:${PATH}"
-
-# Nix
-if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
-  source '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
-
-  export NIX_PATH="${NIX_STATE_DIR}/defexpr/channels"
-fi
 {{ end -}}
