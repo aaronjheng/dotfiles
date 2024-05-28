@@ -77,7 +77,7 @@ if [ -f "${NIX_PROFILE_DIR}/share/zsh-syntax-highlighting/zsh-syntax-highlightin
 fi
 
 # Functions
-function proxyon() {
+function proxy_on() {
   export HTTP_PROXY=http://127.0.0.1:7890
   export HTTPS_PROXY=http://127.0.0.1:7890
   export ALL_PROXY=socks5://127.0.0.1:7890
@@ -86,8 +86,48 @@ function proxyon() {
   export all_proxy=socks5://127.0.0.1:7890
 }
 
-function proxyoff() {
+function proxy_off() {
   unset HTTP_PROXY HTTPS_PROXY ALL_PROXY http_proxy https_proxy all_proxy
+}
+
+function system_proxy_on() {
+  networksetup -setsecurewebproxystate 'Wi-Fi' on
+  networksetup -setwebproxystate 'Wi-Fi' on
+  networksetup -setsocksfirewallproxystate 'Wi-Fi' on
+}
+
+function system_proxy_off() {
+  networksetup -setsecurewebproxystate 'Wi-Fi' off
+  networksetup -setwebproxystate 'Wi-Fi' off
+  networksetup -setsocksfirewallproxystate 'Wi-Fi' off
+}
+
+function system_proxy_setup() {
+  host="127.0.0.1"
+  port="7890"
+
+  if [[ -n "$1" ]]; then
+    host=$1
+  fi
+
+  if [[ -n "$2" ]]; then
+    port=$2
+  fi
+  
+  networksetup -setsecurewebproxy 'Wi-Fi' "${host}" "${port}"
+  networksetup -setwebproxy 'Wi-Fi' "${host}" "${port}"
+  networksetup -setsocksfirewallproxy 'Wi-Fi' "${host}" "${port}"
+}
+
+function system_proxy_show() {
+  echo "HTTPS Proxy"
+  networksetup -getsecurewebproxy 'Wi-Fi'
+  echo ""
+  echo "HTTP Proxy"
+  networksetup -getwebproxy 'Wi-Fi'
+  echo ""
+  echo "SOCKS Proxy"
+  networksetup -getsocksfirewallproxy 'Wi-Fi'
 }
 
 function ipython() {
