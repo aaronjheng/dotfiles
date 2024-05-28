@@ -141,17 +141,17 @@ function goworkspace() {
 }
 
 function launchctl() {
-	case "$1" in
-	"reload")
-		command launchctl unload "$2" && command launchctl load "$2"
-		;;
-	"restart")
-		command launchctl stop "$2" && command launchctl start "$2"
-		;;
-	*)
-		command launchctl "$@"
+  case "$1" in
+  "reload")
+    command launchctl unload "$2" && command launchctl load "$2"
     ;;
-	esac
+  "restart")
+    command launchctl stop "$2" && command launchctl start "$2"
+    ;;
+  *)
+    command launchctl "$@"
+    ;;
+  esac
 }
 
 {{ end -}}
