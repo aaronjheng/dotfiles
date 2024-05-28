@@ -96,7 +96,7 @@ function ipython() {
 
 {{ if eq .chezmoi.os "darwin" -}}
 function goworkspace() {
-  local serial=`system_profiler -json SPHardwareDataType | yq -r '.SPHardwareDataType[0].serial_number'`
+  local serial=`system_profiler SPHardwareDataType | grep "Serial Number (system)" | cut -d ":" -f 2 | xargs`
   ssh -t workspace "tmux -CC new -A -s workspace-${serial}"
 }
 
