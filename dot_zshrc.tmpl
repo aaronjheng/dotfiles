@@ -34,9 +34,7 @@ alias wget=wget2
 FUNC_DIRS=(
   "/nix/var/nix/profiles/default/share/zsh/site-functions"
   "${NIX_PROFILE_DIR}/share/zsh/site-functions"
-  # Linux
   /usr/share/zsh/site-functions
-  # Darwin
   /opt/homebrew/share/zsh/site-functions
 )
 for FUNC_DIR in ${FUNC_DIRS[@]}; do
