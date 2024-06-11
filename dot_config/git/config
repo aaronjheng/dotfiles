@@ -25,7 +25,14 @@
 
 [url "ssh://git@ssh.github.com:443/"]
 	insteadOf = git@github.com:
+
 [merge]
 	conflictStyle = zdiff3
+
 [diff]
 	algorithm = histogram
+	colorMoved = default
+
+[delta]
+    navigate = true    # use n and N to move between diff sections
+	line-numbers = true
