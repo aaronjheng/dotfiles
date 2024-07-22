@@ -82,10 +82,13 @@ function proxy_on() {
   export HTTP_PROXY=http://127.0.0.1:7890
   export HTTPS_PROXY=http://127.0.0.1:7890
   export ALL_PROXY=socks5://127.0.0.1:7890
+  export http_proxy=http://127.0.0.1:7890
+  export https_proxy=http://127.0.0.1:7890
+  export all_proxy=socks5://127.0.0.1:7890
 }
 
 function proxy_off() {
-  unset HTTP_PROXY HTTPS_PROXY ALL_PROXY
+  unset HTTP_PROXY HTTPS_PROXY ALL_PROXY http_proxy https_proxy all_proxy
 }
 
 function system_proxy_on() {
