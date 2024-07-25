@@ -1,6 +1,5 @@
 [core]
 	ignorecase = false
-	pager = delta
 
 [user]
 	useconfigonly = true
