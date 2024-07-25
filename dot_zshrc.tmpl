@@ -34,8 +34,14 @@ alias l='ls -CF'
 {{- if eq .chezmoi.os "darwin" }}
 alias typora="open -a typora"
 {{- end }}
-alias wget=wget2
-alias redis=redli
+
+if command -v wget2 1>/dev/null 2>&1; then
+  alias wget=wget2
+fi
+
+if command -v redli 1>/dev/null 2>&1; then
+  alias redis=redli
+fi
 
 # FPATH
 FUNC_DIRS=(
