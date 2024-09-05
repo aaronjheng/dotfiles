@@ -5,16 +5,21 @@ log-level: info
 mode: rule
 ipv6: true
 proxies:
-  - name: PROXY
-    type: {{ .clash.type }}
-    server: {{ .clash.host }}
-    port: {{ .clash.port }}
-    password: {{ .clash.password }}
-{{- if index .clash "sni" }}
-    sni: {{ .clash.sni }}
+{{- range .clash.proxy }}
+  - name: {{ .name }}
+    type: {{ .type }}
+    server: {{ .host }}
+    port: {{ .port }}
+    password: {{ .password }}
+{{- if index . "cipher" }}
+    cipher: {{ .cipher }}
 {{- end }}
-{{- if index .clash "skip_cert_verify" }}
-    skip-cert-verify: {{ .clash.skip_cert_verify }}
+{{- if index . "sni" }}
+    sni: {{ .sni }}
+{{- end }}
+{{- if index . "skip_cert_verify" }}
+    skip-cert-verify: {{ .skip_cert_verify }}
+{{- end }}
 {{- end }}
 rules:
   # Apple
