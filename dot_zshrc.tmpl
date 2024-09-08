@@ -43,6 +43,10 @@ if command -v redli 1>/dev/null 2>&1; then
   alias redis=redli
 fi
 
+if command -v gojq 1>/dev/null 2>&1; then
+  alias jq=gojq
+fi
+
 # FPATH
 FUNC_DIRS=(
   "/nix/var/nix/profiles/default/share/zsh/site-functions"
