@@ -130,7 +130,24 @@ function system_proxy_setup() {
   if [[ -n "$2" ]]; then
     port=$2
   fi
-  
+
+  networksetup -setsecurewebproxy 'Wi-Fi' "${host}" "${port}"
+  networksetup -setwebproxy 'Wi-Fi' "${host}" "${port}"
+  networksetup -setsocksfirewallproxy 'Wi-Fi' "${host}" "${port}"
+}
+
+function mitmproxy_setup() {
+  host="10.0.7.137"
+  port="9118"
+
+  if [[ -n "$1" ]]; then
+    host=$1
+  fi
+
+  if [[ -n "$2" ]]; then
+    port=$2
+  fi
+
   networksetup -setsecurewebproxy 'Wi-Fi' "${host}" "${port}"
   networksetup -setwebproxy 'Wi-Fi' "${host}" "${port}"
   networksetup -setsocksfirewallproxy 'Wi-Fi' "${host}" "${port}"
