@@ -151,6 +151,7 @@ function mitmproxy_setup() {
   networksetup -setsecurewebproxy 'Wi-Fi' "${host}" "${port}"
   networksetup -setwebproxy 'Wi-Fi' "${host}" "${port}"
   networksetup -setsocksfirewallproxy 'Wi-Fi' "${host}" "${port}"
+  networksetup -setproxybypassdomains 'Wi-Fi' '*.local' '10.*' '127.0.0.*' '192.168.*'
 }
 
 function system_proxy_show() {
@@ -162,6 +163,9 @@ function system_proxy_show() {
   echo ""
   echo "SOCKS Proxy"
   networksetup -getsocksfirewallproxy 'Wi-Fi'
+  echo ""
+  echo "Proxy Bypass Domains"
+  networksetup -getproxybypassdomains 'Wi-Fi'
 }
 
 function ipython() {
