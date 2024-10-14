@@ -35,12 +35,16 @@ alias l='ls -CF'
 alias typora="open -a typora"
 {{- end }}
 
-if command -v wget2 1>/dev/null 2>&1; then
-  alias wget=wget2
+if command -v gojq 1>/dev/null 2>&1; then
+  alias jq=gojq
 fi
 
 if command -v gojq 1>/dev/null 2>&1; then
-  alias jq=gojq
+  alias http=xh
+fi
+
+if command -v wget2 1>/dev/null 2>&1; then
+  alias wget=wget2
 fi
 
 # FPATH
