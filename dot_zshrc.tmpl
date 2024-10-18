@@ -103,6 +103,11 @@ function proxy_on() {
   export all_proxy=socks5://127.0.0.1:7890
 }
 
+function ipython() {
+  nix-shell -p python3Packages.ipython --command "ipython $@"
+}
+
+{{ if eq .chezmoi.os "darwin" -}}
 function proxy_off() {
   unset HTTP_PROXY HTTPS_PROXY ALL_PROXY http_proxy https_proxy all_proxy
 }
@@ -169,11 +174,6 @@ function system_proxy_show() {
   networksetup -getproxybypassdomains 'Wi-Fi'
 }
 
-function ipython() {
-  nix-shell -p python3Packages.ipython --command "ipython $@"
-}
-
-{{ if eq .chezmoi.os "darwin" -}}
 function goworkspace() {
   local serial=`system_profiler SPHardwareDataType | grep "Serial Number (system)" | cut -d ":" -f 2 | xargs`
   ssh -t workspace "tmux -CC new -A -s workspace-${serial}"
