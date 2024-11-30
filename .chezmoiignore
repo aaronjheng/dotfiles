@@ -9,5 +9,4 @@ Library
 .config/containers
 .config/pypoetry
 .config/systemd
-.local
 {{ end }}
