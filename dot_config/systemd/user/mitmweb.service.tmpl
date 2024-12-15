@@ -4,7 +4,9 @@ After=network.target
 
 [Service]
 Type=simple
-ExecStart={{ .chezmoi.homeDir }}/.local/state/nix/profile/bin/mitmweb -p 9118 --mode 'upstream:http://127.0.0.1:7890' --no-web-open-browser --web-host 0.0.0.0 --web-port 9119
+ExecStart={{ .chezmoi.homeDir }}/.local/state/nix/profile/bin/mitmweb \
+	-p 9118 --mode 'upstream:http://127.0.0.1:7890' --no-web-open-browser \
+	--web-host 0.0.0.0 --web-port 9119
 Restart=always
 
 [Install]
