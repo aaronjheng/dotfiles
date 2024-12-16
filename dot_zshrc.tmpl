@@ -179,6 +179,11 @@ function goworkspace() {
   ssh -t workspace "tmux -CC new -A -s workspace-${serial}"
 }
 
+function goworvm() {
+  local serial=`system_profiler SPHardwareDataType | grep "Serial Number (system)" | cut -d ":" -f 2 | xargs`
+  ssh -t workvm "tmux -CC new -A -s workspace-${serial}"
+}
+
 function launchctl() {
   case "$1" in
   "reload")

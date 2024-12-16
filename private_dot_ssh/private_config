@@ -11,3 +11,7 @@ Host workspace
 	Port 22
 	User aaron
 
+Host workvm
+	HostName aarons-work-vm.local
+	Port 22
+	User aaron
