@@ -5,13 +5,3 @@ Host *
 	ServerAliveCountMax 3
 	StrictHostKeyChecking no
 	IdentityFile ~/.ssh/id_ed25519
-
-Host workspace
-	HostName aarons-nuc.local
-	Port 22
-	User aaron
-
-Host workvm
-	HostName aarons-work-vm.local
-	Port 22
-	User aaron

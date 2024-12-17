@@ -174,14 +174,14 @@ function system_proxy_show() {
   networksetup -getproxybypassdomains 'Wi-Fi'
 }
 
-function goworkspace() {
+function gonuc() {
   local serial=`system_profiler SPHardwareDataType | grep "Serial Number (system)" | cut -d ":" -f 2 | xargs`
-  ssh -t workspace "tmux -CC new -A -s workspace-${serial}"
+  ssh -t aarons-nuc.local "tmux -CC new -A -s workspace-${serial}"
 }
 
-function goworkvm() {
+function govm() {
   local serial=`system_profiler SPHardwareDataType | grep "Serial Number (system)" | cut -d ":" -f 2 | xargs`
-  ssh -t workvm "tmux -CC new -A -s workspace-${serial}"
+  ssh -t aarons-work-vm.local "tmux -CC new -A -s workspace-${serial}"
 }
 
 function launchctl() {
