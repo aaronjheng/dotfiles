@@ -1,0 +1,5 @@
+font-family = "Lucida Console"
+font-size = 12
+focus-follows-mouse = true
+copy-on-select = true
+theme = iTerm2 Dark Background
