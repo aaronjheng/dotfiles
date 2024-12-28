@@ -111,25 +111,25 @@ rules:
   - DOMAIN-SUFFIX,telegram.me,PROXY
   - DOMAIN-SUFFIX,telegram.org,PROXY
   - DOMAIN-SUFFIX,telesco.pe,PROXY
-  - IP-CIDR,91.108.4.0/22,PROXY,no-resolve
-  - IP-CIDR,91.108.8.0/22,PROXY,no-resolve
-  - IP-CIDR,91.108.12.0/22,PROXY,no-resolve
-  - IP-CIDR,91.108.16.0/22,PROXY,no-resolve
-  - IP-CIDR,91.108.56.0/22,PROXY,no-resolve
-  - IP-CIDR,109.239.140.0/24,PROXY,no-resolve
-  - IP-CIDR,149.154.160.0/20,PROXY,no-resolve
-  - IP-CIDR,2001:B28:F23D::/48,PROXY,no-resolve
-  - IP-CIDR,2001:B28:F23F::/48,PROXY,no-resolve
-  - IP-CIDR,2001:67C:4E8::/48,PROXY,no-resolve
+  - SRC-IP-CIDR,91.108.4.0/22,PROXY,no-resolve
+  - SRC-IP-CIDR,91.108.8.0/22,PROXY,no-resolve
+  - SRC-IP-CIDR,91.108.12.0/22,PROXY,no-resolve
+  - SRC-IP-CIDR,91.108.16.0/22,PROXY,no-resolve
+  - SRC-IP-CIDR,91.108.56.0/22,PROXY,no-resolve
+  - SRC-IP-CIDR,109.239.140.0/24,PROXY,no-resolve
+  - SRC-IP-CIDR,149.154.160.0/20,PROXY,no-resolve
+  - SRC-IP-CIDR,2001:B28:F23D::/48,PROXY,no-resolve
+  - SRC-IP-CIDR,2001:B28:F23F::/48,PROXY,no-resolve
+  - SRC-IP-CIDR,2001:67C:4E8::/48,PROXY,no-resolve
   # LinkedIn
   - DOMAIN-SUFFIX,linkedin.com,PROXY
   # mDNS
   - DOMAIN-SUFFIX,local,DIRECT
   # LAN
-  - IP-CIDR,10.0.0.0/8,DIRECT
-  - IP-CIDR,127.0.0.0/8,DIRECT
-  - IP-CIDR,172.16.0.0/12,DIRECT
-  - IP-CIDR,192.168.0.0/16,DIRECT
+  - SRC-IP-CIDR,10.0.0.0/8,DIRECT
+  - SRC-IP-CIDR,127.0.0.0/8,DIRECT
+  - SRC-IP-CIDR,172.16.0.0/12,DIRECT
+  - SRC-IP-CIDR,192.168.0.0/16,DIRECT
   # CN
   - GEOIP,CN,DIRECT
   # Misc
