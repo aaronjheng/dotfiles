@@ -8,6 +8,7 @@ shell-integration-features = no-cursor
 theme = iTerm2 Default
 working-directory = home
 window-inherit-working-directory = false
+confirm-close-surface = true
 keybind= cmd+left=previous_tab
 keybind= cmd+right=next_tab
 keybind= cmd+left_bracket=previous_tab
