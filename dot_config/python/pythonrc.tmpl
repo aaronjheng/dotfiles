@@ -2,15 +2,7 @@ import atexit
 import os
 import readline
 
-{{ if eq .chezmoi.os "linux" -}}
-
 histfile = os.path.join(os.path.expanduser("~"), ".local/state/python/history")
-
-{{ else if eq .chezmoi.os "darwin" -}}
-
-histfile = os.path.join(os.path.expanduser("~"), "Library/Application Support/python/history")
-
-{{ end -}}
 
 if readline.get_current_history_length() == 0:
     try:
