@@ -1,5 +1,6 @@
 font-family = "Lucida Console"
 font-size = 13
+adjust-cell-height = 5%
 focus-follows-mouse = true
 copy-on-select = true
 cursor-style = block
