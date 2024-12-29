@@ -4,12 +4,11 @@ setopt INC_APPEND_HISTORY
 
 # Base Directories
 CONFIG_DIR=${HOME}/.config
+STATE_DIR="${HOME}/.local/state"
 {{ if eq .chezmoi.os "darwin" -}}
 CACHE_DIR="${HOME}/Library/Caches"
-STATE_DIR="${HOME}/Library/Application Support"
 {{- else -}}
 CACHE_DIR="${HOME}/.cache"
-STATE_DIR="${HOME}/.local/state"
 {{- end }}
 
 NIX_STATE_DIR="${HOME}/.local/state/nix"
@@ -34,6 +33,7 @@ export ETCDCTL_API=3
 export NIXPKGS_ALLOW_INSECURE=1
 export NIXPKGS_ALLOW_UNFREE=1
 export PYTHONSTARTUP="${CONFIG_DIR}/python/pythonrc"
+export TERMINFO="${STATE_DIR}/terminfo"
 
 {{ if .proxy_enabled -}}
 export HTTP_PROXY=http://127.0.0.1:7890
