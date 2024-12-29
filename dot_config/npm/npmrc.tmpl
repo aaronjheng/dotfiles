@@ -1,11 +1,2 @@
-{{ if eq .chezmoi.os "linux" -}}
-
 prefix={{.chezmoi.homeDir }}/.local/state/npm
 cache={{ .chezmoi.homeDir }}/.cache/npm
-
-{{ else if eq .chezmoi.os "darwin" -}}
-
-prefix={{ .chezmoi.homeDir }}/Library/Application Support/npm
-cache={{ .chezmoi.homeDir }}/Library/Caches/npm
-
-{{ end -}}
