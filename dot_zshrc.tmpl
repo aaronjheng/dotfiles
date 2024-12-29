@@ -47,6 +47,10 @@ if command -v wget2 1>/dev/null 2>&1; then
   alias wget=wget2
 fi
 
+if command -v mitmproxy 1>/dev/null 2>&1; then
+  alias mitmproxy="mitmproxy --set confdir=${STATE_DIR}/mitmproxy"
+fi
+
 # FPATH
 FUNC_DIRS=(
   "/nix/var/nix/profiles/default/share/zsh/site-functions"
