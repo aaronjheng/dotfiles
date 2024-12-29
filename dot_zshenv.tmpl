@@ -5,11 +5,7 @@ setopt INC_APPEND_HISTORY
 # Base Directories
 CONFIG_DIR=${HOME}/.config
 STATE_DIR="${HOME}/.local/state"
-{{ if eq .chezmoi.os "darwin" -}}
-CACHE_DIR="${HOME}/Library/Caches"
-{{- else -}}
 CACHE_DIR="${HOME}/.cache"
-{{- end }}
 
 NIX_STATE_DIR="${HOME}/.local/state/nix"
 NIX_PROFILE_DIR="${NIX_STATE_DIR}/profile"
