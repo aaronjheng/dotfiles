@@ -30,7 +30,7 @@ export NIXPKGS_ALLOW_INSECURE=1
 export NIXPKGS_ALLOW_UNFREE=1
 export PYTHONSTARTUP="${CONFIG_DIR}/python/pythonrc"
 if [[ -z "$TERMINFO" ]]; then
-  export TERMINFO="${STATE_DIR}/.terminfo"
+  export TERMINFO="${STATE_DIR}/terminfo"
 fi
 
 {{ if .proxy_enabled -}}
