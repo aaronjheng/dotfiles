@@ -33,6 +33,7 @@ if [[ -z "$TERMINFO" ]]; then
   export TERMINFO="${STATE_DIR}/terminfo"
 fi
 export VSC_REST_CLIENT_HOME="${STATE_DIR}/rest-client"
+export MYSQLSH_USER_CONFIG_HOME="${CONFIG_DIR}/mysqlsh"
 
 {{ if .proxy_enabled -}}
 export HTTP_PROXY=http://127.0.0.1:7890
