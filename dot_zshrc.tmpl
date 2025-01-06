@@ -71,11 +71,6 @@ if command -v kafka 1>/dev/null 2>&1; then
   source <(kafka completion zsh) && compdef _kafka kafka
 fi
 
-# Protogen
-if command -v protogen 1>/dev/null 2>&1; then
-  source <(protogen completion zsh) && compdef _protogen protogen
-fi
-
 # Extensions
 # Zoxide
 if command -v zoxide 1>/dev/null 2>&1; then
