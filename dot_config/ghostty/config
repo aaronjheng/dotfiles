@@ -10,7 +10,8 @@ theme = iTerm2 Default
 working-directory = home
 window-inherit-working-directory = false
 confirm-close-surface = false
-auto-update = off
+auto-update = download
+auto-update-channel = tip
 split-divider-color = #555555
 keybind = cmd+left=previous_tab
 keybind = cmd+right=next_tab
