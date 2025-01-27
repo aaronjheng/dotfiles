@@ -147,24 +147,6 @@ function system_proxy_setup() {
   networksetup -setproxybypassdomains 'Wi-Fi' '*.local' '10.*' '127.0.0.*' '192.168.*' 'example.dev' '*.example.dev'
 }
 
-function mitmproxy_setup() {
-  host="aarons-nuc.local"
-  port="9118"
-
-  if [[ -n "$1" ]]; then
-    host=$1
-  fi
-
-  if [[ -n "$2" ]]; then
-    port=$2
-  fi
-
-  networksetup -setsecurewebproxy 'Wi-Fi' "${host}" "${port}"
-  networksetup -setwebproxy 'Wi-Fi' "${host}" "${port}"
-  networksetup -setsocksfirewallproxy 'Wi-Fi' "${host}" "${port}"
-  networksetup -setproxybypassdomains 'Wi-Fi' '*.local' '10.*' '127.0.0.*' '192.168.*' 'example.dev' '*.example.dev'
-}
-
 function system_proxy_show() {
   echo "HTTPS Proxy"
   networksetup -getsecurewebproxy 'Wi-Fi'
