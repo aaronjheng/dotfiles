@@ -39,16 +39,6 @@ export MYSQLSH_USER_CONFIG_HOME="${CONFIG_DIR}/mysqlsh"
 export KUBECONFIG="${CONFIG_DIR}/kube" 
 export KUBECACHEDIR="${CACHE_DIR}/kube"
 
-{{ if .proxy_enabled -}}
-export HTTP_PROXY=http://127.0.0.1:7890
-export HTTPS_PROXY=http://127.0.0.1:7890
-export ALL_PROXY=socks5://127.0.0.1:7890
-export http_proxy=http://127.0.0.1:7890
-export https_proxy=http://127.0.0.1:7890
-export all_proxy=socks5://127.0.0.1:7890
-
-{{ end -}}
-
 # Paths
 typeset -U PATH path
 

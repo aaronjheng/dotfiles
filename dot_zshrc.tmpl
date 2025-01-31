@@ -186,3 +186,8 @@ function launchctl() {
 }
 
 {{ end -}}
+
+{{ if .proxy_enabled -}}
+proxy_on()
+
+{{ end -}}
