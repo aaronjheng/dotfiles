@@ -94,12 +94,12 @@ fi
 
 # Functions
 function proxy_on() {
-  export HTTP_PROXY=http://127.0.0.1:7890
-  export HTTPS_PROXY=http://127.0.0.1:7890
-  export ALL_PROXY=socks5://127.0.0.1:7890
-  export http_proxy=http://127.0.0.1:7890
-  export https_proxy=http://127.0.0.1:7890
-  export all_proxy=socks5://127.0.0.1:7890
+  export HTTP_PROXY=http://{{ .proxy.host }}:{{ .proxy.port }}
+  export HTTPS_PROXY=http://{{ .proxy.host }}:{{ .proxy.port }}
+  export ALL_PROXY=socks5://{{ .proxy.host }}:{{ .proxy.port }}
+  export http_proxy=http://{{ .proxy.host }}:{{ .proxy.port }}
+  export https_proxy=http://{{ .proxy.host }}:{{ .proxy.port }}
+  export all_proxy=socks5://{{ .proxy.host }}:{{ .proxy.port }}
 }
 
 function proxy_off() {
@@ -130,16 +130,8 @@ function system_proxy_off() {
 }
 
 function system_proxy_setup() {
-  host="127.0.0.1"
-  port="7890"
-
-  if [[ -n "$1" ]]; then
-    host=$1
-  fi
-
-  if [[ -n "$2" ]]; then
-    port=$2
-  fi
+  host="{{ .proxy.host }}"
+  port="{{ .proxy.port }}"
 
   networksetup -setsecurewebproxy 'Wi-Fi' "${host}" "${port}"
   networksetup -setwebproxy 'Wi-Fi' "${host}" "${port}"
@@ -187,7 +179,7 @@ function launchctl() {
 
 {{ end -}}
 
-{{ if .proxy_enabled -}}
+{{ if .proxy.enabled -}}
 proxy_on()
 
 {{ end -}}
