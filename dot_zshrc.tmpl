@@ -94,16 +94,20 @@ fi
 
 # Functions
 function proxy_on() {
-  export HTTP_PROXY=http://{{ .proxy.host }}:{{ .proxy.port }}
-  export HTTPS_PROXY=http://{{ .proxy.host }}:{{ .proxy.port }}
-  export ALL_PROXY=socks5://{{ .proxy.host }}:{{ .proxy.port }}
-  export http_proxy=http://{{ .proxy.host }}:{{ .proxy.port }}
-  export https_proxy=http://{{ .proxy.host }}:{{ .proxy.port }}
-  export all_proxy=socks5://{{ .proxy.host }}:{{ .proxy.port }}
+  export HTTP_PROXY='http://{{ .proxy.host }}:{{ .proxy.port }}'
+  export HTTPS_PROXY='http://{{ .proxy.host }}:{{ .proxy.port }}'
+  export ALL_PROXY='socks5://{{ .proxy.host }}:{{ .proxy.port }}'
+  export NO_PROXY='localhost,internal.domain,.local,example.dev,.example.dev,10.0.0.1/8,127.0.0.1/24,192.168.0.1/16'
+
+  export http_proxy="${HTTP_PROXY}"
+  export https_proxy="${HTTPS_PROXY}"
+  export all_proxy="${ALL_PROXY}"
+  export no_proxy="${NO_PROXY}"
 }
 
 function proxy_off() {
-  unset HTTP_PROXY HTTPS_PROXY ALL_PROXY http_proxy https_proxy all_proxy
+  unset HTTP_PROXY HTTPS_PROXY ALL_PROXY NO_PROXY \
+    http_proxy https_proxy all_proxy no_proxy
 }
 
 function ipython() {
@@ -136,7 +140,7 @@ function system_proxy_setup() {
   networksetup -setsecurewebproxy 'Wi-Fi' "${host}" "${port}"
   networksetup -setwebproxy 'Wi-Fi' "${host}" "${port}"
   networksetup -setsocksfirewallproxy 'Wi-Fi' "${host}" "${port}"
-  networksetup -setproxybypassdomains 'Wi-Fi' '*.local' 'example.dev' '*.example.dev' '10.*' '127.0.0.*' '192.168.*'
+  networksetup -setproxybypassdomains 'Wi-Fi' 'localhost' 'internal.domain' '*.local' 'example.dev' '*.example.dev' '10.*' '127.0.0.*' '192.168.*'
 }
 
 function system_proxy_show() {
