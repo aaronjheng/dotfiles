@@ -144,7 +144,7 @@ function system_proxy_setup() {
   networksetup -setsecurewebproxy 'Wi-Fi' "${host}" "${port}"
   networksetup -setwebproxy 'Wi-Fi' "${host}" "${port}"
   networksetup -setsocksfirewallproxy 'Wi-Fi' "${host}" "${port}"
-  networksetup -setproxybypassdomains 'Wi-Fi' '*.local' '10.*' '127.0.0.*' '192.168.*' 'example.dev' '*.example.dev'
+  networksetup -setproxybypassdomains 'Wi-Fi' '*.local' 'example.dev' '*.example.dev' '10.*' '127.0.0.*' '192.168.*'
 }
 
 function system_proxy_show() {
