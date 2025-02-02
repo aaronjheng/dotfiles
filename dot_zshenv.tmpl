@@ -28,6 +28,8 @@ export WGETRC="${CONFIG_DIR}/wgetrc"
 export VSCE_PAT={{ .vsce.token }}
 export GITHUB_TOKEN={{ .github.token }}
 export ETCDCTL_API=3
+export NIXPKGS_ALLOW_INSECURE=1
+export NIXPKGS_ALLOW_UNFREE=1
 export PYTHONSTARTUP="${CONFIG_DIR}/python/pythonrc"
 if [[ -z "$TERMINFO" ]]; then
   export TERMINFO="${STATE_DIR}/terminfo"
