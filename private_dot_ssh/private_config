@@ -5,3 +5,9 @@ Host *
 	ServerAliveCountMax 3
 	StrictHostKeyChecking no
 	IdentityFile ~/.ssh/id_ed25519
+
+Host aarons-air.local
+  SetEnv TERM=xterm-256color
+
+Host aarons-work.local
+  SetEnv TERM=xterm-256color
