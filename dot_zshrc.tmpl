@@ -188,3 +188,8 @@ function launchctl() {
 proxy_on
 
 {{ end -}}
+
+# Local configuration
+if [ -f ~/.zshrc.local ]; then
+  source ~/.zshrc.local
+fi
