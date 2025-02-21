@@ -186,7 +186,7 @@ func set-corp-dns() {
   sudo networksetup -setdnsservers 'Wi-Fi' '10.0.0.2'
 }
 
-func clear-corp-dns() {
+func unset-corp-dns() {
   sudo networksetup -setdnsservers 'Wi-Fi' 'empty'
 }
 
