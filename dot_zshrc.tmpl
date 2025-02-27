@@ -88,11 +88,6 @@ if [ -f "${NIX_PROFILE_DIR}/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ]
   source "${NIX_PROFILE_DIR}/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 fi
 
-# zsh-syntax-highlighting
-if [ -f "${NIX_PROFILE_DIR}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]; then
-  source "${NIX_PROFILE_DIR}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
-fi
-
 # Functions
 function proxy_on() {
   export HTTP_PROXY='http://{{ .proxy.host }}:{{ .proxy.port }}'
