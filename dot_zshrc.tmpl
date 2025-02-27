@@ -81,11 +81,6 @@ if command -v atuin 1>/dev/null 2>&1; then
   eval "$(atuin init zsh)"
 fi
 
-# zsh-autosuggestions
-if [ -f "${NIX_PROFILE_DIR}/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ]; then
-  source "${NIX_PROFILE_DIR}/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
-fi
-
 # Functions
 function proxy_on() {
   export HTTP_PROXY='http://{{ .proxy.host }}:{{ .proxy.port }}'
