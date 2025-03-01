@@ -14,7 +14,7 @@
 	</array>
 	<key>ProgramArguments</key>
 	<array>
-		<string>{{ .chezmoi.homeDir }}/.local/state/nix/profile/bin/clash</string>
+		<string>/etc/profiles/per-user/{{ .chezmoi.username }}/bin/clash</string>
 		<string>-f</string>
 		<string>{{ .chezmoi.homeDir }}/.config/clash/config.yaml</string>
 		<string>-d</string>
