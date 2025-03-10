@@ -27,9 +27,6 @@ export ETCDCTL_API=3
 export NIXPKGS_ALLOW_INSECURE=1
 export NIXPKGS_ALLOW_UNFREE=1
 export PYTHONSTARTUP="${CONFIG_DIR}/python/pythonrc"
-if [[ -z "$TERMINFO" ]]; then
-  export TERMINFO="${STATE_DIR}/terminfo"
-fi
 export MYSQLSH_USER_CONFIG_HOME="${CONFIG_DIR}/mysqlsh"
 export KUBECONFIG="${CONFIG_DIR}/kube" 
 export KUBECACHEDIR="${CACHE_DIR}/kube"
