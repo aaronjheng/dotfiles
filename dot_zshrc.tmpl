@@ -146,11 +146,6 @@ function system_proxy_show() {
   networksetup -getproxybypassdomains 'Wi-Fi'
 }
 
-function gobox() {
-  local serial=`system_profiler SPHardwareDataType | grep "Serial Number (system)" | cut -d ":" -f 2 | xargs`
-  ssh -t aarons-box.local "tmux -CC new -A -s workspace-${serial}"
-}
-
 function govm() {
   local serial=`system_profiler SPHardwareDataType | grep "Serial Number (system)" | cut -d ":" -f 2 | xargs`
   ssh -t aarons-work-vm.local "tmux -CC new -A -s workspace-${serial}"
