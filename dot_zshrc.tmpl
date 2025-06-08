@@ -82,7 +82,7 @@ if command -v atuin 1>/dev/null 2>&1; then
 fi
 
 # Functions
-function proxy_on() {
+function term-proxy-on() {
   export HTTP_PROXY='http://{{ .proxy.host }}:{{ .proxy.port }}'
   export HTTPS_PROXY='http://{{ .proxy.host }}:{{ .proxy.port }}'
   export ALL_PROXY='socks5://{{ .proxy.host }}:{{ .proxy.port }}'
@@ -94,7 +94,7 @@ function proxy_on() {
   export no_proxy="${NO_PROXY}"
 }
 
-function proxy_off() {
+function term-proxy-off() {
   unset HTTP_PROXY HTTPS_PROXY ALL_PROXY NO_PROXY \
     http_proxy https_proxy all_proxy no_proxy
 }
@@ -110,19 +110,19 @@ function config-git-user() {
 }
 
 {{ if eq .chezmoi.os "darwin" -}}
-function system_proxy_on() {
+function system-proxy-on() {
   networksetup -setsecurewebproxystate 'Wi-Fi' on
   networksetup -setwebproxystate 'Wi-Fi' on
   networksetup -setsocksfirewallproxystate 'Wi-Fi' on
 }
 
-function system_proxy_off() {
+function system-proxy-off() {
   networksetup -setsecurewebproxystate 'Wi-Fi' off
   networksetup -setwebproxystate 'Wi-Fi' off
   networksetup -setsocksfirewallproxystate 'Wi-Fi' off
 }
 
-function system_proxy_setup() {
+function system-proxy-setup() {
   host="{{ .proxy.host }}"
   port="{{ .proxy.port }}"
 
@@ -132,7 +132,7 @@ function system_proxy_setup() {
   networksetup -setproxybypassdomains 'Wi-Fi' 'localhost' 'internal.domain' '*.local' 'example.dev' '*.example.dev' '10.*' '127.0.0.*' '192.168.*'
 }
 
-function system_proxy_show() {
+function system-proxy-show() {
   echo "HTTPS Proxy"
   networksetup -getsecurewebproxy 'Wi-Fi'
   echo ""
