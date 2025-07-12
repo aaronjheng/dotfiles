@@ -94,10 +94,6 @@ function term-proxy-off() {
     http_proxy https_proxy all_proxy no_proxy
 }
 
-function ipython() {
-  nix-shell -p python3Packages.ipython --command "ipython $@"
-}
-
 function config-git-user() {
   git config --local user.name "Aaron Jheng"
   git config --local user.email "wentworth@outlook.com"
