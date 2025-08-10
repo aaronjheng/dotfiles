@@ -4,9 +4,12 @@ bind-address: 0.0.0.0
 allow-lan: true
 mode: rule
 ipv6: true
-mmdb-download-url: https://cdn.jsdelivr.net/gh/Loyalsoldier/geoip@release/GeoLite2-Country.mmdb
-asn-mmdb-download-url: https://cdn.jsdelivr.net/gh/Loyalsoldier/geoip@release/GeoLite2-ASN.mmdb
-geosite-download-url: https://cdn.jsdelivr.net/gh/Loyalsoldier/v2ray-rules-dat@release/geosite.dat
+mmdb: GeoLite2-Country.mmdb
+mmdb-download-url: https://fastly.jsdelivr.net/gh/Loyalsoldier/geoip@release/GeoLite2-Country.mmdb
+asn-mmdb: GeoLite2-ASN.mmdb
+asn-mmdb-download-url: https://fastly.jsdelivr.net/gh/Loyalsoldier/geoip@release/GeoLite2-ASN.mmdb
+geosite: geosite.dat
+geosite-download-url: https://fastly.jsdelivr.net/gh/Loyalsoldier/v2ray-rules-dat@release/geosite.dat
 
 proxies:
 {{- range .clash.proxy }}
