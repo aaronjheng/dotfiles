@@ -1,4 +1,5 @@
 font-family = "Lucida Console"
+font-family = "Menlo"
 font-size = 13
 adjust-cell-height = 2
 focus-follows-mouse = true
