@@ -1,6 +1,5 @@
-font-family = "Lucida Console"
-font-family = "Menlo"
-font-size = 13
+font-family = "Consolas"
+font-size = 14
 adjust-cell-height = 2
 focus-follows-mouse = true
 copy-on-select = clipboard
