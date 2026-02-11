@@ -1,4 +1,9 @@
 font-family = "Consolas"
+font-family = "Noto Sans CJK SC"
+font-family = "Noto Sans CJK HK"
+font-family = "Noto Sans CJK TW"
+font-family = "Noto Sans CJK JP"
+font-family = "Noto Sans CJK KR"
 font-size = 14
 adjust-cell-height = 2
 focus-follows-mouse = true
