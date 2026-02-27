@@ -33,6 +33,7 @@ alias l='ls -CF'
 {{- if eq .chezmoi.os "darwin" }}
 alias typora="open -a typora"
 {{- end }}
+alias mitmproxy="mitmproxy --set confdir=${STATE_DIR}/mitmproxy"
 
 if command -v gojq 1>/dev/null 2>&1; then
   alias jq=gojq
@@ -44,10 +45,6 @@ fi
 
 if command -v wget2 1>/dev/null 2>&1; then
   alias wget=wget2
-fi
-
-if command -v mitmproxy 1>/dev/null 2>&1; then
-  alias mitmproxy="mitmproxy --set confdir=${STATE_DIR}/mitmproxy"
 fi
 
 # FPATH
