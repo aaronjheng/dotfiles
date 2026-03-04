@@ -158,6 +158,48 @@ function launchctl() {
   esac
 }
 
+tech() {
+  local workspace="$HOME/Library/Mobile Documents/iCloud~md~obsidian/Documents/notes"
+  local failed=0
+  local added=0
+  local url
+
+  if [[ $# -eq 0 ]]; then
+    echo "Usage:"
+    echo "  tech <URL> [URL ...]"
+    echo "  tech --dedupe"
+    return 1
+  fi
+
+  if [[ "$1" == "--dedupe" ]]; then
+    cursor-agent -p --trust --force --workspace "$workspace" "/dedupe-tech-knowledge"
+    return $?
+  fi
+
+  for url in "$@"; do
+    if [[ ! "$url" =~ ^https?:// ]]; then
+      echo "[skip] invalid URL: $url"
+      failed=1
+      continue
+    fi
+
+    echo "[add] $url"
+    if cursor-agent -p --trust --force --workspace "$workspace" "/add-tech-knowledge $url"; then
+      added=$((added + 1))
+    else
+      echo "[fail] $url"
+      failed=1
+    fi
+  done
+
+  if [[ $added -gt 1 ]]; then
+    echo "[dedupe] checking duplicates in Tech Knowledge"
+    cursor-agent -p --trust --force --workspace "$workspace" "/dedupe-tech-knowledge" || failed=1
+  fi
+
+  return $failed
+}
+
 {{ end -}}
 
 {{ if .proxy.enabled -}}
