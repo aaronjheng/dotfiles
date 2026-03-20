@@ -64,7 +64,7 @@ zstyle ':completion:*' cache-path "${CACHE_DIR}/zsh/zcompcache"
 
 # Kafka
 if command -v kafka 1>/dev/null 2>&1; then
-  source <(kafka completion zsh) && compdef _kafka kafka
+  source <(kafka completion zsh)
 fi
 
 # Extensions
