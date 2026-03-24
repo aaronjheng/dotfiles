@@ -31,6 +31,7 @@ alias ll='ls -alv'
 alias la='ls -A'
 alias l='ls -CF'
 {{- if eq .chezmoi.os "darwin" }}
+alias cursor=cursor-agent
 alias typora="open -a typora"
 {{- end }}
 alias mitmproxy="mitmproxy --set confdir=${STATE_DIR}/mitmproxy"
