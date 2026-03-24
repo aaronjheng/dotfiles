@@ -160,44 +160,37 @@ function launchctl() {
 
 tech() {
   local workspace="$HOME/Library/Mobile Documents/iCloud~md~obsidian/Documents/notes"
-  local failed=0
-  local added=0
+  local -a valid_urls=()
   local url
 
-  if [[ $# -eq 0 ]]; then
+  command -v codex >/dev/null 2>&1 || {
+    echo "[fail] codex CLI not found in PATH"
+    return 127
+  }
+
+  (( $# > 0 )) || {
     echo "Usage:"
     echo "  tech <URL> [URL ...]"
-    echo "  tech --dedupe"
     return 1
-  fi
-
-  if [[ "$1" == "--dedupe" ]]; then
-    cursor-agent -p --trust --force --workspace "$workspace" "/dedupe-tech-knowledge"
-    return $?
-  fi
+  }
 
   for url in "$@"; do
-    if [[ ! "$url" =~ ^https?:// ]]; then
-      echo "[skip] invalid URL: $url"
-      failed=1
-      continue
-    fi
-
-    echo "[add] $url"
-    if cursor-agent -p --trust --force --workspace "$workspace" "/add-tech-knowledge $url"; then
-      added=$((added + 1))
+    if [[ "$url" =~ ^https?:// ]]; then
+      valid_urls+=("$url")
     else
-      echo "[fail] $url"
-      failed=1
+      echo "[skip] invalid URL: $url"
     fi
   done
 
-  if [[ $added -gt 1 ]]; then
-    echo "[dedupe] checking duplicates in Tech Knowledge"
-    cursor-agent -p --trust --force --workspace "$workspace" "/dedupe-tech-knowledge" || failed=1
-  fi
+  (( ${#valid_urls[@]} > 0 )) || {
+    echo "[fail] no valid URL provided"
+    return 1
+  }
 
-  return $failed
+  local url_block="${(j:\n:)valid_urls}"
+  local prompt="Use the batch-add-tech-knowledge skill for these URLs:\n${url_block}"
+
+  codex exec --skip-git-repo-check -C "$workspace" "$prompt"
 }
 
 {{ end -}}
