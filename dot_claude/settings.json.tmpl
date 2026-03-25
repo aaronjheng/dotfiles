@@ -2,6 +2,6 @@
   "env": {
     "ANTHROPIC_MODEL": "kimi-k2.5",
     "ANTHROPIC_BASE_URL": "https://ark.cn-beijing.volces.com/api/coding",
-    "ANTHROPIC_AUTH_TOKEN": "{{ .volcano_engine_api_key }}"
+    "ANTHROPIC_AUTH_TOKEN": "{{ get . "volcano_engine_api_key" | default "" }}"
   }
 }

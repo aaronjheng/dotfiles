@@ -32,6 +32,10 @@ export KUBECONFIG="${CONFIG_DIR}/kube"
 export KUBECACHEDIR="${CACHE_DIR}/kube"
 export PSQL_HISTORY="${STATE_DIR}/postgres/psql_history"
 export SQLITE_HISTORY="${STATE_DIR}/sqlite/history"
+{{- $volcanoEngineApiKey := (get . "volcano_engine_api_key" | default "") -}}
+{{ if $volcanoEngineApiKey -}}
+export VOLCANO_ENGINE_API_KEY="{{ $volcanoEngineApiKey }}"
+{{ end -}}
 
 # Paths
 typeset -U PATH path

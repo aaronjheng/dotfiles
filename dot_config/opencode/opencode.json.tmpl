@@ -7,7 +7,7 @@
       "npm": "@ai-sdk/openai-compatible",
       "options": {
         "baseURL": "https://ark.cn-beijing.volces.com/api/coding/v3",
-        "apiKey": "{{ .volcano_engine_api_key }}"
+        "apiKey": "{{ get . "volcano_engine_api_key" | default "" }}"
       },
       "models": {
         "ark-code-latest": {
