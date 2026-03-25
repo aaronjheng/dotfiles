@@ -1,0 +1,17 @@
+{
+  "providers": {
+    "volcanoengine": {
+      "id": "volcanoengine",
+      "name": "Volcano Engine",
+      "type": "openai-compat",
+      "base_url": "https://ark.cn-beijing.volces.com/api/coding/v3",
+      "api_key": "{{ get . "volcano_engine_api_key" | default "" }}",
+      "models": [
+        { "id": "kimi-k2.5", "name": "Kimi K2.5" },
+        { "id": "minimax-m2.5", "name": "MiniMax M2.5" },
+        { "id": "deepseek-v3.2", "name": "DeepSeek V3.2" },
+        { "id": "glm-4.7", "name": "GLM 4.7" }
+      ]
+    }
+  }
+}
