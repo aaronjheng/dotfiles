@@ -36,6 +36,8 @@ export SQLITE_HISTORY="${STATE_DIR}/sqlite/history"
 {{ if $volcanoEngineApiKey -}}
 export VOLCANO_ENGINE_API_KEY="{{ $volcanoEngineApiKey }}"
 {{ end -}}
+export TELEPORT_PROXY=teleport.g123.io:443
+export TELEPORT_AUTH=github
 
 # Paths
 typeset -U PATH path
