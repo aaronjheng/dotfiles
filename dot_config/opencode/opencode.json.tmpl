@@ -1,6 +1,6 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "model": "volcanoengine/kimi-k2.5",
+  "model": "opencode/mimo-v2-pro-free",
   "provider": {
     "volcanoengine": {
       "name": "Volcano Engine",
@@ -10,8 +10,61 @@
         "apiKey": "{{ get . "volcano_engine_api_key" | default "" }}"
       },
       "models": {
+        "glm-4.7": {
+          "name": "GLM 4.7",
+          "limit": {
+            "context": 200000,
+            "output": 4096
+          },
+          "modalities": {
+            "input": [
+              "text"
+            ],
+            "output": [
+              "text"
+            ]
+          }
+        },
+        "deepseek-v3.2": {
+          "name": "DeepSeek V3.2",
+          "limit": {
+            "context": 128000,
+            "output": 4096
+          }
+        },
+        "minimax-m2.5": {
+          "name": "Minimax M2.5",
+          "limit": {
+            "context": 200000,
+            "output": 4096
+          },
+          "modalities": {
+            "input": [
+              "text"
+            ],
+            "output": [
+              "text"
+            ]
+          }
+        },
+        "kimi-k2.5": {
+          "name": "Kimi K2.5",
+          "limit": {
+            "context": 256000,
+            "output": 4096
+          },
+          "modalities": {
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          }
+        },
         "ark-code-latest": {
-          "name": "ark-code-latest",
+          "name": "Ark Code Latest",
           "limit": {
             "context": 256000,
             "output": 4096
@@ -27,7 +80,7 @@
           }
         },
         "doubao-seed-code": {
-          "name": "doubao-seed-code",
+          "name": "Doubao Seed Code",
           "limit": {
             "context": 256000,
             "output": 4096
@@ -43,7 +96,7 @@
           }
         },
         "doubao-seed-2.0-code": {
-          "name": "doubao-seed-2.0-code",
+          "name": "Doubao Seed Code 2.0",
           "limit": {
             "context": 256000,
             "output": 4096
@@ -59,7 +112,7 @@
           }
         },
         "doubao-seed-2.0-pro": {
-          "name": "doubao-seed-2.0-pro",
+          "name": "Doubao Seed Code 2.0 Pro",
           "limit": {
             "context": 256000,
             "output": 4096
@@ -75,60 +128,7 @@
           }
         },
         "doubao-seed-2.0-lite": {
-          "name": "doubao-seed-2.0-lite",
-          "limit": {
-            "context": 256000,
-            "output": 4096
-          },
-          "modalities": {
-            "input": [
-              "text",
-              "image"
-            ],
-            "output": [
-              "text"
-            ]
-          }
-        },
-        "glm-4.7": {
-          "name": "glm-4.7",
-          "limit": {
-            "context": 200000,
-            "output": 4096
-          },
-          "modalities": {
-            "input": [
-              "text"
-            ],
-            "output": [
-              "text"
-            ]
-          }
-        },
-        "deepseek-v3.2": {
-          "name": "deepseek-v3.2",
-          "limit": {
-            "context": 128000,
-            "output": 4096
-          }
-        },
-        "minimax-m2.5": {
-          "name": "minimax-m2.5",
-          "limit": {
-            "context": 200000,
-            "output": 4096
-          },
-          "modalities": {
-            "input": [
-              "text"
-            ],
-            "output": [
-              "text"
-            ]
-          }
-        },
-        "kimi-k2.5": {
-          "name": "kimi-k2.5",
+          "name": "Doubao Seed Code 2.0 Lite",
           "limit": {
             "context": 256000,
             "output": 4096
