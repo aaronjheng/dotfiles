@@ -21,3 +21,4 @@ keybind = cmd+left=previous_tab
 keybind = cmd+right=next_tab
 keybind = cmd+left_bracket=previous_tab
 keybind = cmd+right_bracket=next_tab
+keybind = super+v=paste_from_clipboard
