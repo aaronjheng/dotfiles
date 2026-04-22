@@ -1,6 +1,6 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "model": "volcanoengine/glm-4.7",
+  "model": "volcanoengine/glm-5.1",
   "provider": {
     "volcanoengine": {
       "name": "Volcano Engine",
@@ -10,11 +10,18 @@
         "apiKey": "{{ get . "volcano_engine_api_key" | default "" }}"
       },
       "models": {
-        "glm-4.7": {
-          "name": "GLM 4.7",
+        "deepseek-v3.2": {
+          "name": "DeepSeek V3.2",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        },
+        "glm-5.1": {
+          "name": "GLM 5.1",
           "limit": {
             "context": 200000,
-            "output": 4096
+            "output": 131072
           },
           "modalities": {
             "input": [
@@ -23,20 +30,13 @@
             "output": [
               "text"
             ]
-          }
-        },
-        "deepseek-v3.2": {
-          "name": "DeepSeek V3.2",
-          "limit": {
-            "context": 128000,
-            "output": 4096
           }
         },
         "minimax-m2.7": {
           "name": "Minimax M2.7",
           "limit": {
-            "context": 200000,
-            "output": 4096
+            "context": 204800,
+            "output": 65536
           },
           "modalities": {
             "input": [
@@ -47,11 +47,11 @@
             ]
           }
         },
-        "kimi-k2.5": {
-          "name": "Kimi K2.5",
+        "kimi-k2.6": {
+          "name": "Kimi K2.6",
           "limit": {
-            "context": 256000,
-            "output": 4096
+            "context": 262144,
+            "output": 98304
           },
           "modalities": {
             "input": [
