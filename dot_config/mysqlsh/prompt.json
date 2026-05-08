@@ -1,0 +1,18 @@
+{
+  "prompt": {
+    "text": " > "
+  },
+  "segments": [
+    {
+      "classes": ["disconnected%host%"],
+      "text": "%host%:%port%/%schema%",
+      "fg": "cyan"
+    },
+    {
+      "classes": ["%Mode%"],
+      "text": "%Mode%",
+      "fg": "green"
+    }
+  ]
+}
+
