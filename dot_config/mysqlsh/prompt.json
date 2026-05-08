@@ -2,17 +2,25 @@
   "prompt": {
     "text": " > "
   },
+  "classes": {
+    "schema": {
+      "text": "%host%:%port%/%schema%"
+    },
+    "noschema": {
+      "text": "%host%:%port%"
+    }
+  },
   "segments": [
     {
-      "classes": ["disconnected%host%"],
-      "text": "%host%:%port%/%schema%",
-      "fg": "cyan"
+      "classes": ["disconnected%host%", "noschema%schema%", "schema"],
+      "fg": "cyan",
+      "padding": 0
     },
     {
       "classes": ["%Mode%"],
       "text": "%Mode%",
-      "fg": "green"
+      "fg": "green",
+      "padding": 0
     }
   ]
 }
-
