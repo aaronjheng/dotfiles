@@ -10,18 +10,11 @@
         "apiKey": "{{ get . "volcano_engine_api_key" | default "" }}"
       },
       "models": {
-        "deepseek-v3.2": {
-          "name": "DeepSeek V3.2",
-          "limit": {
-            "context": 128000,
-            "output": 8192
-          }
-        },
         "glm-5.1": {
           "name": "GLM 5.1",
           "limit": {
             "context": 200000,
-            "output": 131072
+            "output": 128000
           },
           "modalities": {
             "input": [
@@ -35,13 +28,12 @@
         "kimi-k2.6": {
           "name": "Kimi K2.6",
           "limit": {
-            "context": 262144,
-            "output": 98304
+            "context": 256000,
+            "output": 164000
           },
           "modalities": {
             "input": [
               "text",
-              "image"
             ],
             "output": [
               "text"
