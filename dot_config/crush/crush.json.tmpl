@@ -1,5 +1,19 @@
 {
   "$schema": "https://charm.land/crush.json",
+  "models": {
+    "large": {
+      "model": "deepseek-v4-pro",
+      "provider": "deepseek",
+      "think": true,
+      "reasoning_effort": "max"
+    },
+    "small": {
+      "model": "deepseek-v4-flash",
+      "provider": "deepseek",
+      "think": false,
+      "reasoning_effort": "medium"
+    }
+  },
   "providers": {
     "deepseek": {
       "type": "openai-compat",
