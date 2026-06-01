@@ -1,19 +1,5 @@
 {
   "$schema": "https://charm.land/crush.json",
-  "models": {
-    "large": {
-      "model": "deepseek-v4-pro",
-      "provider": "deepseek",
-      "think": true,
-      "reasoning_effort": "max"
-    },
-    "small": {
-      "model": "deepseek-v4-flash",
-      "provider": "deepseek",
-      "think": false,
-      "reasoning_effort": "medium"
-    }
-  },
   "providers": {
     "deepseek": {
       "type": "openai-compat",
@@ -22,17 +8,21 @@
       "models": [
         {
           "id": "deepseek-v4-pro",
-          "name": "DeepSeek-V4-Pro",
+          "name": "DeepSeek V4 Pro",
           "context_window": 1048576,
           "default_max_tokens": 32768,
-          "can_reason": true
+          "can_reason": true,
+          "reasoning_levels": ["high", "xhigh"],
+          "default_reasoning_effort": "high"
         },
         {
           "id": "deepseek-v4-flash",
-          "name": "DeepSeek-V4-Flash",
+          "name": "DeepSeek V4 Flash",
           "context_window": 1048576,
           "default_max_tokens": 32768,
-          "can_reason": true
+          "can_reason": true,
+          "reasoning_levels": ["high", "xhigh"],
+          "default_reasoning_effort": "high"
         }
       ]
     }
