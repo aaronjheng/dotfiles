@@ -1,9 +1,7 @@
 #!/usr/bin/env bash
 
 if command -v clash 1>/dev/null 2>&1; then
-{{ if eq .chezmoi.os "linux" -}}
-	systemctl --user restart clash
-{{ else if eq .chezmoi.os "darwin" -}}
+{{ if eq .chezmoi.os "darwin" -}}
 	launchctl stop clash && sleep 1 && launchctl start clash
 {{ end -}}
 fi
