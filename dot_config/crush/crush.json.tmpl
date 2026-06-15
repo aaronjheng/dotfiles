@@ -42,6 +42,49 @@
         }
       ]
     },
+    "volcano-engine": {
+      "type": "openai-compat",
+      "base_url": "https://ark.cn-beijing.volces.com/api/coding/v3",
+      "api_key": "{{ get . "volcano_engine_api_key" | default "" }}",
+      "models": [
+        {
+          "id": "deepseek-v4-pro",
+          "name": "DeepSeek V4 Pro",
+          "context_window": 1000000,
+          "default_max_tokens": 384000,
+          "can_reason": true,
+          "reasoning_levels": [
+            "high",
+            "xhigh"
+          ],
+          "default_reasoning_effort": "high"
+        },
+        {
+          "id": "deepseek-v4-flash",
+          "name": "DeepSeek V4 Flash",
+          "context_window": 1000000,
+          "default_max_tokens": 384000,
+          "can_reason": true,
+          "reasoning_levels": [
+            "high",
+            "xhigh"
+          ],
+          "default_reasoning_effort": "high"
+        },
+        {
+          "id": "glm-5.1",
+          "name": "GLM 5.1",
+          "context_window": 200000,
+          "default_max_tokens": 128000
+        },
+        {
+          "id": "kimi-k2.6",
+          "name": "Kimi K2.6",
+          "context_window": 256000,
+          "default_max_tokens": 224000
+        }
+      ]
+    },
     "ollama": {
       "name": "Ollama",
       "base_url": "http://localhost:11434/v1/",
