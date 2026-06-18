@@ -2,7 +2,7 @@
 
 if command -v clash 1>/dev/null 2>&1; then
 {{ if eq .chezmoi.os "darwin" -}}
-	launchctl stop org.nixos.clash && sleep 1 && launchctl start org.nixos.clash
+	launchctl kickstart -k "gui/$(id -u)/org.nixos.clash"
 {{ else -}}
 	echo "Nothing to restart for clash on {{ .chezmoi.os }}."
 {{ end -}}

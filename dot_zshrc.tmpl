@@ -141,12 +141,31 @@ function govm() {
 }
 
 function launchctl() {
+  local pid status target
+
   case "$1" in
-  "reload")
-    command launchctl unload "$2" && command launchctl load "$2"
-    ;;
   "restart")
-    command launchctl stop "$2" && command launchctl start "$2"
+    if [[ -z "$2" ]]; then
+      echo "Usage: launchctl restart <label|service-target>" >&2
+      return 64
+    fi
+
+    case "$2" in
+    system/*|user/*|gui/*|login/*|pid/*)
+      target="$2"
+      ;;
+    *)
+      target="gui/$(id -u)/$2"
+      ;;
+    esac
+
+    if pid="$(command launchctl kickstart -k -p "${target}")"; then
+      echo "Restarted ${target} (pid ${pid})"
+    else
+      status=$?
+      echo "Failed to restart ${target}" >&2
+      return "${status}"
+    fi
     ;;
   *)
     command launchctl "$@"
