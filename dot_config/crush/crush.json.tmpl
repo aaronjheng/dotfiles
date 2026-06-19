@@ -12,6 +12,7 @@
   },
   "providers": {
     "deepseek": {
+      "name": "DeepSeek",
       "type": "openai-compat",
       "base_url": "https://api.deepseek.com/v1",
       "api_key": "{{ get . "deepseek_api_key" | default "" }}",
@@ -45,6 +46,7 @@
       ]
     },
     "volcano-engine": {
+      "name": "Volcano Engine",
       "type": "openai-compat",
       "base_url": "https://ark.cn-beijing.volces.com/api/coding/v3",
       "api_key": "{{ get . "volcano_engine_api_key" | default "" }}",
