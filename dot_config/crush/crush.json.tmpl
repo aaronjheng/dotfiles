@@ -25,9 +25,9 @@
           "can_reason": true,
           "reasoning_levels": [
             "high",
-            "xhigh"
+            "max"
           ],
-          "default_reasoning_effort": "xhigh",
+          "default_reasoning_effort": "max",
           "supports_attachments": false
         },
         {
@@ -38,17 +38,17 @@
           "can_reason": true,
           "reasoning_levels": [
             "high",
-            "xhigh"
+            "max"
           ],
-          "default_reasoning_effort": "xhigh",
+          "default_reasoning_effort": "max",
           "supports_attachments": false
         }
       ]
     },
     "volcano-engine": {
       "name": "Volcano Engine",
-      "type": "openai-compat",
-      "base_url": "https://ark.cn-beijing.volces.com/api/coding/v3",
+      "type": "anthropic",
+      "base_url": "https://ark.cn-beijing.volces.com/api/coding",
       "api_key": "{{ get . "volcano_engine_api_key" | default "" }}",
       "models": [
         {
@@ -59,9 +59,9 @@
           "can_reason": true,
           "reasoning_levels": [
             "high",
-            "xhigh"
+            "max"
           ],
-          "default_reasoning_effort": "xhigh",
+          "default_reasoning_effort": "max",
           "supports_attachments": false
         },
         {
@@ -72,9 +72,9 @@
           "can_reason": true,
           "reasoning_levels": [
             "high",
-            "xhigh"
+            "max"
           ],
-          "default_reasoning_effort": "xhigh",
+          "default_reasoning_effort": "max",
           "supports_attachments": false
         },
         {
@@ -85,9 +85,9 @@
           "can_reason": true,
           "reasoning_levels": [
             "high",
-            "xhigh"
+            "max"
           ],
-          "default_reasoning_effort": "xhigh",
+          "default_reasoning_effort": "max",
           "supports_attachments": false
         },
         {
