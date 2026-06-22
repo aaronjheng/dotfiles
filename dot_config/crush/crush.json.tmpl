@@ -47,8 +47,9 @@
     },
     "volcano-engine": {
       "name": "Volcano Engine",
-      "type": "anthropic",
-      "base_url": "https://ark.cn-beijing.volces.com/api/coding",
+      "type": "openai-compat
+      ",
+      "base_url": "https://ark.cn-beijing.volces.com/api/coding/v3",
       "api_key": "{{ get . "volcano_engine_api_key" | default "" }}",
       "models": [
         {
