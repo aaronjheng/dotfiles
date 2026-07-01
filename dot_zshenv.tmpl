@@ -34,11 +34,10 @@ export PSQL_HISTORY="${STATE_DIR}/postgres/psql_history"
 export SQLITE_HISTORY="${STATE_DIR}/sqlite/history"
 export TELEPORT_PROXY=teleport.g123.io:443
 export TELEPORT_AUTH=github
-{{- $hyperApiKey := (get . "hyper_api_key" | default "") -}}
+{{ $hyperApiKey := (get . "hyper_api_key" | default "") -}}
 {{ if $hyperApiKey -}}
 export HYPER_API_KEY="{{ $hyperApiKey }}"
 {{ end }}
-
 # Paths
 typeset -U PATH path
 
