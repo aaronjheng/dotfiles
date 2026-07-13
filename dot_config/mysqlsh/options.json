@@ -1,3 +1,4 @@
 {
-	"defaultMode": "sql"
+	"defaultMode": "sql",
+	"history.autoSave": "true"
 }
