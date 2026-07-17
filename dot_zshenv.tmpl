@@ -38,6 +38,10 @@ export TELEPORT_AUTH=github
 {{ if $hyperApiKey -}}
 export HYPER_API_KEY="{{ $hyperApiKey }}"
 {{ end }}
+{{ $opencodeApiKey := (get . "opencode_api_key" | default "") -}}
+{{ if $opencodeApiKey -}}
+export OPENCODE_API_KEY="{{ $opencodeApiKey }}"
+{{ end }}
 # Paths
 typeset -U PATH path
 
