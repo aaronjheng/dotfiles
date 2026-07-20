@@ -1,9 +1,10 @@
 {
   "providers": {
     "volcano-engine": {
+      "name": "Volcano Engine",
       "baseUrl": "https://ark.cn-beijing.volces.com/api/coding/v3",
       "api": "openai-completions",
-      "api_key": "{{ get . "volcano_engine_api_key" | default "" }}",
+      "apiKey": "{{ get . "volcano_engine_api_key" | default "" }}",
       "models": [
         {
           "id": "deepseek-v4-pro",
