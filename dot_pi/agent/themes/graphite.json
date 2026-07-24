@@ -1,0 +1,93 @@
+{
+  "$schema": "https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/src/modes/interactive/theme/theme-schema.json",
+  "name": "graphite",
+  "vars": {
+    "green": "#9ece6a",
+    "red": "#f7768e",
+    "yellow": "#e0af68",
+    "linkBlue": "#7aa6da",
+    "accentGray": "#c8c8c8",
+
+    "text": "#fafafa",
+    "textSecondary": "#ececec",
+    "gray": "#aaaaaa",
+    "grayDim": "#a0a0a0",
+    "grayBright": "#bbbbbb",
+
+    "bgBase": "#1a1a1a",
+    "bgTerminal": "#0a0a0a",
+    "bgHighlight": "#2a2a2a",
+    "bgDark": "#222222",
+    "bgHover": "#323232",
+    "bgVisual": "#3c3c3c",
+    "promptBg": "#6e6e6e",
+
+    "diffDeleteBg": "#501a20",
+    "diffInsertBg": "#0f4a0f"
+  },
+  "colors": {
+    "accent": "accentGray",
+    "border": "#54545c",
+    "borderAccent": "#6e6e78",
+    "borderMuted": "#48484e",
+    "success": "green",
+    "error": "red",
+    "warning": "yellow",
+    "muted": "gray",
+    "dim": "grayDim",
+    "text": "text",
+    "thinkingText": "grayBright",
+
+    "selectedBg": "bgVisual",
+    "userMessageBg": "bgHighlight",
+    "userMessageText": "text",
+    "customMessageBg": "bgHighlight",
+    "customMessageText": "text",
+    "customMessageLabel": "accentGray",
+    "toolPendingBg": "bgHighlight",
+    "toolSuccessBg": "diffInsertBg",
+    "toolErrorBg": "diffDeleteBg",
+    "toolTitle": "textSecondary",
+    "toolOutput": "gray",
+
+    "mdHeading": "textSecondary",
+    "mdLink": "linkBlue",
+    "mdLinkUrl": "grayDim",
+    "mdCode": "accentGray",
+    "mdCodeBlock": "textSecondary",
+    "mdCodeBlockBorder": "gray",
+    "mdQuote": "gray",
+    "mdQuoteBorder": "gray",
+    "mdHr": "gray",
+    "mdListBullet": "accentGray",
+
+    "toolDiffAdded": "green",
+    "toolDiffRemoved": "red",
+    "toolDiffContext": "gray",
+
+    "syntaxComment": "#6A9955",
+    "syntaxKeyword": "#569CD6",
+    "syntaxFunction": "#DCDCAA",
+    "syntaxVariable": "#9CDCFE",
+    "syntaxString": "#CE9178",
+    "syntaxNumber": "#B5CEA8",
+    "syntaxType": "#4EC9B0",
+    "syntaxOperator": "#ececec",
+    "syntaxPunctuation": "#ececec",
+
+    "thinkingOff": "#3a3a3a",
+    "thinkingMinimal": "#484850",
+    "thinkingLow": "#505058",
+    "thinkingMedium": "#5a5a64",
+    "thinkingHigh": "#646470",
+    "thinkingXhigh": "#70707c",
+    "thinkingMax": "#7c7c8a",
+
+    "bashMode": "yellow"
+  },
+  "export": {
+    "pageBg": "#0a0a0a",
+    "cardBg": "#1a1a1a",
+    "infoBg": "#222222"
+  }
+}
