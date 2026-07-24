@@ -1,0 +1,34 @@
+{
+  "timeout": 45000,
+  "servers": {
+    "gopls": {
+      "command": ["gopls"],
+      "extensions": [".go"]
+    },
+    "rust-analyzer": {
+      "command": ["rust-analyzer"],
+      "extensions": [".rs"]
+    },
+    "pyright": {
+      "command": ["pyright-langserver", "--stdio"],
+      "extensions": [".py", ".pyi"]
+    },
+    "zls": {
+      "command": ["zls"],
+      "extensions": [".zig", ".zon"]
+    },
+    "nixd": {
+      "command": ["nixd"],
+      "extensions": [".nix"]
+    },
+    "sourcekit-lsp": {
+      "command": ["sourcekit-lsp"],
+      "extensions": [".swift"]
+    },
+    "typescript": {
+      "command": ["typescript-language-server", "--stdio"],
+      "extensions": [".ts", ".tsx", ".mts", ".cts", ".js", ".jsx", ".mjs", ".cjs"],
+      "skipDirectories": ["node_modules", "dist", "build", ".next", "coverage"]
+    }
+  }
+}
