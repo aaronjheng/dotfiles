@@ -1,0 +1,113 @@
+{
+  "version": 1,
+  "servers": [
+    {
+      "id": "gopls",
+      "enabled": true,
+      "include": ["**/*.go"],
+      "rootMarkers": ["go.mod", "go.work"],
+      "bin": "gopls",
+      "args": [],
+      "cwd": "{root}",
+      "languageIdByExtension": { ".go": "go" },
+      "startupTimeoutMs": 45000,
+      "diagnosticsWaitMs": 1500,
+      "initializationOptions": {},
+      "settings": {}
+    },
+    {
+      "id": "rust-analyzer",
+      "enabled": true,
+      "include": ["**/*.rs"],
+      "rootMarkers": ["Cargo.toml", "Cargo.lock"],
+      "bin": "rust-analyzer",
+      "args": [],
+      "cwd": "{root}",
+      "languageIdByExtension": { ".rs": "rust" },
+      "startupTimeoutMs": 60000,
+      "diagnosticsWaitMs": 2000,
+      "initializationOptions": {},
+      "settings": {}
+    },
+    {
+      "id": "pyright",
+      "enabled": true,
+      "include": ["**/*.py", "**/*.pyi"],
+      "rootMarkers": ["pyproject.toml", "setup.py", "setup.cfg", "requirements.txt", "Pipfile"],
+      "bin": "pyright-langserver",
+      "args": ["--stdio"],
+      "cwd": "{root}",
+      "languageIdByExtension": { ".py": "python", ".pyi": "python" },
+      "startupTimeoutMs": 45000,
+      "diagnosticsWaitMs": 2000,
+      "initializationOptions": {},
+      "settings": {}
+    },
+    {
+      "id": "zls",
+      "enabled": true,
+      "include": ["**/*.zig", "**/*.zon"],
+      "rootMarkers": ["build.zig", "build.zig.zon"],
+      "bin": "zls",
+      "args": [],
+      "cwd": "{root}",
+      "languageIdByExtension": { ".zig": "zig", ".zon": "zig" },
+      "startupTimeoutMs": 30000,
+      "diagnosticsWaitMs": 1500,
+      "initializationOptions": {},
+      "settings": {}
+    },
+    {
+      "id": "nixd",
+      "enabled": true,
+      "include": ["**/*.nix"],
+      "rootMarkers": ["flake.nix", "default.nix", "shell.nix"],
+      "bin": "nixd",
+      "args": [],
+      "cwd": "{root}",
+      "languageIdByExtension": { ".nix": "nix" },
+      "startupTimeoutMs": 30000,
+      "diagnosticsWaitMs": 1500,
+      "initializationOptions": {},
+      "settings": {}
+    },
+    {
+      "id": "sourcekit-lsp",
+      "enabled": true,
+      "include": ["**/*.swift"],
+      "rootMarkers": ["Package.swift", "*.xcodeproj", "*.xcworkspace"],
+      "bin": "sourcekit-lsp",
+      "args": [],
+      "cwd": "{root}",
+      "languageIdByExtension": { ".swift": "swift" },
+      "startupTimeoutMs": 60000,
+      "diagnosticsWaitMs": 2000,
+      "initializationOptions": {},
+      "settings": {}
+    },
+    {
+      "id": "typescript",
+      "enabled": true,
+      "include": ["**/*.ts", "**/*.tsx", "**/*.mts", "**/*.cts", "**/*.js", "**/*.jsx", "**/*.mjs", "**/*.cjs"],
+      "exclude": ["**/node_modules/**", "**/dist/**", "**/build/**", "**/.next/**", "**/coverage/**"],
+      "rootMarkers": ["tsconfig.json", "jsconfig.json", "package.json"],
+      "bin": "typescript-language-server",
+      "args": ["--stdio"],
+      "cwd": "{root}",
+      "languageIdByExtension": {
+        ".ts": "typescript",
+        ".tsx": "typescriptreact",
+        ".mts": "typescript",
+        ".cts": "typescript",
+        ".js": "javascript",
+        ".jsx": "javascriptreact",
+        ".mjs": "javascript",
+        ".cjs": "javascript"
+      },
+      "startupTimeoutMs": 45000,
+      "diagnosticsWaitMs": 2000,
+      "initializationOptions": {},
+      "settings": {}
+    }
+  ]
+}
