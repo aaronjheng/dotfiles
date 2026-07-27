@@ -206,7 +206,7 @@ tech() {
   local url_block="${(j:\n:)valid_urls}"
   local prompt="Use the batch-add-tech-knowledge skill for these URLs:\n${url_block}"
 
-  pi exec -C "$workspace" "$prompt"
+  pi exec --provider deepseek --model deepseek-v4-flash -C "$workspace" "$prompt"
 }
 
 {{ end -}}
