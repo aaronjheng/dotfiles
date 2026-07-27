@@ -3,115 +3,11 @@
   "models": {
     "large": {
       "model": "deepseek-v4-pro",
-      "provider": "volcano-engine"
+      "provider": "hyper"
     },
     "small": {
       "model": "deepseek-v4-flash",
-      "provider": "volcano-engine"
-    }
-  },
-  "providers": {
-    "deepseek": {
-      "name": "DeepSeek",
-      "type": "openai-compat",
-      "base_url": "https://api.deepseek.com/v1",
-      "api_key": "{{ get . "deepseek_api_key" | default "" }}",
-      "models": [
-        {
-          "id": "deepseek-v4-pro",
-          "name": "DeepSeek V4 Pro",
-          "context_window": 1000000,
-          "default_max_tokens": 384000,
-          "can_reason": true,
-          "reasoning_levels": [
-            "high",
-            "max"
-          ],
-          "default_reasoning_effort": "max",
-          "supports_attachments": false
-        },
-        {
-          "id": "deepseek-v4-flash",
-          "name": "DeepSeek V4 Flash",
-          "context_window": 1000000,
-          "default_max_tokens": 384000,
-          "can_reason": true,
-          "reasoning_levels": [
-            "high",
-            "max"
-          ],
-          "default_reasoning_effort": "max",
-          "supports_attachments": false
-        }
-      ]
-    },
-    "volcano-engine": {
-      "name": "Volcano Engine",
-      "type": "openai-compat",
-      "base_url": "https://ark.cn-beijing.volces.com/api/coding/v3",
-      "api_key": "{{ get . "volcano_engine_api_key" | default "" }}",
-      "models": [
-        {
-          "id": "deepseek-v4-pro",
-          "name": "DeepSeek V4 Pro",
-          "context_window": 1000000,
-          "default_max_tokens": 384000,
-          "can_reason": true,
-          "reasoning_levels": [
-            "high",
-            "max"
-          ],
-          "default_reasoning_effort": "max",
-          "supports_attachments": false
-        },
-        {
-          "id": "deepseek-v4-flash",
-          "name": "DeepSeek V4 Flash",
-          "context_window": 1000000,
-          "default_max_tokens": 384000,
-          "can_reason": true,
-          "reasoning_levels": [
-            "high",
-            "max"
-          ],
-          "default_reasoning_effort": "max",
-          "supports_attachments": false
-        },
-        {
-          "id": "glm-5.2",
-          "name": "GLM 5.2",
-          "context_window": 1000000,
-          "default_max_tokens": 128000,
-          "can_reason": true,
-          "reasoning_levels": [
-            "high",
-            "max"
-          ],
-          "default_reasoning_effort": "max",
-          "supports_attachments": false
-        },
-        {
-          "id": "kimi-k2.7-code",
-          "name": "Kimi K2.7 Code",
-          "context_window": 256000,
-          "default_max_tokens": 32768,
-          "can_reason": true,
-          "supports_attachments": true
-        }
-      ]
-    },
-    "ollama": {
-      "name": "Ollama",
-      "base_url": "http://localhost:11434/v1/",
-      "type": "openai-compat",
-      "models": [
-        {
-          "name": "Gemma 4 12B MLX",
-          "id": "gemma4:12b-mlx",
-          "context_window": 256000,
-          "default_max_tokens": 20000
-        }
-      ]
+      "provider": "hyper"
     }
   },
   "permissions": {
