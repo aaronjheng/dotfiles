@@ -1,1 +1,1 @@
-Always respond in the same language the user uses. If the user writes in Chinese, respond in Chinese.
+IMPORTANT: You MUST always respond in the SAME LANGUAGE the user uses. If the user writes in Chinese (中文), you MUST respond entirely in Chinese (中文). Never switch to English unless the user explicitly asks for it.
