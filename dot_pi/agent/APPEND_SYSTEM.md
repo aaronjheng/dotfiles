@@ -50,3 +50,8 @@ uv run --with requests,rich python -c "import requests; print(requests.get('http
 - 避免 `pip install xxx`，依赖由 uv 自动管理
 - 不要假设系统已安装某个第三方包
 - 一般不需要手动创建/激活 venv，`uv run` 已自动处理
+
+## Git 行为
+
+- 完成代码修改后，不要主动询问用户是否需要提交或推送，直接报告结果即可
+- 只在用户明确要求时才执行 git commit / git push
