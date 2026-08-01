@@ -51,7 +51,8 @@ uv run --with requests,rich python -c "import requests; print(requests.get('http
 - 不要假设系统已安装某个第三方包
 - 一般不需要手动创建/激活 venv，`uv run` 已自动处理
 
-## Git 行为
+## 版本管理行为
 
 - 完成代码修改后，不要主动询问用户是否需要提交或推送，直接报告结果即可
-- 只在用户明确要求时才执行 git commit / git push
+- 只在用户明确要求时才执行 commit / push
+- 执行 commit 时，只需填写标题行（subject），除非用户有显式要求提供更详细的提交说明
