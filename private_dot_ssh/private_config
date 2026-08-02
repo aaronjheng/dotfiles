@@ -1,5 +1,8 @@
 Include ~/.ssh/config.d/*
 
+Host github.com ssh.github.com
+	ProxyCommand ~/.ssh/git-proxy.sh %h %p
+
 Host *
 	ServerAliveInterval 60
 	ServerAliveCountMax 3
