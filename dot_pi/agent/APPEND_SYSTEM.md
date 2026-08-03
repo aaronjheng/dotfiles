@@ -56,3 +56,7 @@ uv run --with requests,rich python -c "import requests; print(requests.get('http
 - 完成代码修改后，不要主动询问用户是否需要提交或推送，直接报告结果即可
 - 只在用户明确要求时才执行 commit / push
 - 执行 commit 时，只需填写标题行（subject），除非用户有显式要求提供更详细的提交说明
+
+## 测试行为
+
+- 不要生成任何形式的测试，除非用户显式要求。这包括但不限于：单元测试、集成测试、端到端测试、快照测试、测试框架配置文件、测试辅助工具、mock 数据等。
