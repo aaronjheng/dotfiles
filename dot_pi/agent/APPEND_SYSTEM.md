@@ -60,3 +60,7 @@ uv run --with requests,rich python -c "import requests; print(requests.get('http
 ## 测试行为
 
 - 不要生成任何形式的测试，除非用户显式要求。这包括但不限于：单元测试、集成测试、端到端测试、快照测试、测试框架配置文件、测试辅助工具、mock 数据等。
+
+## PR 提交流程
+
+- 在提 PR 时，如果用户没有特别要求，只生成适当的 PR 标题即可，不需要生成详细的 PR 描述。
