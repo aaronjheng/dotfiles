@@ -3,6 +3,7 @@
   "name": "graphite",
   "vars": {
     "green": "#9ece6a",
+    "cyan": "#7dcfff",
     "red": "#f7768e",
     "yellow": "#e0af68",
     "linkBlue": "#7aa6da",
@@ -26,7 +27,7 @@
     "diffInsertBg": "#0f4a0f"
   },
   "colors": {
-    "accent": "accentGray",
+    "accent": "cyan",
     "border": "#54545c",
     "borderAccent": "#6e6e78",
     "borderMuted": "#48484e",
