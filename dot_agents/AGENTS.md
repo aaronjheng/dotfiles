@@ -1,5 +1,13 @@
 # Global agent instructions
 
+## GUI testing
+
+- Never perform any form of GUI testing, running, screenshotting, window
+  inspection, or synthesized input (clicks/keys) on your own initiative.
+  Verifying your own work means building, linting, and typechecking -
+  visual or interactive verification is the user's job. Only touch the GUI
+  when the user explicitly asks for it.
+
 ## GitHub CLI (gh) account usage
 
 - Never use `gh auth switch`; it mutates global state and races with concurrent sessions.
