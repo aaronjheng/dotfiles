@@ -4,15 +4,15 @@
   "vars": {
     "green": "#9ece6a",
     "cyan": "#7dcfff",
-    "red": "#f7768e",
+    "red": "#f87f94",
     "yellow": "#e0af68",
-    "linkBlue": "#7aa6da",
+    "linkBlue": "#84aedf",
     "accentGray": "#bebebe",
 
     "text": "#fafafa",
     "textSecondary": "#d0d0d0",
-    "gray": "#909090",
-    "grayDim": "#787878",
+    "gray": "#a9a9a9",
+    "grayDim": "#8c8c8c",
     "grayBright": "#a8a8a8",
 
     "bgBase": "#1a1a1a",
