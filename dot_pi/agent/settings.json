@@ -1,0 +1,25 @@
+{
+  "$schema": "https://pi.dev/schemas/settings.schema.json",
+  "theme": "graphite",
+  "defaultProvider": "volcano-engine",
+  "defaultModel": "glm-5.3-flash",
+  "defaultThinkingLevel": "max",
+  "collapseChangelog": true,
+  "defaultTools": [
+    "read",
+    "bash",
+    "edit",
+    "write",
+    "grep",
+    "find",
+    "ls"
+  ],
+  "packages": [
+    "npm:@narumitw/pi-lsp",
+    "npm:@juicesharp/rpiv-ask-user-question",
+    "npm:@juicesharp/rpiv-todo",
+    "npm:pi-web-access",
+    "npm:pi-subagents"
+  ],
+  "hideThinkingBlock": true
+}
