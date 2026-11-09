@@ -19,7 +19,8 @@
     "npm:@juicesharp/rpiv-ask-user-question",
     "npm:@juicesharp/rpiv-todo",
     "npm:pi-web-access",
-    "npm:pi-subagents"
+    "npm:pi-subagents",
+    "git:github.com/aaronjheng/pi-opencode-free"
   ],
   "hideThinkingBlock": true
 }
