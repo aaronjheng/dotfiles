@@ -16,6 +16,15 @@ explicitly asks for it.
 - When I do ask for a PR, provide a title only — no description, unless I explicitly
   ask for one.
 
+### Scope of a commit/push request
+
+- A "commit/push" request covers only the repo where the approved changes
+  live. In multi-repo sessions, never cascade it to other repos - e.g.
+  auto-committing a dependency bump in a host project as part of the same
+  request. Leave every other repo untouched in its working tree.
+- In a multi-repo session it IS acceptable to ask which repos a commit/push
+  request covers - that is a scope question, not an offer to commit.
+
 ## Tests
 
 - Never add tests to the repo unless I explicitly ask for them — no unit,
