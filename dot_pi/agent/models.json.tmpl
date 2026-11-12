@@ -8,28 +8,6 @@
       "apiKey": "{{ get . "volcano_engine_api_key" | default "" }}",
       "models": [
         {
-          "id": "deepseek-v4-pro",
-          "name": "DeepSeek V4 Pro",
-          "reasoning": true,
-          "input": [
-            "text"
-          ],
-          "contextWindow": 1000000,
-          "maxTokens": 384000,
-          "thinkingLevelMap": {
-            "off": "none",
-            "minimal": null,
-            "low": "low",
-            "medium": null,
-            "high": "high",
-            "xhigh": "high",
-            "max": "max"
-          },
-          "compat": {
-            "supportsDeveloperRole": false
-          }
-        },
-        {
           "id": "deepseek-v4.1-flash-economy",
           "name": "DeepSeek V4.1 Flash Economy",
           "reasoning": true,
