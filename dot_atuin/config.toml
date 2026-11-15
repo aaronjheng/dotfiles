@@ -1,17 +1,7 @@
-## where to store your database, default is your system data directory
-## linux/mac: ~/.local/share/atuin/history.db
-## windows: %USERPROFILE%/.local/share/atuin/history.db
-db_path = "~/.local/state/atuin/history.db"
-
-## where to store your encryption key, default is your system data directory
-## linux/mac: ~/.local/share/atuin/key
-## windows: %USERPROFILE%/.local/share/atuin/key
-key_path = "~/.local/state/atuin/key"
-
-## where to store your auth session token, default is your system data directory
-## linux/mac: ~/.local/share/atuin/session
-## windows: %USERPROFILE%/.local/share/atuin/session
-session_path = "~/.local/state/atuin/session"
+## All Atuin files live in ~/.atuin by default (set ATUIN_HOME to override the whole tree):
+##   config: ~/.atuin/config.toml
+##   data:   ~/.atuin/data   (records.db, history.db, key, meta.db, ...)
+##   logs:   ~/.atuin/logs
 
 ## date format used, either "us" or "uk"
 # dialect = "us"
