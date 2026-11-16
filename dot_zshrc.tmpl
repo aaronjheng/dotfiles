@@ -2,7 +2,7 @@
 unsetopt beep
 
 # History
-export HISTFILE="${STATE_DIR}/zsh/history"
+export HISTFILE="${HOME}/.zsh/history"
 
 # Prompt
 PROMPT='%n@%m:%1~ %% '
@@ -61,8 +61,8 @@ for FUNC_DIR in ${FUNC_DIRS[@]}; do
 done
 
 # Completions
-autoload -Uz compinit && compinit -d "${CACHE_DIR}/zsh/zcompdump-${ZSH_VERSION}"
-zstyle ':completion:*' cache-path "${CACHE_DIR}/zsh/zcompcache"
+autoload -Uz compinit && compinit -d "${HOME}/.zsh/zcompdump-${ZSH_VERSION}"
+zstyle ':completion:*' cache-path "${HOME}/.zsh/zcompcache"
 
 # Extensions
 # Zoxide
