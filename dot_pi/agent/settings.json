@@ -2,7 +2,7 @@
   "$schema": "https://pi.dev/schemas/settings.schema.json",
   "theme": "graphite",
   "defaultProvider": "volcano-engine",
-  "defaultModel": "glm-5.3-flash",
+  "defaultModel": "deepseek-v4.1-flash-economy",
   "defaultThinkingLevel": "max",
   "collapseChangelog": true,
   "defaultTools": [
