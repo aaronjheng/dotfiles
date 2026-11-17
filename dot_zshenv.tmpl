@@ -9,8 +9,6 @@ CACHE_DIR="${HOME}/.cache"
 NIX_STATE_DIR="${HOME}/.local/state/nix"
 NIX_PROFILE_DIR="${NIX_STATE_DIR}/profile"
 
-export CARGO_HOME="${CONFIG_DIR}/cargo"
-export RUSTUP_HOME="${CONFIG_DIR}/rustup"
 export GOPATH="${HOME}/.go"
 export GOCACHE="${GOPATH}/cache/build"
 export GOMODCACHE="${GOPATH}/cache/mod"
@@ -40,7 +38,7 @@ typeset -U PATH path
 
 BIN_DIRS=(
   "${HOME}/.local/bin"
-  "${CARGO_HOME}/bin"
+  "${HOME}/.cargo/bin"
   "${GOPATH}/bin"
 )
 for BIN_DIR in ${BIN_DIRS[@]}; do
