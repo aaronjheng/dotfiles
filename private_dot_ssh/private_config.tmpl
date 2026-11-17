@@ -6,10 +6,10 @@ Host *
 	StrictHostKeyChecking no
 	IdentityFile ~/.ssh/id_ed25519
 
-{{ if eq .chezmoi.hostname "aarons-air" -}}
+{{ if eq (output "hostname" | trim) "aarons-air" -}}
 Host aarons-work-vm.local
 	ProxyJump aarons-work.local
-{{ else if eq .chezmoi.hostname "aarons-work" -}}
+{{ else if eq (output "hostname" | trim) "aarons-work" -}}
 Host aarons-air-vm.local
 	ProxyJump aarons-air.local
 {{ end -}}
