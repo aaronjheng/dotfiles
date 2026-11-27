@@ -27,10 +27,12 @@ export NIXPKGS_ALLOW_UNFREE=1
 export PYTHONSTARTUP="${CONFIG_DIR}/python/pythonrc"
 export PSQL_HISTORY="${STATE_DIR}/postgres/psql_history"
 export SQLITE_HISTORY="${STATE_DIR}/sqlite/history"
+export VAULT_ADDR=http://vault.g123.io
 export GRAFANA_SERVER=https://g123.grafana.net
 export TELEPORT_PROXY=teleport.g123.io:443
 export TELEPORT_AUTH=github
 export CLAUDE_CONFIG_DIR=~/.claude
+
 
 # Paths
 typeset -U PATH path

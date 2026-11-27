@@ -36,12 +36,13 @@ alias cursor=cursor-agent
 alias typora="open -a typora"
 {{- end }}
 alias mitmproxy="mitmproxy --set confdir=${STATE_DIR}/mitmproxy"
+alias argocd='env -u HTTPS_PROXY -u HTTP_PROXY -u ALL_PROXY -u https_proxy -u http_proxy -u all_proxy argocd'
 
 if command -v gojq 1>/dev/null 2>&1; then
   alias jq=gojq
 fi
 
-if command -v gojq 1>/dev/null 2>&1; then
+if command -v xh 1>/dev/null 2>&1; then
   alias http=xh
 fi
 
